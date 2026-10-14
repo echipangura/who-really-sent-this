@@ -11,11 +11,11 @@ redact = cc.build_redactor(["jane.doe@gmail.com", "jdoe1981@outlook.com", "jdoe1
 
 
 def test_full_address_and_name():
-    assert redact("To: Jane Doe <jane.doe@gmail.com>") == "To: Recipient 1 <recipient1@example.com>"
+    assert redact("To: Jane Doe <jane.doe@gmail.com>") == "To: Recipient 1 <recipient1@gmail.com>"
 
 
 def test_bounce_encoding():
-    assert redact("<bounces+123-jane.doe=gmail.com@em.shop.com>") == "<bounces+123-recipient1=example.com@em.shop.com>"
+    assert redact("<bounces+123-jane.doe=gmail.com@em.shop.com>") == "<bounces+123-recipient1=gmail.com@em.shop.com>"
 
 
 def test_bare_username_longest_first():

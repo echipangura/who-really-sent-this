@@ -1,10 +1,10 @@
-Return-path: <recipient1@example.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-smtpin-us-west-3a-20-percent-8 by p115-mailgateway-smtp-677f4d6665-gtc8f (mailgateway 2638B134) with SMTP id 6c420ade-b962-4500-b959-721bc40430c5 for <recipient4@example.com>; Wed, 30 Sep 2026 20:43:52 GMT
+Return-path: <recipient1@gmail.com>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-3a-20-percent-8 by p115-mailgateway-smtp-677f4d6665-gtc8f (mailgateway 2638B134) with SMTP id 6c420ade-b962-4500-b959-721bc40430c5 for <recipient4@icloud.com>; Wed, 30 Sep 2026 20:43:52 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 6c420ade-b962-4500-b959-721bc40430c5
-Received: from mail-ed2-f33.google.com (mail-ed2-f33.google.com [74.125.228.97]) by p00-icloudmta-smtpin-us-west-3a-20-percent-8 (Postfix) with ESMTPS id E163AC000C1 for <recipient4@example.com>; Wed, 30 Sep 2026 20:43:49 +0000 (UTC)
+Received: from mail-ed2-f33.google.com (mail-ed2-f33.google.com [74.125.228.97]) by p00-icloudmta-smtpin-us-west-3a-20-percent-8 (Postfix) with ESMTPS id E163AC000C1 for <recipient4@icloud.com>; Wed, 30 Sep 2026 20:43:49 +0000 (UTC)
 X-ICL-RepId: 01a0f40f-2ab3-7db2-a738-289b09e38bc9
 X-ICL-Info: GAtbRVYDBVFFSlVHSwQFUVUKE0oWX1gHVQoPB0UHAkxES1NZSgIOTExORhIcDVMBHRAWFhZXQxAUOQEaGVlaTBYWC1ceVAsFGBgPG1ZTWQ9VCwVKFVlFERAPA0Y4WVUOGgwCWRtfW0IdHAoYRV1XCxlUAxNKHVBRRlcBGBdXWgdbGgkaWEBCEEgUBx4UHVMGR1QAREseUQ0aHgoSVlNZD1UdAkofXVcLGVcFGBUQWwsRRFo0OX9vGDAcFSIWfwM6DSYuLhcJUTQfTjUvIEN8CgQSKRQARAYFQjIsB0FbdCoELB5FEkd2DxQQClkfXVcLGVcFGBUO
 X-ICL-Score: 2.33303303433
@@ -15,9 +15,9 @@ Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=gmail.com
 X-DMARC-Policy: v=DMARC1; p=none; sp=quarantine; rua=mailto:mailauth-reports@google.com
 X-DMARC-Info: pass=pass; dmarc-policy=none; s=r1; d=r1; pdomain=gmail.com
 Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=gmail.com header.i=@gmail.com header.b=ai5n3mhm
-Received-SPF: pass (spf.icloud.com: domain of recipient1@example.com designates 74.125.228.97 as permitted sender) receiver=spf.icloud.com; client-ip=74.125.228.97; helo=mail-ed2-f33.google.com; envelope-from=recipient1@example.com
-Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of recipient1@example.com designates 74.125.228.97 as permitted sender) smtp.mailfrom=recipient1@example.com
-Received: by mail-ed2-f33.google.com with SMTP id 4fb4d7f45d1cf-6ac6fa788e6so6035437a12.1 for <recipient4@example.com>; Wed, 30 Sep 2026 13:43:49 -0700 (PDT)
+Received-SPF: pass (spf.icloud.com: domain of recipient1@gmail.com designates 74.125.228.97 as permitted sender) receiver=spf.icloud.com; client-ip=74.125.228.97; helo=mail-ed2-f33.google.com; envelope-from=recipient1@gmail.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of recipient1@gmail.com designates 74.125.228.97 as permitted sender) smtp.mailfrom=recipient1@gmail.com
+Received: by mail-ed2-f33.google.com with SMTP id 4fb4d7f45d1cf-6ac6fa788e6so6035437a12.1 for <recipient4@icloud.com>; Wed, 30 Sep 2026 13:43:49 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1790801029; cv=none; d=google.com; s=arc-20260327; b=mksjnh1fsEPZISnCBvbz8yXdFSRZqpWxxTNGqWhUgcHe0gD/I6Pd1Ya93CgXEYv84z DNB22rC/4tI+IIcXyNPY1JTOMF2aa7dWz37acDpBdhNt7cLG4kPUNYpY2x6b/7yKe5d8 v3XOpRU2TA9yWnEtUSI3qef972HbQCPCfD2/i1qFHXBrSlXLT5Bjy6a8lBJS/Qp362G9 7PZiRXXE6SIb+VVCuv3ypFjqRCD3gAX3u17Nkzp2ZiQZ+B/Vebsx9VDzQqvQWOJPerfQ 6fNnnQOEv7Y6XqGfaWrTgZzOO5rH9Fr19mGJIwtlJ7xWy+PxWJiW8EwK/I7Rtryq6M9u N1ng==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :dkim-signature; bh=TSUV+bvbNq6eJ+mGYSLl9ji8kOF7cUDXMa2Zeez+0Is=; fh=3ClIDg5b67LXaGR7goKN8pe7Y6IIKk21Rpv8cDjWNBs=; b=PEJZCfKF4Ls5v+vVykTvI/Enqq9gBwgJf+dlXvarndprFWQ14CY9CnY0TkpsS86/13 3hYJvJz6G/gdff61+xBCaFjChV+UbDO/ihIdGeMEdemr4l1OJsy6YNilM1ShEMzlKXDi c8iXfLhWS/HcYzVqMdGm7dlTPdJtW+Sc7mtFx+chd/VCddwE9k+WlhM43KZF8tYkv51S uVumyGm7n67pF554/78advm5VmoPDeXMsAnnwV+65skprebJDzDJ4BHvBawhUTctvxVo bSPOYTz8VvFRBjCCAgUWXocLQdaw+EGfCfFeCBJKtjI7hHyM9dCkyQkL29dv45z1GWyj mTQQ==; darn=icloud.com
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
@@ -29,12 +29,12 @@ X-Received: by 2002:a05:6402:a0c2:b0:6aa:28d7:5b15 with SMTP id 4fb4d7f45d1cf-6a
 MIME-Version: 1.0
 References: <BUeqZMyYTnSrHhhiaNZjSQ@geopod-ismtpd-99>
 In-Reply-To: <BUeqZMyYTnSrHhhiaNZjSQ@geopod-ismtpd-99>
-From: Recipient 1 <recipient1@example.com>
+From: Recipient 1 <recipient1@gmail.com>
 Date: Wed, 30 Sep 2026 13:43:36 -0700
 X-Gm-Features: AclHuK_8GXjZp1Toj6cL9WJJrtj0avEECsihtUiaa60tmGVx3i3uF0KN37C3VBw
 Message-ID: <CAOYzEesUnO5Xx_HYo9gVj7SXXsJhqkOcxt0g7KJp9kBHqUx2jw@mail.gmail.com>
 Subject: Fwd: Recipient 3, you have cash back waiting!
-To: recipient4@example.com
+To: recipient4@icloud.com
 Content-Type: multipart/alternative; boundary="00000000000030588f065cb95b1c"
 X-MANTSH: 1TFkXGxoaHxEKWUQXZ1plTGRlTBpjTh8RCllNF25PRkNcT1gRCl9ZFwcfEQpfTRd tWE9TEQpZSRcdH3EbBhsfGncGHhoGGgYHHxpCEwYHHxoGGnEaEBp3BhoGBx8aBhkaBhoGGgYac RoQGncGGhEKWV4XbGx5EQpDThdlWxxsTXBTTX9QaH98H0tPeX94Uxpccx5faxkSfUBwaBEKWFw XGQQaBB8SBRsaGgQdGwQbHBoEExoQGx4aHxoRCl5ZF0ISUkFCEQpNXBcHGxgZEQpMWhdsaUFpb xEKTEYXbE1rEQpDWhcdHgQbGB8EGBgSBBMdEQpCXhcbEQpCXBcbEQpeThcbEQpCSxdjU2NrexN YfhpfXhEKQkkXY1Nja3sTWH4aX14RCkJFF3oFbxNbQVhLf05LEQpCThdjU2NrexNYfhpfXhEKQ kwXY3NsekNFfGUfbHIRCkJsF2ASX09FHExLTB1JEQpCQBdlbWMYRlNfQWdoXBEKQlgXZXscU0Z DElkeHHoRCk1eFwcbEQpaWBccEQpwZxdiYk8THm1tT0dpbhAHGRoRCnBoF29kYl96blpffUFJE AcZGhEKcGgXZlpQZhJ9a08ZcHMQBxkaEQpwaBdsRUhzHm0db1kYbBAHGRoRCnBoF2xeR1Nza3N GRmdZEAcZGhEKcGgXZR8bR3AfG0teWE8QBxkaEQpwaBdoSElAWQFBZVNYfhAHGRoRCnBoF2Nec mFlb3lHfnJ6EAcZGhEKcGgXaUl7bmMYaW1OQkkQBxkaEQpwfxdiZ29fRWhTSWBdWhAHHx4RCnB fF2toYFpPZFlvcl5wEAceGhEKcH0XYEtBaElLBWt7AXgQBxkaEQpwXxdpHxJlfxpzR28ZWhAHG RoRCnB9F2BYYB9ebmBvQhlDEAcZGhEKcH0Xb0FGelpwHmQbf3AQBxkaEQpwfRdjUxJfWh0cBX1 LYxAHGRoRCnB/F29Dax1/THhzEkhZEAcYGBEKcF8XYHlOGm1geR1BUxoQBxkaEQpwfRdsAXIcR UlOfnpZQRAaEQpwfxdhXBlzQnlveUJAXhAHHR0RCnBfF2ZwQmRzE3tpa09NEAceEhEKcH0XbEB HW2xvbRtiBVMQBxkaEQpwfxdhTx8ZeUlpXHkaZhAHHRwRCnBfF2J7GHtlXWBlYmNNEAcZGhEKc H0XYHpfTEJAb2dCARwQBxkaEQpwfxdmcBp5HHkSbVNoRBAHExsRCnBfF3pffV5ge35YeWZtEAc ZGhEKcH0XaAFTW11eeGBLbHkQBxkaEQpwfxdgZERZG0F7XR14ThAHEhgRCnBfF25rYhNEYl9Gc GBrEAcZGhEKcH0XZR9JGm1zTXAaTXMQBxkaEQpwfRdlH0kabXNNcBpNcxAHGRoRCnBfF2lmGFs TXUJ5XllrEAcZGhEKcH0XY2lmaxhZbVN8QkEQBxkaEQpwfRdraBtAGkVcbx5EWxAHGRoRCnBfF 2FaT21hGmZkH0t5EAcZGhEKcH0XYkBsXUEZQmZjQR0QBxkaEQpwbBdoSEN8ckdDcEtCQRAHGRo RCm1+FwcbEQpYTRdLEQ==
 X-Authority-Info: v=2.4 cv=Mp1fKmae c=1 sm=1 tr=0 ts=6abd7486 cx=c_apl:c_pps p=20Q7QQ-rjqo_BFABl8kA:9 a=Xz4epktCYSFNfAqRzP63oA==:117 a=VdqzKS8jKosA:10 a=x7bEGLp0ZPQA:10 a=PZR7nDz3ucwA:10 a=95EFz5htlIgA:10 a=cbUs10ydAAAA:8 a=MU3YLIgrAAAA:8 a=BkpHzsgbAAAA:8 a=3j4BkbkPAAAA:8 a=6FPNYluCAAAA:8 a=jfLGntU3AAAA:8 a=JTt-KS7JAAAA:8 a=pGLkceISAAAA:8 a=qkgdUKtvI8GDV2nMlDIA:9 a=QEXdDO2ut3YA:10 a=r3Trk3xdAAAA:8 a=3xtlNZgm3yEXo+T05C31pup2r18=:19 a=WUOZKTrpsBWCcTbZ:21 a=lqcHg5cX4UMA:10 a=P3uFDBdo-Ry_KMe77QVR:22 a=uJQ5KqjMj5TYcS1X3yuR:22 a=0TkXfT2pXjVnQC2iIllu:22 a=IQ4RqAP5Y7TO4UNjOvx9:22 a=vS2PVDuHti6yXCRDaztk:22 a=lvwBUfSAqYTPgrtYw45t:22 a=Bho9c0fBagfJEIQBS7DQ:22

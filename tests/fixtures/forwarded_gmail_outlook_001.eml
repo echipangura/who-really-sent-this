@@ -8,7 +8,7 @@ Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP is 74.125.228.95
 Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates 74.125.228.95 as permitted sender) receiver=protection.outlook.com; client-ip=74.125.228.95; helo=mail-ed2-f31.google.com; pr=C
 Received: from mail-ed2-f31.google.com (74.125.228.95) by SJ5PEPF000001CF.mail.protection.outlook.com (10.167.242.43) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.472.14 via Frontend Transport; Wed, 30 Sep 2026 22:27:00 +0000
 X-IncomingTopHeaderMarker: OriginalChecksum:9E11A322941614289074A3C010F64EFB2AA13912F57FD3DB3033C4F25F324151;UpperCasedChecksum:113C89D71A18CFF408A55B23C68C781EC1843DE88084BE5EC01077D7A83A8D4E;SizeAsReceived:4420;Count:19
-Received: by mail-ed2-f31.google.com with SMTP id 4fb4d7f45d1cf-6ad795d5205so1651434a12.0 for <recipient5@example.com>; Wed, 30 Sep 2026 15:27:00 -0700 (PDT)
+Received: by mail-ed2-f31.google.com with SMTP id 4fb4d7f45d1cf-6ad795d5205so1651434a12.0 for <recipient5@outlook.com>; Wed, 30 Sep 2026 15:27:00 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1790807219; cv=none; d=google.com; s=arc-20260327; b=fRvzib7qY9QmBe4Y9kVSFScAyCqfM2h8vqFs9zqs3yf34yLOrSDV5G7pSRhmchAISs oUw9zl+cF5Fhl3Xq42DggSCFlhqIrsGV6MJvWgcTj6sNGdCf7wU2Gx/lPe3PU/JN2TlJ vpRrgLdQjQnjuDM1sJpZi9ghdPCU51c2kkkLaImlHHIhgmZPMGLmMLJX9LwgDNUdrivn R1ac1wMkqE/kEsJQizcOUTiTkFJOZV5TP6e65Ymk23j/QdD/vPjFtJEPZbKwS1xDLHgp 8ala1pJzaRWig2BH25b9JfAMDVI1nWoPXQ5A15Yvy28PurlqmZXK9HjBijQ9qXkfVmoe w5JQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :dkim-signature; bh=NK2+NQwbWZPqgDA9rSg7n1nMp2BDW31ukTWdwOScwfs=; fh=1RNEtJgufP+Kt1i2S+07LZl5ibebxIsY5tSjT5d3aCg=; b=aHLU79RAaPI49h74r4RlvLNIjpUPu72pviBAArt3/qMqM5x/zlqd+krrNkj2SNPdF/ 1kbxNO1RluMBDmj5YQwzdCytT4LKSKCIgsPXTixmg7U3NEyFP12uf0QuNVEImGfLvsT6 10sM/E5oHBUdRxRfag8BRAoci4SYXUmLOJUpZezk2VdX+z1Jsos2atcYBLHM714RJcs4 SRyw7ampIH26DJNdpdS1jeKudXB93aq8D8eo/QDw27CYSTk7ogqv4YvYfOpCuskmPxwU MCvOPqg3Wzm+47oGI5Gn3Zqe4LjzXgkUPuyAihTmhLtQtVSjlO+QTZXmyPUNnjS/USrC E/DA==; darn=outlook.com
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
@@ -19,15 +19,15 @@ X-Gm-Gg: AYBFou0epKnqHoF6j7glhVO7GtKvawf8u88IOjXAww5Z4hcsM+0/OA8F8JtFV7bVju1 CuY
 X-Received: by 2002:a05:6402:51d0:b0:6ac:689e:ad5f with SMTP id 4fb4d7f45d1cf-6ae19914711mr1908344a12.23.1790807219373; Wed, 30 Sep 2026 15:26:59 -0700 (PDT)
 References: <6ab9992034f6f_58cb11d82646d@accountsecurityworker-5c488d8d55-6qcfr.mail>
 In-Reply-To: <6ab9992034f6f_58cb11d82646d@accountsecurityworker-5c488d8d55-6qcfr.mail>
-From: Recipient 1 <recipient1@example.com>
+From: Recipient 1 <recipient1@gmail.com>
 Date: Wed, 30 Sep 2026 15:26:48 -0700
 X-Gm-Features: AclHuK_bAWIXLzhHDRYmSTAEdNnOKp6oEi8GEVqhVky_c8cyc0PQD6fmhbmb3Ug
 Message-ID: <CAOYzEeshEgep5MzU6Xkb8CRbiygj5ckfkJ-=bef1r6J+L6Dm3A@mail.gmail.com>
 Subject: Fwd: [GitHub] Please verify your device
-To: recipient5@example.com
+To: recipient5@outlook.com
 Content-Type: multipart/alternative; boundary="0000000000002c09ce065cbacc3e"
 X-IncomingHeaderCount: 19
-Return-Path: recipient1@example.com
+Return-Path: recipient1@gmail.com
 X-MS-Exchange-Organization-ExpirationStartTime: 30 Sep 2026 22:27:00.2908 (UTC)
 X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
 X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
@@ -44,7 +44,7 @@ X-MS-UserLastLogonTime: 9/30/2026 10:24:39 PM
 X-MS-Office365-Filtering-Correlation-Id: 56dea240-902a-48f8-b470-08df1f41f1f9
 X-Sender-IP: 74.125.228.95
 X-MS-Exchange-EOPDirect: true
-X-SID-PRA: recipient1@example.com
+X-SID-PRA: recipient1@gmail.com
 X-SID-Result: PASS
 X-MS-Exchange-Organization-SCL: 1
 X-Microsoft-Antispam: BCL:0;ARA:1444111002|7009299003|260928210016899003|9020799019|47200799027|54080799006|9400799043|13020799009|58200799025|260826003000599003|20103052903057|20103052901057|20103052904057|20103052914048|2607281247196008|440099028|3412199025|30041999003|1380799030|1360799030|1370799030;

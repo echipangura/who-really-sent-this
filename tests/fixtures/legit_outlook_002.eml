@@ -7,11 +7,11 @@ Received: from r16.emailnotify.microsoft.com (172.82.208.16) by CH2PEPF0000009C.
 X-IncomingTopHeaderMarker: OriginalChecksum:AB121DE565DB68E3D9829536F7B39F74D103744FFB4B510FBB79C57E47872DFA;UpperCasedChecksum:A49D2E35F48B5C1D1A63827789A7C5973D2D524BB7C7985EC27FC1845F58775F;SizeAsReceived:1496;Count:15
 X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50IjoibWlzc2V2ZTE5ODFAb3V0bG9vay5jb20ifQ==
 DKIM-Signature: v=1; a=rsa-sha256; d=emailnotifications.microsoft.com; s=mscom; c=relaxed/relaxed; bh=5x60Clj1YZNymJ4T+WaGtXqQhUBXhdmSeC0gYgtrADw=; h=from:to:message-id:date:subject:content-type:mime-version: list-unsubscribe:list-unsubscribe-post; t=1790807904; b=SBf12aIM0mm0wQUd1Bge5F2UQtpMQJhDI7XYcWmRSVz/h3tSUzVw1PvxTQhgTd2vuVEWD4tEi C4A1718E94Z2Ivdg90tL2n184iKigZlWABGuDDero8vROuOovnPBTUItZ2uSEK7K9l1InVhZBUE sLTYT2QczR3wi8CsupJiqQvn7XaI2T9XCwzmKO1Msxh/3elz7WXVEUbo9RlooHjkmeww+9L8XDt SkDnUjHUTmylJFQyQomeUZwiXvBEb2ZM5YbSCouUq17R05VY1mdiqbdSjfs0N9hdYJNa9j0ILlN +6eikWeZk/WinqO4NWCdY0KcWacwmlJOu0xJStlcS/iw==;
-Received: from r17.emailnotify.microsoft.com (10.1.1.77) by or2-prod1-kumo-mta-i-0deb4bf2ef620b368 (KumoMTA 10.246.45.252) with ESMTP id a58efdaebd1f11f19fda0a6254727445 for <recipient5@example.com>; Wed, 30 Sep 2026 22:38:24 +0000
+Received: from r17.emailnotify.microsoft.com (10.1.1.77) by or2-prod1-kumo-mta-i-0deb4bf2ef620b368 (KumoMTA 10.246.45.252) with ESMTP id a58efdaebd1f11f19fda0a6254727445 for <recipient5@outlook.com>; Wed, 30 Sep 2026 22:38:24 +0000
 From: "Microsoft OneDrive" <OneDrive@emailnotifications.microsoft.com>
 Date: Wed, 30 Sep 2026 15:37:54 -0700
 Subject: Welcome to your Microsoft OneDrive
-To: <recipient5@example.com>
+To: <recipient5@outlook.com>
 Reply-To: "noreply" <replies@microsoft.com>
 X-mailer: nlserver, Build 7.0.0.10737
 Message-ID: <AC700000001A6B437AF0045B7F1mscom_mkt_prod79@emailnotifications.microsoft.com>

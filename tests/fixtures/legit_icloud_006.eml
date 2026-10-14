@@ -1,10 +1,10 @@
 Return-path: <n_i_bounces@insideapple.apple.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-bulkin-us-central-1a-20-percent-1 by p115-mailgateway-smtp-f77b8c697-nb5g8 (mailgateway 2634B97) with SMTP id cb709ff2-bb93-4b8d-b459-e181380cff55 for <recipient4@example.com>; Tue, 15 Sep 2026 20:52:04 GMT
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-bulkin-us-central-1a-20-percent-1 by p115-mailgateway-smtp-f77b8c697-nb5g8 (mailgateway 2634B97) with SMTP id cb709ff2-bb93-4b8d-b459-e181380cff55 for <recipient4@icloud.com>; Tue, 15 Sep 2026 20:52:04 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: cb709ff2-bb93-4b8d-b459-e181380cff55
-Received: from mdn-epsmtap-mkt-lsndr14105.apple.com (mdn-epsmtap-mkt-lsndr14105.apple.com [17.32.227.240]) by p00-icloudmta-bulkin-us-central-1a-20-percent-1 (Postfix) with ESMTPS id 66113C0041F for <recipient4@example.com>; Tue, 15 Sep 2026 20:52:04 +0000 (UTC)
+Received: from mdn-epsmtap-mkt-lsndr14105.apple.com (mdn-epsmtap-mkt-lsndr14105.apple.com [17.32.227.240]) by p00-icloudmta-bulkin-us-central-1a-20-percent-1 (Postfix) with ESMTPS id 66113C0041F for <recipient4@icloud.com>; Tue, 15 Sep 2026 20:52:04 +0000 (UTC)
 Authentication-Results: bimi.icloud.com; bimi=pass header.d=InsideApple.Apple.com header.selector=default policy.authority=pass policy.authority-uri=https://www.apple.com/bimi/v2/apple.pem
 BIMI-Location: v=BIMI1; l=https://www.apple.com/bimi/v2/apple.svg a=https://www.apple.com/bimi/v2/apple.pem
 X-BIMI-Indicator-Hash: h=dpGHsU5Bu2SZy3DWazxD9zU3yePODqJnG07fkFwcckg= a=sha256
@@ -17,13 +17,13 @@ Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of n_i_
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=insideapple.apple.com; s=insideapple0517; t=1789505496; bh=BzC7G2k0uXyyaDTdzJXvPZySfga5bQrUm1E9j7xnvK4=; h=Date:From:To:Message-ID:Subject:Content-Type: List-Unsubscribe-Post:List-Unsubscribe; b=1kvH5bE+gBLow7YL+fsR084U9Rn9vgsfS0+PR71CPZgKz3CQGlio2QJoRFs+6tMvc ry5DKLGHgcTaE2yaoa19IY/3JTPlYzlDQFWyDuVXjp0QPW/vWUn+12LoyfoVxE/Gk3 tWN79HeeY+BERzg3nK67+GRlhUo2z5OpLIAthxsbEJkBx8qQyvItmSVRIBwvVbQ9oo cTMvmhPcgQBfd9+u39niQ7lxOSE9thXJrLbfKxAGLg6JosGmEXR1EQhBciywt4Eho+ sfWqGrDzzgYnXBF1WFxEFdfE9+SFKK7gMvLeYVZaR80mPtjzbRvRRQl/aPwrvG6Njf l4sySjoZBMtcg==
 Date: Tue, 15 Sep 2026 20:51:36 +0000 (GMT)
 From: Apple <News@InsideApple.Apple.com>
-To: recipient4@example.com
+To: recipient4@icloud.com
 Message-ID: <696343981.135139274.1789505496631@InsideApple.Apple.com>
 Subject: =?UTF-8?Q?=E2=8F=B0_Limited-time_college_offer_ends_soon.?=
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="----=_Part_135139272_1167980195.1789505496631"
 X-Attach-Flag: N
-X-Sent-To: recipient4@example.com,2,8w%2BvXLoOe%2FyPdV0vFeToEajdcNY528CWpg8xuHwjtgxbY7egcaG0OD%2BxwOdgauwH1jBkOGsYC72dCqMP5iFXoTN0h%2BDKCfXF0mnMKtp0Md0oLzthT16kvFEqyIaaowY3bT%2B14COTzNImBwiynqpTFhzvxFNuFbpi6EB6tNXGv%2BSL2CThY%2BgPjI62ykcu7CFveIthhY13WtbF2ZW0iXjnnPrxj8jodvFg0FyxYuDb7cMwr1BG9%2Bkx2QcjUqtjfPKQUHEeWKcXR%2FJibrWltBVtSQ%3D%3D
+X-Sent-To: recipient4@icloud.com,2,8w%2BvXLoOe%2FyPdV0vFeToEajdcNY528CWpg8xuHwjtgxbY7egcaG0OD%2BxwOdgauwH1jBkOGsYC72dCqMP5iFXoTN0h%2BDKCfXF0mnMKtp0Md0oLzthT16kvFEqyIaaowY3bT%2B14COTzNImBwiynqpTFhzvxFNuFbpi6EB6tNXGv%2BSL2CThY%2BgPjI62ykcu7CFveIthhY13WtbF2ZW0iXjnnPrxj8jodvFg0FyxYuDb7cMwr1BG9%2Bkx2QcjUqtjfPKQUHEeWKcXR%2FJibrWltBVtSQ%3D%3D
 X-TXN_ID: 92267425-8aae-41f2-9801-28e2d470e620
 X-DKIM_SIGN_REQUIRED: YES
 x-evs: BYPASS

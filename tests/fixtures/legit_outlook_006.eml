@@ -8,7 +8,7 @@ Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP is 209.85.167.51
 Received-SPF: Pass (protection.outlook.com: domain of mail.yu.edu designates 209.85.167.51 as permitted sender) receiver=protection.outlook.com; client-ip=209.85.167.51; helo=mail-lf1-f51.google.com; pr=C
 Received: from mail-lf1-f51.google.com (209.85.167.51) by SJ1PEPF00001CDC.mail.protection.outlook.com (10.167.242.4) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.522.6 via Frontend Transport; Fri, 9 Oct 2026 05:55:49 +0000
 X-IncomingTopHeaderMarker: OriginalChecksum:8DF398F246F0CA0B0DD36DB3B7CCE5B98DFAFD9D165EE582C664E9BD4CC76D8F;UpperCasedChecksum:953146AEC77BF9153A6E77855F3D38354320E94E2BF2F0AA82FD1B4CB7848A24;SizeAsReceived:4159;Count:17
-Received: by mail-lf1-f51.google.com with SMTP id 2adb3069b0e04-5bcb2eceb3eso105936e87.0 for <recipient5@example.com>; Thu, 08 Oct 2026 22:55:49 -0700 (PDT)
+Received: by mail-lf1-f51.google.com with SMTP id 2adb3069b0e04-5bcb2eceb3eso105936e87.0 for <recipient5@outlook.com>; Thu, 08 Oct 2026 22:55:49 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1791525349; cv=none; d=google.com; s=arc-20260327; b=m7drjil6c7K8sSVWFvLeJAcubNKjydxSRG5apJo6IkVu5GFhpKcH0B9Cmv7o51Fq57 MEePxYFyhfWo0GsFtIkmTCg6Kk6u22nueTIbbaI3E37ip0IsVUtqefpGmfxOrUEm+dnh e/QNlTA2SaZLVjDY6OexFq0LXVs+ozUrvOqCtcb3GUd0E00oHIM9AVLkU80taLIJs2hD VYtnenhXXhEqBHK6wzVnHpW7okcLXaWjJvZ7TCFUKaNp3OHh0QmDGopmbMqlMcGzCuq/ vaRoqC9z29vTOmklqX3k+6WVpgoUfEh69ER+x27bjofYClRQCjyi2iY6x3/J6WqQKNS6 9Skw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:mime-version:dkim-signature; bh=X/k5mMvntBNYll5j/6Q1HcZMALMdimUtWzmUzvOdwtU=; fh=jfepvaLa+mhQslJmVn8vlbIojXh91iYC49biSMLdFI4=; b=mhBcbiPanodaTk0Bo6qHTPlN3kKOY76w3KE73/lY7g2WSFq9/BaVDqpUmgOAS5b9ZC /8Llp152609DqkEyqRyLLHtWKJHTooQX9TQ+s0DXLOCj2CaN14LQUsLjj/0v6aIoKXYq 1a0k5npM71k8Rrgi1FiLmaNGs8hFcgEyZaXHpFCO9GYytmaQk8RQS730TuywpepCObnx 9UD4MaaIn829Irehf31Km9F2cMqmzI1knwa1RTFg5p03ejG4ymdoD5Fbd56udUdQgroy nt+EecbFwKmjWo6DIFFMDk4PTf54yNOr1woNe9EG90wWVlIEGB9OklqANCuW0WFRSNPs hd4A==; darn=outlook.com
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
@@ -17,15 +17,15 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20
 X-Gm-Message-State: AFq9FYJp/NdWqgE4yvfWDuzFLHC77moaP0caQ0x/ClRsvdU7rhxKNZcR B1/H1N+hlJg92qz7hh6lgRWIwwy2D2XyYHdf8f0EjLD9VXev0H1NBam+EUXDfm27MuYKhE/jcR9 yJ82Cb/vL57gGf3NHA4TkLkB/pdVrU5mGvhZ5YOYKS3g2r1KTN9rF
 X-Gm-Gg: AYBFou3oknwGB/iMevjh3Op9FtfvkmCmldNmEEIrEyLR811PHkxzQr4eYC7tqU3PW6U AqdKljaaJemfr0Rc2MhwofTJtNmyZfd4+pPSppvC7SN80g94VCH9M80aEE+MelTqoc9+WvJ9xCq t8xDgQ9mXUMYID6dnDNwe90egZz8sE1T015glsqw7RfuDweSrmrPp3DoSqMAGFH3MA4mMl4Ujk3 CjFFjBO/sIBc31mN+XTcWYqVDAqoZDkG15bzSkCjft7Fu1jy6Agcr96r4OGCaD5BoWSSO3wQVdy rHKdP5HfAhup/jLb/skwKimiO0DxGjT5co6iiwSA5pcXuLIV+kcF9/NF786x7kWjSxVV4SniqUW S4Gcq9e1jmWHr
 X-Received: by 2002:a05:6512:31d5:b0:5b8:c763:67f7 with SMTP id 2adb3069b0e04-5bcde6c0076mr315826e87.24.1791525349075; Thu, 08 Oct 2026 22:55:49 -0700 (PDT)
-From: Recipient 1 <recipient3@example.com>
+From: Recipient 1 <recipient3@mail.yu.edu>
 Date: Thu, 8 Oct 2026 22:55:38 -0700
 X-Gm-Features: AclHuK_y29-oj0DwcQVe67YR36AQFCrdN9AFwbXDnRPE5vK_YGUY3v7bq7F9GNM
 Message-ID: <CAFVb_D5D6DiLouKC4DJDz1gWk71t2cp9T2Z6fU71QC6Q8eiWaw@mail.gmail.com>
 Subject: Project
-To: recipient5@example.com
+To: recipient5@outlook.com
 Content-Type: multipart/alternative; boundary="00000000000009be31065d6200ae"
 X-IncomingHeaderCount: 17
-Return-Path: recipient3@example.com
+Return-Path: recipient3@mail.yu.edu
 X-MS-Exchange-Organization-ExpirationStartTime: 09 Oct 2026 05:55:49.9746 (UTC)
 X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
 X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
@@ -42,7 +42,7 @@ X-MS-UserLastLogonTime: 10/9/2026 5:55:45 AM
 X-MS-Office365-Filtering-Correlation-Id: 3807c422-0f95-40ff-5abd-08df25c9f89f
 X-Sender-IP: 209.85.167.51
 X-MS-Exchange-EOPDirect: true
-X-SID-PRA: recipient3@example.com
+X-SID-PRA: recipient3@mail.yu.edu
 X-SID-Result: PASS
 X-MS-Exchange-Organization-SCL: 1
 X-Microsoft-Antispam: BCL:0;ARA:1444111002|260928210016899003|60050799012|260804220100599006|3069299007|260826003000599003|13020799009|29090799004|20103052903057|20103052901057|9020799019|58200799025|2700799033|16110799025|47200799027|970799063|20103052904057|20103052914048|2607281247196008|3412199025|440099028|1380799030|1370799030|1360799030|30041999003;

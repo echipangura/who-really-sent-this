@@ -1,11 +1,11 @@
-Delivered-To: recipient3@example.com
+Delivered-To: recipient3@mail.yu.edu
 Received: by 2002:ab3:74d9:0:b0:314:e04a:dfcb with SMTP id l25csp2609903lti; Sun, 27 Sep 2026 09:02:26 -0700 (PDT)
 X-Received: by 2002:a05:651c:198d:b0:3a5:b1f7:a7bf with SMTP id 38308e7fff4ca-3a63c0cab6dmr28941211fa.21.1790524945875; Sun, 27 Sep 2026 09:02:25 -0700 (PDT)
 ARC-Seal: i=2; a=rsa-sha256; t=1790524945; cv=pass; d=google.com; s=arc-20260327; b=GrEkeggffCosah1s/sCfXvec0bC6PgIDfRsbQ4qymOY7cDT9QAlx1gHM2wRmFDV4nF o7jSzrGsrOpAcT02DqqNm0XY6kKwHzwfUOX6Ut+jIns26dWtDWMLHHWNfoHAYDNSUTLS VW5pRj6Gn0CUS/Q43AobZTPFnc5vbn23saEShQMWwki1GDnsyf6MD1Q8KuGMQd8za4VI 3ONN1MFhzTuKqexxqbIquaHfUcXkKKTojbDftiGi+ffLEz+70rwuhwY+N0DTOlgcR4Me AOnhsiRVa8vlzQubyz65HQ6hv9ikxbnxrek8x0spmr+RgH5I8rVf8dvGRsv3OS1daiRw u0pQ==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:mime-version:dkim-signature; bh=yy44FkRL7s/S3AAj/FFMwroutRzPAZeHfs1ozaTaXpI=; fh=KPRUpbBMccuIe/rKeGynk18PHexd52IDeWYibNxVqus=; b=kwwTlWniVkOiUkY0sGQtVNQSINBsE+biT7YZbXvwJtiR6zHfeRZSH6IbeL7T5W38hT uXqlSSA7wE4jf+ArQ1n6Tw18hI6+Bh/Vi8zNuJLYN29QA0+gee3qxF/YC5MaBWl0xx1h KxadvDhqNPzu9OhNq3Tuk+LcO24TapB/7U+XRXrOruD/cyPM6wYzkrrlvrKNiboffS/Y Y1K+vOoZUAFJnVfULrUGQHilrZjs1s3/iZEPI7pEWxT7Ffc5hkhKaKfPx93+y1Y4rd7l FTP//v2fafprUd4ZqfJfakA2//ehGeFDxbe3B7w3DvA3hSVrW15RhQX7L9efEwR8QLal liqQ==; dara=google.com
 ARC-Authentication-Results: i=2; mx.google.com; dkim=pass header.i=@fritconstructioninc.com header.s=google header.b=WFL+PdQZ; arc=pass (i=1); spf=pass (google.com: domain of hr@fritconstructioninc.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=hr@fritconstructioninc.com; dara=neutral header.i=@mail.yu.edu
 Return-Path: <hr@fritconstructioninc.com>
-Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65]) by mx.google.com with SMTPS id 38308e7fff4ca-3a66c19af80sor1372261fa.20.2026.09.27.09.02.25 for <recipient3@example.com> (Google Transport Security); Sun, 27 Sep 2026 09:02:25 -0700 (PDT)
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65]) by mx.google.com with SMTPS id 38308e7fff4ca-3a66c19af80sor1372261fa.20.2026.09.27.09.02.25 for <recipient3@mail.yu.edu> (Google Transport Security); Sun, 27 Sep 2026 09:02:25 -0700 (PDT)
 Received-SPF: pass (google.com: domain of hr@fritconstructioninc.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
 Authentication-Results: mx.google.com; dkim=pass header.i=@fritconstructioninc.com header.s=google header.b=WFL+PdQZ; arc=pass (i=1); spf=pass (google.com: domain of hr@fritconstructioninc.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=hr@fritconstructioninc.com; dara=neutral header.i=@mail.yu.edu
 ARC-Seal: i=1; a=rsa-sha256; t=1790524945; cv=none; d=google.com; s=arc-20260327; b=BCYGGGiffJ+UeyCCxYG92viAzOjJgl7tez4b66q8vksqpk5RKRUNEf3HIr9KjRT7FG 5v8MWt//6OL/tgw7jRF1awrDegTjexoBt6Z/1rN4MObHHHmJ2ztjZu0OhPfqwnA8z4uH CIvlpN4uE5QdpvRlmwm4+pUXFEqYhz+cK9W/vlsP46v85Oo/qgRW5k/68CeIWcpupEm7 OiV4SLrBcziea/zOBV3OPlIgUIVaQER3Tk9/VRNRDqz2v8WJ0cRDV4FMaEXHh3ZB08o8 ptfgHmLRYj/acW/ConunNH+O7xD35c4NlKxZv02kJpkeWDbaXBaktwdpTuJbPsEMiNsy 34Tw==
@@ -22,5 +22,5 @@ Date: Sun, 27 Sep 2026 12:02:13 -0400
 X-Gm-Features: AclHuK9eUF_y3BMdLBZk0sHADEQ_3I5H6qFRDFyItpTH2z5mJEN4Y1qB2gYCaY0
 Message-ID: <CAKwd-JREfPvQfYDVZN_eVCo8JsCafKRtDKPQhB+o+J_uTEWJ1A@mail.gmail.com>
 Subject: Interview with Fritz Construction Inc
-To: recipient3@example.com
+To: recipient3@mail.yu.edu
 Content-Type: multipart/alternative; boundary="00000000000053cca5065c791365"

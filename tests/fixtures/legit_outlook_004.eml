@@ -8,12 +8,12 @@ X-IncomingTopHeaderMarker: OriginalChecksum:0EA880A800637B29CE01764C85D93E3B1788
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.co.uk; s=s2048; t=1791235627; bh=gXgXxwqdnHDtIVvjSUDrCh6dPGZUy3EGFr3LmuYl9K0=; h=Date:From:To:References:Subject:From:Subject:Reply-To; b=bPdbkuZmXbr1Fmf3fGmNjpWguVTvxodwOWstTFXZEHdmHLMk3sDI031Y7pWCMEVRawf0OEB1O5NGQCjf2ZLm2w3FXpaY6tQm+XO1AXlxRJvYoqbvAB8LmNatVodKqwDwXnHDHl0+8c2kR+Kbv4voNmSXMVk5WYEN9fLKbG3tOqIDhdbT01SfJeHy85FrjMoDSD7lfFvgTqHPXRzFTfyRa30RJnWCCnBJ8XTjgFUPBRwbV/bBhxfZdjAJR+vsyoZkE3ce7qVSIypOiBmq4xWW1pL0cBdXHhVl/ZhLPisGQhYRvPTOpcyE9eIvmYhLuLUqyr8LEJr6MLiQwNxBc7NAYg==
 X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1791235627; bh=OrA4fcnyoJF+CH9HdyxPGHJ4flwB9+0XJwbcvsrbGDm=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=omCQSWRtAqzy7Uekl2+vBvg0Hzm0l9Gp0gMZWatdd9yneOX9BKMtuCBIjKhY/EybIrCvyU7K/7IY0W/wqxAgQe/f5CnCLWjdDtIvolNmJV8xOx97TFeMn/R/oa99x2fIuX9mSrlAQXkC6PunF+hfZ8yI2WRpU0UAoE4M+IXTXy+TwPKpIhuMDwiIiLEIo+GMU6GRQNPU8nqiyysgpE1aYUgU1eOCGMzfdTX4un3fswPo2w0Bebu6BcF2Ogr9RBj7Jjf4WgLG0Nz7x6QvAY0ZptsPwyCsp6b6xLDfxUn0Ror7tSWsqwbtXpF90yaAwcHMCfVbldkCz5Qs74H8cP+l0Q==
 X-YMail-OSG: IjrH41IVM1kr03x7VD5V8HfVHOyRQ9dQa25AkgNnWjCofxGr3p2l.AF4ZmfM5Om GrFatERNLRs6T6M_RtL0y5UtcQdDbJhImqmHPp4JqMz_qTX_b4dkrhKY5rCf_tYxVstvjdFmiB2m ya6WCsj3QxDt8XMrx4BVoTXvNNrUWKjcNQo3ez2PX0wTzsN.729yDX1Wkap62zI5SfmcZndvuLBg _xdcbFI4xrN9QV2Ty8JTt0tX5zhdMGGj1qlYMRUHvnj.SQuKY1uQgRwuPv5WObq2Xs80AxCZbslE F5a0K6cA3f0ynk5S6KGMFF1anFUEY0ncICKQjYSvlKJ3X.MB88gA5PnU8Pw7BxlMaa2bJeWMh6p8 OjwTr6eyVV4gGZ1BHRXRdLDq0mwIPwM_CxJGoA305TMJqH8J7raWninzvpUtapNH_Zql.u2CigAB pcPeVAubhsm6mYrw5adlZ_SagMKfqZnGpHqoWOOPhRHh98frNn8G1lzGaPfibZbZgDxN6xzAV_23 ElTyzrqqmKnNfdyaepFLg9EErzlSG1IQ2rOpYXNOgDnoFOm8xJxU1WXRswgp.CaiXhbLN.ccjTeP pUvufVMr8apcY9YkCXGvvk1gMTNLChzuvUAMqgJhGyeNnQ8gTjCFmPhzUefSS7h3XcLyoRAy52LI xm_9thI3e685ISc0iy9RjXw3wmSGjD.9xIjMMRFqzNAGtjgUg6kBOm1enLEPcgnrbMPz9ObWyNOi bxDCkQCq2hlQyPaTnYDX_POnEWnPwmedVzENh8LQRXgHlX1BmidUeYpVjFF4f5MsAFkK6dSNqaw1 J4Em9D2FXDkj93HuuhOiwUZzWfTFJX9O.2Z_byhgWNL_ylwdebjtancHK5uGWaTexd7cTmTYEX0s L61WkthWWLqFy0_b2C1MzzqtXo7nUr02yIpitcklrH.q.QCe3coOpC3m6oHq7hPRW8A3.PtOA6s4 AUiefKQ7qNp99SETsf3Ja0lL3aF6bTdOUIBbNho4Kima2G_.ITxHDdXT8qu5MPYMU96R88dhvhku 13zqUp5MkpIYrlLlF0GXJqOvXg65yTufubua7dlgWZLYMRy97gAUIP27S.t.gJmgCq7MEux_rRP3 QW8QT.wCCR6iFqlNP1paVv0Rw885Vbp8OG3Z0WkbJhbjpgmm7Om0PzMuypv_guyXOi3EDPbsFTHH 1TJD5BrAbpz_DPkDwx_yN0aJpc0YY186.xyVzYBCDGMEe5PgBP_XjJtJIHKaCDjdg3_qeaFp36SR gK9W4xOtxcQmkxOmsyZbZUvCoEUfmfv84TKS02lNM7Fx5dZ695H7mL_N.4rUkWVbi4JWf1h8Ty0G 5rw0UfFd.l9Ewu735.u3nWp_r8nHa2Q6jjhynlrkHiojfemVKlp1Wm9Rkm3Y8GcBpUxF4c_Mawf9 dCSHfDSUbMlnbbI3ErZo7bTdUu3Bi69Denl5LECk8xOE9AgNrhSIlrxFqkoboawMl1VTq0FxDYWB rld1ZqteYHXAmEt7SchXa291PAMdPq3R8.GedwKAuykR_mSVfpojY2lecxbPLWNBX34fkZxU48Xt yYPF8kpG.gKAC83pXCOdHY5mW_B7QG_oIDtBAXA8qnEJ6yzkNBzidtN9nTqcm78Rxwxzqg4cZCuH YiIu7eBlIYiLIUeuLjv6_PNEW43YPj.cwaptNgILsp.8Wo7K0Gj_gFZ8gxVsaW7JDAmkcHz66rMA aKOZCVXrEwv6UV8nZeVVcaKET5HEyfpJ6_vGljZkV0jFFCFfuSWXvZzu9IYkff6SZubmMb3UaHu5 96OGIJWPVhZwNvtim4Q11VrZdzS7yHkMQyMnJA.xKnqkoINq1Mu1ZSELkVP9bv3Ro4G.qmPBBgt_ p9l35B9aygEALzgqqKGd6ewXkLLT7VXJeKE7X5VAJGcQepGFuqo4zvIHmUY1T5RlGaASgCiuDfQ7 uWibHmzFyWxDWrlDEoj.5NoU5IqCOdxVEL.SgE9cIT9KOECLsHqDYWvU2ZpTT2nrqBgAEbhjRori pg5Lcq1C1iqJQJwVjelcDJwd6xLyz25I7Zb29jsCRzjBm0m8uDCpzb9ltR8RFsZRysVl_1LCkkGs ENFbXQZcbK0Grj2t5WMXyFRPwvkLay59RMkiqay5sbdRIgxp7KO8qiV2xqw7y5E774Z1DXewuDk0 CZmfWMLR.n6uvTQ--
-X-Sonic-MF: <recipient2@example.com>
+X-Sonic-MF: <recipient2@yahoo.co.uk>
 X-Sonic-ID: f277dbd2-66d6-4545-9153-d0e213a18de4
 Received: from sonic.gate.mail.ne1.yahoo.com by mail-asdoutdeli-p-cin-usea4-prod-sonicconsumer-svc-102 with HTTP; Mon, 5 Oct 2026 21:27:07 +0000
 Date: Mon, 5 Oct 2026 21:27:05 +0000 (UTC)
-From: Recipient 1 <recipient2@example.com>
-To: "recipient5@example.com" <recipient5@example.com>
+From: Recipient 1 <recipient2@yahoo.co.uk>
+To: "recipient5@outlook.com" <recipient5@outlook.com>
 Message-ID: <1294710645.130624.1791235625346@mail.yahoo.com>
 References: <1294710645.130624.1791235625346.ref@mail.yahoo.com>
 Subject: project
@@ -21,7 +21,7 @@ Content-Type: multipart/alternative; boundary="----=_Part_130623_1649700858.1791
 X-Mailer: WebService/1.1.26668 YMailCLDNovation
 Content-Length: 715
 X-IncomingHeaderCount: 16
-Return-Path: recipient2@example.com
+Return-Path: recipient2@yahoo.co.uk
 X-MS-Exchange-Organization-ExpirationStartTime: 05 Oct 2026 21:27:07.4829 (UTC)
 X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
 X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
@@ -38,7 +38,7 @@ X-MS-UserLastLogonTime: 10/5/2026 9:22:49 PM
 X-MS-Office365-Filtering-Correlation-Id: a140c84c-7725-459a-79d8-08df2327688f
 X-Sender-IP: 34.2.68.31
 X-MS-Exchange-EOPDirect: true
-X-SID-PRA: recipient2@example.com
+X-SID-PRA: recipient2@yahoo.co.uk
 X-SID-Result: PASS
 X-MS-Exchange-Organization-SCL: 1
 X-Microsoft-Antispam: BCL:0;ARA:1444111002|16110799025|3069299007|20103052903057|20103052901057|13020799009|47200799027|2700799033|58200799025|260925184616899003|260928210016899003|29090799004|260826003000599003|970799063|20103052914048|20103052904057|3412199025|440099028|1380799030|1360799030|1370799030|30041999003|2607281247196008;

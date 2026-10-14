@@ -1,20 +1,20 @@
-Delivered-To: recipient1@example.com
+Delivered-To: recipient1@gmail.com
 Received: by 2002:a05:7412:46a4:b0:213:3411:42e1 with SMTP id z36csp3092849rdg; Sun, 4 Oct 2026 13:42:23 -0700 (PDT)
 X-Received: by 2002:a05:690e:14ca:b0:676:858d:35e3 with SMTP id 956f58d0204a3-677bd352044mr1607346d50.44.1791146542828; Sun, 04 Oct 2026 13:42:22 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1791146542; cv=none; d=google.com; s=arc-20260327; b=oZ0hxj6cjW12R3ae+0uP9y/kZ+1WSPRsIVdv6LkAGcJ3vkyeU2lMjlTvAUrAqu8ubM lVQdir8bpiOHk/hSu6CRjiT5zcLbI3NYaveJ65CW0L+jpctVP9Pwphakhuo7jWRpeesY xYETL2o2qlftAvn+6ySIemnB5p6dKUvutxqjSzXEmNKjVL6QVXioaGlVj1rn/+ZoqV2f xN5ZR8zPq/3uwnVfuTPpCG2wu+2DjfEO3Zxg06xW0daGBFkTZiUfM46Uw/iN2BowtMgw SUPdnXuX6V7PLepdqX+M2iahMAqE/NndhbNHWxEU3Jh8YsypBredaEw9hqMIh6EP6eqQ pPDw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=references:mime-version:message-id:date:subject:from:to :dkim-signature; bh=g0Kpqsk3UXN//SQTFnaLK0oeRWRsCMz2cwdeyRCVgAU=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=kwrQC66YwxaH6ylv3k87tnanF3rA6TK6+y0cGnQksb6VkHvV9hg2vFY+AcQbXE5IBY RBRJpKsjBRNN/37Y/zDABCUuoT74HrnZ8vAwDU0opsrhZygvShhpJb+P7z2GUE+B8xI6 duMfN5+I1JDuuTK7n97J6BebYiuE68Js1BQoooLLbLOu6XpXmOIVnUAmXz9aFoE4vpNK s3INSC3cg6XeJEwqEKIwZ9PE0Lu5Js28lVzzwI3jm1o4/4PUJVMAnO+UxCOIIYPc1GrJ c4oXx2g9iVDRS1tcpTexf+dO/8tmjtB1HMbRvjAAbckKqmIuinL4xaJX6vG2nrJY/nBA /GqQ==; dara=google.com
-ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@icloud.com header.s=1a1hai header.b="tU8v/flp"; spf=pass (google.com: domain of recipient4@example.com designates 2a01:b747:3001:206::5a as permitted sender) smtp.mailfrom=recipient4@example.com; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
-Return-Path: <recipient4@example.com>
-Received: from outbound.st.icloud.com (st-2001i-snip6-10.eps.apple.com. [2a01:b747:3001:206::5a]) by mx.google.com with ESMTPS id 956f58d0204a3-677c1ba9fa9si2064364d50.142.2026.10.04.13.42.22 for <recipient1@example.com> (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256); Sun, 04 Oct 2026 13:42:22 -0700 (PDT)
-Received-SPF: pass (google.com: domain of recipient4@example.com designates 2a01:b747:3001:206::5a as permitted sender) client-ip=2a01:b747:3001:206::5a;
-Authentication-Results: mx.google.com; dkim=pass header.i=@icloud.com header.s=1a1hai header.b="tU8v/flp"; spf=pass (google.com: domain of recipient4@example.com designates 2a01:b747:3001:206::5a as permitted sender) smtp.mailfrom=recipient4@example.com; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
-Received: from outbound.st.icloud.com (unknown [127.0.0.2]) by p00-icloudmta-asmtp-us-east-1a-100-percent-10 (Postfix) with ESMTPS id 49EDD18001F4 for <recipient1@example.com>; Sun, 04 Oct 2026 20:42:20 +0000 (UTC)
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@icloud.com header.s=1a1hai header.b="tU8v/flp"; spf=pass (google.com: domain of recipient4@icloud.com designates 2a01:b747:3001:206::5a as permitted sender) smtp.mailfrom=recipient4@icloud.com; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
+Return-Path: <recipient4@icloud.com>
+Received: from outbound.st.icloud.com (st-2001i-snip6-10.eps.apple.com. [2a01:b747:3001:206::5a]) by mx.google.com with ESMTPS id 956f58d0204a3-677c1ba9fa9si2064364d50.142.2026.10.04.13.42.22 for <recipient1@gmail.com> (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256); Sun, 04 Oct 2026 13:42:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of recipient4@icloud.com designates 2a01:b747:3001:206::5a as permitted sender) client-ip=2a01:b747:3001:206::5a;
+Authentication-Results: mx.google.com; dkim=pass header.i=@icloud.com header.s=1a1hai header.b="tU8v/flp"; spf=pass (google.com: domain of recipient4@icloud.com designates 2a01:b747:3001:206::5a as permitted sender) smtp.mailfrom=recipient4@icloud.com; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
+Received: from outbound.st.icloud.com (unknown [127.0.0.2]) by p00-icloudmta-asmtp-us-east-1a-100-percent-10 (Postfix) with ESMTPS id 49EDD18001F4 for <recipient1@gmail.com>; Sun, 04 Oct 2026 20:42:20 +0000 (UTC)
 X-ICL-RepId: 01a108a7-3cc1-7cb1-a2fe-4a7be149d805
 X-ICL-Out-Info: HUtFAUMEWwJACUgBTUQeDx5WFlZNRAJCTQ5OHVwDXRxFDVYCXgBLVxQEFVoeRA5EFQg4Wg5bBEcUFxtcABcNVk1QG18CQg8cE1YVEx9UVgNQUR1fAgoERwRbF0YDU0VBBBcRUAFYHlZeWhdeTUcfQE1iSQFaGVscQBdKbk1TDw8ZWhRcGFNFUR9UWF4EU1YOQl1JUVUECgVdCBwFXBpfAkcBVVIOAAkfR1tBBV4PD1FHDkADLVoOHBNWFQ1NQxJCFQQRUAFYHlY=
 Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com; s=1a1hai; t=1791146542; x=1793738542; bh=g0Kpqsk3UXN//SQTFnaLK0oeRWRsCMz2cwdeyRCVgAU=; h=To:From:Subject:Date:Message-id:Content-Type:MIME-Version:x-icloud-hme; b=tU8v/flps2ZGNL9/KGGmUoEyYRYzhzCcBgubgJNnZ4xlPZS4ax+j3Q4TVy8E1RxqYXBqM0IDGuQizkVEDtQChsP9eh+USHim8zGaedkKjNX5VlrG9P/gSM0IeQF5oTvTyW8mEwd077nbPezRMi5BKG3/usX5d7HdFyuG0l4SkcAmpboEx1FBbHzybHYMz0FSOKJPtagHpocziEQrV3Py/5v8OTJ2HSF8kg+qtn8HScS2373UyzVihL0pe77AsFqD+w4yrGEPUMHoehBbDkyXLteLzqLfUzNOPv48th95RWkFtXal2GnFfOrcMAAwDs4+DFXk9Rs29B0s7TcF6kl/og==
-Received: from p00-mailws2-76fc755f86-7xrpw (unknown [100.81.28.104]) by p00-icloudmta-asmtp-us-east-1a-100-percent-10 (Postfix) with ESMTPSA id A700E18001C4 for <recipient1@example.com>; Sun, 04 Oct 2026 20:42:19 +0000 (UTC)
-To: recipient1@example.com
-From: Recipient 1 <recipient4@example.com>
+Received: from p00-mailws2-76fc755f86-7xrpw (unknown [100.81.28.104]) by p00-icloudmta-asmtp-us-east-1a-100-percent-10 (Postfix) with ESMTPSA id A700E18001C4 for <recipient1@gmail.com>; Sun, 04 Oct 2026 20:42:19 +0000 (UTC)
+To: recipient1@gmail.com
+From: Recipient 1 <recipient4@icloud.com>
 Subject: =?utf-8?B?RndkOiBZb3VyIEFwcGxlIEFjY291bnQgd2FzIHVzZWQgdG8gc2lnbiBpbiB0?= =?utf-8?B?byBpQ2xvdWQgdmlhIGEgd2ViIGJyb3dzZXIu?=
 Date: Sun, 4 Oct 2026 20:42:19 +0000 (GMT)
 X-Mailer: iCloud MailClient2634Hotfix39 MailServer2612B5.952a5ad53a12

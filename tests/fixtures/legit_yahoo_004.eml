@@ -1,9 +1,9 @@
 Received: from 127.0.0.1 by atlas-production.v2-mail-prod1-ir2.omega.yahoo.com pod-id atlas--production-ir2-7657ff95b6-77wgx.ir2.yahoo.com with HTTP; Sat, 3 Oct 2026 22:14:51 +0000
-Return-Path: <bounce+35db1c.2ba27-recipient2=example.com@mg.ziprecruiter.com>
+Return-Path: <bounce+35db1c.2ba27-recipient2=yahoo.co.uk@mg.ziprecruiter.com>
 X-Originating-Ip: [161.38.201.113]
 Received-SPF: pass (domain of mg.ziprecruiter.com designates 161.38.201.113 as permitted sender)
 Authentication-Results: mta.yahoo.com; dkim=pass header.i=@mg.ziprecruiter.com header.s=pdk1 arc_overridden_status=NOT_OVERRIDDEN; dkim=pass header.i=@mailgun.org header.s=mg arc_overridden_status=NOT_OVERRIDDEN; spf=pass smtp.mailfrom=mg.ziprecruiter.com arc_overridden_status=NOT_OVERRIDDEN; dmarc=pass(p=QUARANTINE,sp=QUARANTINE) header.from=ziprecruiter.com arc_overridden_status=NOT_OVERRIDDEN;
-X-Apparently-To: recipient2@example.com; Sat, 3 Oct 2026 22:14:51 +0000
+X-Apparently-To: recipient2@yahoo.co.uk; Sat, 3 Oct 2026 22:14:51 +0000
 X-YMailISG: 1xdn3FcWLDvNYXru2ST6abpwSQFzZci8V1NTBU5uKez6wPv7 lMT09wgdXkYA2Pdj56A6yGIr5NJjW4.jHaqPrGgGeKpybsraH3WR7bRVBSgi lLvOcR4CDjUTCw19wuNAxW0UQQBGfPdTVbk3GiZTN0.qsAeVgK5Hc1XmwM1v QRHckiq50bPo3IGV.TDXp1bMjvbKrLCgq6rtH5T8Dg_uqpAqqBfrHmaTPVHI Y0k_vkP0VeJA2JuzFRaO9lGUpL0EkwTmoVsjE6_lJjgeMDa07UBPdvgpOQ7p mrserDEBLkilB.7b5B70OYrXw0XcfA_sCpH35_48PvyOV16HKtge7d1rIXui Q4xkjtWdU5s201JzdtuGXbJEMID1lOuOoFmbOq50PHX0oG9k9JTVMR66CKhM dMUAWlHwtxWSGlZhwLC65U4zKrvdJNfqVkxgeeP8MOFHkU4vkTm0BS8hyf1a mM9UPOSDGrtnycAdadbUA0rabWow7u2S6OuHKylU4ZvpjjHEzMYjGhHrQw5X Vf38ZBmvdMkkH0Ub7DB6BCBrdp8PmqZRNxZZmxoExPSF4Fd4Hwvytg8lYm6K iZoMYbYS6TkUf.1kf5IW9hJXbwgtygnP0V7Y.mXovGX5zMi.9thuDR7Ydzl3 lQeLCmmmBZfPflHlbbFtZBD3wDtAMQ6JHrpHRU8tFxo66IczUe3yJQOLkuyb MN4lqpu9YduJYAjEkBV55kgTxaURy5d_eWTavqg_FBpa68qnuTTfN_d8R10G SrQHdROpfLaOxudmyGGdXjHqPOqCcNFoX1qjHUlk0RY3vEW3qfL9Ucz_3lS4 IIg7CWm_dXFmvi6B_kvXIeUUc7FL9GTCoRblUjUulcCNEJ_7ky7kY58T0Zyt DB.NWe3SVujBM_LxeOB6znHK4hpUT3zSBftJvAW4kVWVMiOkNvmF80AsH4Cu 5sn.fIb_9pUrWd3AsEDrDBll19cN01Rp5jANY3ZXW1q9voDleRHa6EMAEiGU xcdJWarglRE6Wyz77N_._G8b2ySyZ9IbibYTbuWceSAXfVW8Ae2MHJXudMnD gL3m0MYqVKruW2jAW80XwV_PbRTKAMN_pAn5WUqMtUypS9J45WWIDBu3MVge 1kO3Y7ELw9RGoMn_Hs3DqJTECaAvzAmDkySwuNRqSLVpMpR4kIIL88F8ipmM .1OAql2sChQrqzr2KvlYcz0-
 Received: from 161.38.201.113 (EHLO v5113.v5075e2e3.usw1.send.mailgun.net) by 10.200.78.225 with SMTPs (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Sat, 03 Oct 2026 22:14:51 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.ziprecruiter.com; q=dns/txt; s=pdk1; t=1791065689; x=1791072889; h=Message-Id: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender; bh=EH0Z8wBNbnqxwr2IgmlbdJzVj8DSf2t3ZoaTQFKu7p4=; b=eMmFCpW6/yIhiswQrb0yuxA7kZFT6AWFzCWMNJINVxLn66yvFzY3Ij/ezOa1HC8SSkJH138PoBcV8AofT5Cq1agOZskrD0NgVHIIKn3i5Qk9F12rp4AN1Wf/YhHt80ILwJQvhaX/uva3nxB3BJw9JucIoMoNPO9E2VF9kyciX4xY04Znyq5AafRu+JBtezuV4rkuecYt8ltqfibaPhcXjZvtzaocV9Ad8Dxk8Z9iuJ0Dn7pt63INaF4vYa5p/b5J8Bj2op86E6i9/mT10pC9invOq3bwOVWc8sJ727CU1H+MA5Ve04eLvYccvQfZdEUIuYp0/wbrTbsyJkMkLdQrQg==
@@ -17,7 +17,7 @@ Mime-Version: 1.0
 Content-Type: multipart/alternative; boundary="d6c097a215f9f9aeb640afce8166b919f1a437803338760951a417f7d25d"
 Subject: We updated our Privacy Policy
 From: ZipRecruiter <support@ziprecruiter.com>
-To: recipient2@example.com
+To: recipient2@yahoo.co.uk
 X-Mailgun-Tag: templateclass=privacy_policy_update
 X-Mailgun-Tag: platform-email
 Feedback-Id: compliance_emails:privacy_policy_update:mg.ziprecruiter.com:js_ziprecruiter

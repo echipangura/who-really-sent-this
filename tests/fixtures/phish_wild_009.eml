@@ -1,4 +1,4 @@
-Delivered-To: recipient1@example.com
+Delivered-To: recipient1@gmail.com
 Received: by 2002:a05:7412:10f:b0:1ff:c373:efb6 with SMTP id 15csp4487414rdd; Tue, 29 Sep 2026 04:17:42 -0700 (PDT)
 X-Forwarded-Encrypted: i=2; AKwUvBwg08iAmkTPx7gdCm2m3XXNRqIFl8s/viGwRj05OwZmdPxH8w7LWUxhjCdOuzE02zqLeUEE8w3MbJYseA==@gmail.com
 X-Received: by 2002:a05:6000:4707:b0:487:527:80a5 with SMTP id ffacd0b85a97d-488717724a8mr27581966f8f.41.1790680662257; Tue, 29 Sep 2026 04:17:42 -0700 (PDT)
@@ -6,7 +6,7 @@ ARC-Seal: i=1; a=rsa-sha256; t=1790680662; cv=none; d=google.com; s=arc-20260327
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=subject:precedence:mime-version:date:list-unsubscribe:envelope-to :message-id:to:from:sender:delivered-to:domainkey-signature :dkim-signature; bh=SFfupG2M3hlskoK177MFqY7x4aZvgAoBEDmQhtfmAtQ=; fh=n+q9pMbhM0eZjOdD0WWZpyNO946HUHl9hAOLrrMGfog=; b=MX912/ZkJbyyEPiknZzXzpEXT7kOvGdPli+LoIs+PntYHhERdCy9NOeuev9WCC/1rM 5qxHw7Q4hrwASUBSPT34gHXh4DjcnsrtmSx6Wpf0fyQGJFwRBzRNPVp2hmAoaklqIyAM PIQ38AM8A1ftTFYUp5yiK0GWEGKOUAt0bbt2rRo8VC4TquLPwQ6gSUWjow8xLO/H5dLp ucDzR/QZ8FXrVM++eF1lev8xJ3HfYGnfBpXsawOv5f9jezkYm9eNklY5sVpIg1AAsMa1 z1oQ+8/1eevio032SndlwNw3OTDepxuiA/P2u/Umi3lhtfgD/mH1GVqQqkqTQTGavgdq /nUw==; dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com; dkim=permerror (no key for signature) header.i=@OXYt.sb035.dynamicbackendhub.my.id header.s=mail header.b=BLHDrOZs; spf=pass (google.com: domain of return@sb035.dynamicbackendhub.my.id designates 5.135.245.28 as permitted sender) smtp.mailfrom=return@sb035.dynamicbackendhub.my.id
 Return-Path: <return@sb035.dynamicbackendhub.my.id>
-Received: from docs.google.com (e-presidentielle.lesechos.fr. [5.135.245.28]) by mx.google.com with ESMTPS id ffacd0b85a97d-48afb66ed0asi138713f8f.380.2026.09.29.04.17.42 for <recipient1@example.com> (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128); Tue, 29 Sep 2026 04:17:42 -0700 (PDT)
+Received: from docs.google.com (e-presidentielle.lesechos.fr. [5.135.245.28]) by mx.google.com with ESMTPS id ffacd0b85a97d-48afb66ed0asi138713f8f.380.2026.09.29.04.17.42 for <recipient1@gmail.com> (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128); Tue, 29 Sep 2026 04:17:42 -0700 (PDT)
 Received-SPF: pass (google.com: domain of return@sb035.dynamicbackendhub.my.id designates 5.135.245.28 as permitted sender) client-ip=5.135.245.28;
 Authentication-Results: mx.google.com; dkim=permerror (no key for signature) header.i=@OXYt.sb035.dynamicbackendhub.my.id header.s=mail header.b=BLHDrOZs; spf=pass (google.com: domain of return@sb035.dynamicbackendhub.my.id designates 5.135.245.28 as permitted sender) smtp.mailfrom=return@sb035.dynamicbackendhub.my.id
 DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=mail; d=OXYt.sb035.dynamicbackendhub.my.id; h=Sender:From:To:Message-ID:List-Unsubscribe:Date:Content-Type:MIME-Version:Subject; i=recipient1@OXYt.sb035.dynamicbackendhub.my.id; bh=9AvPeM6ZzWh27Vy4MZUYQEkNxUY=; b=BLHDrOZso8jLThKoHv8goTIwJYIkmoUGCQ18glZw7/ZY5mszeFduxT68M9roaDpvVkVdqpf56YQz 63ueIIWmBYvI/PbC6OfQvmfBVkIctChd2FbGUVc6lPVQ9j6R5YM7jqIkq05akrdAH+6ChEW1q/yq jyK5wTJzRZKaxewfqM08PWU/Eh9ysNBol6Hl/t0MqOOuonl7CXPN5Vz2rUY+f2fAU9ukm9/P2eMP R6vrKlQ9kH/YCTNAn8FkFtLlchs62aRjH1qNIUFJ01ZrJohRE8Vb9vmKM4jN5FKH87xRuAHN1sGB i+sKGYa8gRusrAyziMFQIZSMqPAzNz7IJ/8PdA==
@@ -19,9 +19,9 @@ Received: from efianalytics.com (efianalytics.com. 216.244.76.116) by mx.google.
 To: me@aol.com
 Message-ID: <84955-recipient1@kdiavWe.iry>
 Content-Length: 1245
-X-Original-Sender: <recipient1@example.com>
-Envelope-To: <recipient1@example.com>
-X-Google-Sender-Delegation: recipient1@example.com Trusted Sender
+X-Original-Sender: <recipient1@gmail.com>
+Envelope-To: <recipient1@gmail.com>
+X-Google-Sender-Delegation: recipient1@gmail.com Trusted Sender
 X-Originating-IP: 217.18.210.147
 X-Google-Original-Message-ID: <-@vevida.net>
 List-Unsubscribe: <http://kdiavWe.iry/LEAVE=To>

@@ -8,7 +8,7 @@ Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP is 74.125.228.87
 Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates 74.125.228.87 as permitted sender) receiver=protection.outlook.com; client-ip=74.125.228.87; helo=mail-ed2-f23.google.com; pr=C
 Received: from mail-ed2-f23.google.com (74.125.228.87) by CH1PEPF0000A345.mail.protection.outlook.com (10.167.244.8) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.496.14 via Frontend Transport; Mon, 5 Oct 2026 21:29:02 +0000
 X-IncomingTopHeaderMarker: OriginalChecksum:1155CEB5F78993AF7926460C185E4CAFB6DCA1452B2AA75386A8944E358EC879;UpperCasedChecksum:7CF38AAF20347E28AB6FC650FD394B2AF168CBC279B44ABCCCC185D5F3344FF8;SizeAsReceived:4133;Count:17
-Received: by mail-ed2-f23.google.com with SMTP id 4fb4d7f45d1cf-6aaf8415866so3184921a12.0 for <recipient5@example.com>; Mon, 05 Oct 2026 14:29:02 -0700 (PDT)
+Received: by mail-ed2-f23.google.com with SMTP id 4fb4d7f45d1cf-6aaf8415866so3184921a12.0 for <recipient5@outlook.com>; Mon, 05 Oct 2026 14:29:02 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1791235742; cv=none; d=google.com; s=arc-20260327; b=UaFwbrEwqAr3XZdvPYuiTkZV2K66ZCGFFTjtFSTQUzi0u+YPxYaap0NabBBSRUSkU8 5+lQeEaFebnppcphf5NiTFYI+vcMfyzHyfA66n5PYD89Oqs52rzFPDjNDEd2CFlGUABn Il3Tp0joa+KB201S6XdbQf9Rq4KGc+g0nQtAqgkjJyPONBM9F6yf2I4dJhDyNoPzp3+1 DzJRsTAi38LuAE6cdO+DbFqHmtgfQPYleNsPnkP3uGK6vU90kTjWixd/moc5f3gwViUV TYWMYKEycg/IhPfCn09qDh4/Wbl87Ottp1imEIeCGLWlBXOmrSxDZ9anQLeRbSk/3+tk 3qpA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:mime-version:dkim-signature; bh=EULa3GLUH9+GqUpnPFgwH8crQyL6qWswKEjhhgvkxb8=; fh=1RNEtJgufP+Kt1i2S+07LZl5ibebxIsY5tSjT5d3aCg=; b=mxRq6EqL3sHzO4c8NtLI0VI3T9fvV0xb7oVcklX1MzErsFjtqcHJPSpTnRNfAvcd5B G00smcXBP+syK83ukMvSHczXHRXxy5jxlnesIiMJQHeOS6VfvrBpWN+nZmCr9czK5Zxp Rl4yGVUziu8NatHElcWIojsNvGBvPfEDmUIivn/TNY3b30E0IJyt8RCM09Cslu6x0ZZv +dWFMe+YG1oPkyAXmItjzUf83xxFbrDS4q9qENRyyN7dviTYoJ8/4DW24kEX0jnOa7sj O//60C6/dnGCBYqwYUUSmXxfuq6yYm2efdt3mRNR2oh30VxjJ7M4qH4IYMMAr7sBatrN Cdyw==; darn=outlook.com
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
@@ -17,15 +17,15 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20
 X-Gm-Message-State: AFq9FYL6eWiHLm7T5g6OKlk0ROKSay6zODRIk/fSli9lH8N+Ve1QiiiD S1EK6TiRn2Gtftfm4q5yguhxyB9tKecH2/LMwmjLrq4Uc4ncUcvUiyN8UI+sy0UnKRibFMLX6FP eSJDZnNvxlqct3P5hiHwMW0qYupk9GkH1nA==
 X-Gm-Gg: AYBFou1uu7AEmbh+eRrcTjJ/EQpO9cOxE69fgA7LW3qY4gHf7tgV3R4gr0chlO8ZKzG 9vfg7dBF3cguYroxT0j15mvVQWyIWKhJ2inOKZfGlcLmQyUA689JuxVNrDaZ1W6/S63mGaeYWNa SOKDYaGrRkEaW/Wc5jU3fXUWVTpG3f84n0wz/76e9mDxWPuziZkrzSrvavO3htb7Mstac/OMbSj L4fyFtdrTAx+J8PdBNQjqn/LLYPzRZ5iomGFQ3leGYmmCi2J29vBqjnxPaOAxnMITWa13qRKMhg 68v8vU3vTDIfYJMLb2YcRlY11QTSqN/w4LPZSKsAvSGQRbgQEN2e54gb2LoNWO4fFbhdnR6Eprw a5ZYZmTCk9eU6i6mV1YfrRXM=
 X-Received: by 2002:a05:6402:350c:b0:6aa:e589:87dd with SMTP id 4fb4d7f45d1cf-6af9e2ef1e5mr9230623a12.14.1791235742187; Mon, 05 Oct 2026 14:29:02 -0700 (PDT)
-From: Recipient 1 <recipient1@example.com>
+From: Recipient 1 <recipient1@gmail.com>
 Date: Mon, 5 Oct 2026 14:28:50 -0700
 X-Gm-Features: AclHuK_fY0atMmfjnCG9rFf-BzMzd3bJTMYd_H9aIoRAVxyLEd3u6oN4OQvDbsI
 Message-ID: <CAOYzEeutbk_kGt76ZL6-cMA=q_S98ZGGtMhrfWh1S_=yv-z_NQ@mail.gmail.com>
 Subject: PROJECT
-To: recipient5@example.com
+To: recipient5@outlook.com
 Content-Type: multipart/alternative; boundary="0000000000001f42ee065d1e92af"
 X-IncomingHeaderCount: 17
-Return-Path: recipient1@example.com
+Return-Path: recipient1@gmail.com
 X-MS-Exchange-Organization-ExpirationStartTime: 05 Oct 2026 21:29:02.9372 (UTC)
 X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
 X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
@@ -42,7 +42,7 @@ X-MS-UserLastLogonTime: 10/5/2026 9:22:49 PM
 X-MS-Office365-Filtering-Correlation-Id: f2dd3775-edee-4905-657e-08df2327ad60
 X-Sender-IP: 74.125.228.87
 X-MS-Exchange-EOPDirect: true
-X-SID-PRA: recipient1@example.com
+X-SID-PRA: recipient1@gmail.com
 X-SID-Result: PASS
 X-MS-Exchange-Organization-SCL: 1
 X-Microsoft-Antispam: BCL:0;ARA:1444111002|29090799004|3069299007|13020799009|47200799027|58200799025|260928210016899003|260826003000599003|9020799019|20103052901057|16110799025|20103052903057|20103052904057|20103052914048|3412199025|440099028|1370799030|1380799030|1360799030|30041999003|2607281247196008;

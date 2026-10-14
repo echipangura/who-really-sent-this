@@ -1,10 +1,10 @@
 Return-path: <n_i_bounces@insideapple.apple.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-bulkin-us-east-1a-60-percent-1 by p115-mailgateway-smtp-f77b8c697-r7sgs (mailgateway 2634B97) with SMTP id 6910b616-b4ca-4b75-83e3-34b876e40290 for <recipient4@example.com>; Thu, 10 Sep 2026 00:31:22 GMT
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-bulkin-us-east-1a-60-percent-1 by p115-mailgateway-smtp-f77b8c697-r7sgs (mailgateway 2634B97) with SMTP id 6910b616-b4ca-4b75-83e3-34b876e40290 for <recipient4@icloud.com>; Thu, 10 Sep 2026 00:31:22 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 6910b616-b4ca-4b75-83e3-34b876e40290
-Received: from mdn-epsmtap-mkt-lsndr04106.apple.com (mdn-epsmtap-mkt-lsndr04106.apple.com [17.32.227.81]) by p00-icloudmta-bulkin-us-east-1a-60-percent-1 (Postfix) with ESMTPS id BB7ACC00582 for <recipient4@example.com>; Thu, 10 Sep 2026 00:31:22 +0000 (UTC)
+Received: from mdn-epsmtap-mkt-lsndr04106.apple.com (mdn-epsmtap-mkt-lsndr04106.apple.com [17.32.227.81]) by p00-icloudmta-bulkin-us-east-1a-60-percent-1 (Postfix) with ESMTPS id BB7ACC00582 for <recipient4@icloud.com>; Thu, 10 Sep 2026 00:31:22 +0000 (UTC)
 Authentication-Results: bimi.icloud.com; bimi=pass header.d=InsideApple.Apple.com header.selector=default policy.authority=pass policy.authority-uri=https://www.apple.com/bimi/v2/apple.pem
 BIMI-Location: v=BIMI1; l=https://www.apple.com/bimi/v2/apple.svg a=https://www.apple.com/bimi/v2/apple.pem
 X-BIMI-Indicator-Hash: h=dpGHsU5Bu2SZy3DWazxD9zU3yePODqJnG07fkFwcckg= a=sha256
@@ -17,13 +17,13 @@ Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of n_i_
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=insideapple.apple.com; s=insideapple0517; t=1789000282; bh=Pqtbc3P3tDtHmoLkQscRL3mdiS53Vj2QzhRlropO2BQ=; h=Date:From:To:Message-ID:Subject:Content-Type: List-Unsubscribe-Post:List-Unsubscribe; b=teZcPcdObWjL0ZEZuzuz7zP3VSxE2CCINn7Q3uC33TjKOOjH2Fa8rp/KokDcvwPyp 8MBS8rnUyoSvra2yBIK/ej9XjNttCCkkzKzEbdH0q3DkmCoAubkzxYt2Dz1YL2pmBC IjI9EsoYQv0mPbwrRhKVffJL5Bajg/pISqu6rPrY0JGLGCLUZYzllTqKGQPzrgsmkd ZVDhE+7uxbHdV+oK4TnZ2Dn80sflpHe7Gd6gKJGRbscCRFY/izqWG2cOOpLHioXKGl IG1mEtLEkMR1eFKulWPx2bCZeXtkntB8GY3gNYEQKmPSJEpYj0sNmkdj1xjGiA3ecC 89VZt93yPhG9A==
 Date: Thu, 10 Sep 2026 00:31:22 +0000 (GMT)
 From: Apple <News@InsideApple.Apple.com>
-To: recipient4@example.com
+To: recipient4@icloud.com
 Message-ID: <160307308.13197092.1789000282711@InsideApple.Apple.com>
 Subject: The most powerful iPhone lineup ever. Plus new Apple Watch Series 12, Apple Watch Ultra 4, and AirPods 5.
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="----=_Part_13197090_1834966117.1789000282710"
 X-Attach-Flag: N
-X-Sent-To: recipient4@example.com,2,8w%2BvXLoOe%2FyPdV0vFeToEajdcNY528CWpg8xuHwjtgxbY7egcaG0OD%2BxwOdgauwH1jBkOGsYC72dCqMP5iFXoTN0h%2BDKCfXF0mnMKtp0Md0oLzthT16kvFEqyIaaowY3zN6B5YrczVeWELeJIWxHN5uq0Pgg5Oww9tHlmoL%2BZDojqlGtZjzWGnKaM863g8D2jz7PYwsGL7Trb2Z%2BfjqW0Sy%2BzRx%2FDv2%2FB%2FoDEIryqjly4eGXXU6BumrOLaJP5q47R3gvkCjb1DicX9xJg3xj2w%3D%3D
+X-Sent-To: recipient4@icloud.com,2,8w%2BvXLoOe%2FyPdV0vFeToEajdcNY528CWpg8xuHwjtgxbY7egcaG0OD%2BxwOdgauwH1jBkOGsYC72dCqMP5iFXoTN0h%2BDKCfXF0mnMKtp0Md0oLzthT16kvFEqyIaaowY3zN6B5YrczVeWELeJIWxHN5uq0Pgg5Oww9tHlmoL%2BZDojqlGtZjzWGnKaM863g8D2jz7PYwsGL7Trb2Z%2BfjqW0Sy%2BzRx%2FDv2%2FB%2FoDEIryqjly4eGXXU6BumrOLaJP5q47R3gvkCjb1DicX9xJg3xj2w%3D%3D
 X-TXN_ID: b729a69c-a501-44be-9e8e-b4067e93f276
 X-DKIM_SIGN_REQUIRED: YES
 x-evs: BYPASS

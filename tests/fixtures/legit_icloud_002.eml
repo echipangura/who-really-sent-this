@@ -1,10 +1,10 @@
 Return-path: <mail@mail.adobe.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-smtpin-us-east-2d-20-percent-5 by p115-mailgateway-smtp-677f4d6665-mnccz (mailgateway 2638B134) with SMTP id 061b32fa-9076-4e27-a0db-50df1380690a for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:03 GMT
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-east-2d-20-percent-5 by p115-mailgateway-smtp-677f4d6665-mnccz (mailgateway 2638B134) with SMTP id 061b32fa-9076-4e27-a0db-50df1380690a for <recipient4@icloud.com>; Mon, 28 Sep 2026 14:11:03 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 061b32fa-9076-4e27-a0db-50df1380690a
-Received: from r24a.mail.adobe.com (r24a.mail.adobe.com [130.248.177.24]) by p00-icloudmta-smtpin-us-east-2d-20-percent-5 (Postfix) with ESMTPS id 8127EC006A8 for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:02 +0000 (UTC)
+Received: from r24a.mail.adobe.com (r24a.mail.adobe.com [130.248.177.24]) by p00-icloudmta-smtpin-us-east-2d-20-percent-5 (Postfix) with ESMTPS id 8127EC006A8 for <recipient4@icloud.com>; Mon, 28 Sep 2026 14:11:02 +0000 (UTC)
 X-ICL-RepId: 01a0e85a-d6af-7047-8042-7cb479ddbbff
 X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBBVJbS1JPVgEBVVtLUlcdVAsPFBAKNxVRXw5bGAIYGlUYARoURhEcDVsDHBVIFhxfVAdbGgkaWEJVXxgQFQQdRlNTNRAFGxdFUkwWFgtXEFVaDUgLVEMZHlsDHBVIFhxfVAdbGgkaWEBCEEgLVEMZHlsDHBVIFhxfVAdbGgkaWFRSXxgYDxtWUVINFxxIFBddFg8cHVtLNn1wJDE4VRMeAg9RTBhLQEgIU09BHAcTVQlVVUJUURMdAw4EREsAEhsHBlJCQCRCPHVXBhobAygbX0QSGxwRKBVZUj0FCwkTT3BbAxwVSBYcX1QHWxoJGkY=
 X-ICL-Score: 2.33303302423
@@ -21,11 +21,11 @@ Received-SPF: pass (spf.icloud.com: domain of mail@mail.adobe.com designates 130
 Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of mail@mail.adobe.com designates 130.248.177.24 as permitted sender) smtp.mailfrom=mail@mail.adobe.com
 X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50IjoibWlzc2V2ZTFAaWNsb3VkLmNvbSJ9
 DKIM-Signature: v=1; a=rsa-sha256; d=mail.adobe.com; s=adobecorp; c=relaxed/relaxed; bh=4NXjpAGvcNeQ9/rd3VbTF7hvWoHbpYig44EnHqeAn3c=; h=from:to:message-id:date:subject:content-type:mime-version: list-unsubscribe:list-unsubscribe-post; t=1790604661; b=uF1gqWc18a8O7+WIn8Y+SmrGOHSuZ+wkxwgbKndiMi2GYUjRlNWHzV9WpBN8ds9VNH/4pFWNl sNPvBqhvZg7SGVrKsKGgeZ73lhdh6Jd37aT/wc9rKgY81qp8j1cFhh4WLoq/416R20VGA/GFQ8u Ppr+b6NXsGl7TgWe6Aj0nzw+PbcqY2Nkp/TKWielgwdjmMNlDopr3FB75oYJs87oPrwxiBmu4Zl 9XyPilVN3ZsS4AFgRPOWiACEgROuo4rHk6cwU+pag7LkXOWnTC/lId7obgMbEVp3SRiJnbsss63 GNTx1kYRRfOK9lkrO/CYHIrZEvutGqXNXAlLR7y4iPUg==;
-Received: from r16.mail.adobe.com (10.1.1.118) by or2-prod1-kumo-mta-D-i-0512556619377d301 (KumoMTA 10.246.45.220) with ESMTP id 6f7d56e7bb4611f1bb860a279bccd90d for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:01 +0000
+Received: from r16.mail.adobe.com (10.1.1.118) by or2-prod1-kumo-mta-D-i-0512556619377d301 (KumoMTA 10.246.45.220) with ESMTP id 6f7d56e7bb4611f1bb860a279bccd90d for <recipient4@icloud.com>; Mon, 28 Sep 2026 14:11:01 +0000
 From: "Adobe Lightroom" <mail@mail.adobe.com>
 Subject: =?utf-8?B?TWFrZSBwcmljZWxlc3MgcGhvdG9zIHBlcmZlY3QgaW4gbWludQ==?= =?utf-8?B?dGVz?=
 Date: Mon, 28 Sep 2026 07:11:01 -0700
-To: <recipient4@example.com>
+To: <recipient4@icloud.com>
 Reply-To: "Adobe Lightroom" <mail@mail.adobe.com>
 MIME-Version: 1.0
 X-mailer: nlserver, Build 8.9.3

@@ -1,10 +1,10 @@
-Return-path: <recipient3@example.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-smtpin-us-central-1n-60-percent-33 by p115-mailgateway-smtp-5dd959f7c5-c9p2v (mailgateway 2640B125) with SMTP id 0860ae2c-df61-4b21-8210-64e5a4b9dee7 for <recipient4@example.com>; Fri, 9 Oct 2026 06:03:27 GMT
+Return-path: <recipient3@mail.yu.edu>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-60-percent-33 by p115-mailgateway-smtp-5dd959f7c5-c9p2v (mailgateway 2640B125) with SMTP id 0860ae2c-df61-4b21-8210-64e5a4b9dee7 for <recipient4@icloud.com>; Fri, 9 Oct 2026 06:03:27 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 0860ae2c-df61-4b21-8210-64e5a4b9dee7
-Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com [209.85.167.47]) by p00-icloudmta-smtpin-us-central-1n-60-percent-33 (Postfix) with ESMTPS id 6971EC00093 for <recipient4@example.com>; Fri, 09 Oct 2026 06:03:25 +0000 (UTC)
+Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com [209.85.167.47]) by p00-icloudmta-smtpin-us-central-1n-60-percent-33 (Postfix) with ESMTPS id 6971EC00093 for <recipient4@icloud.com>; Fri, 09 Oct 2026 06:03:25 +0000 (UTC)
 X-ICL-RepId: 01a11f42-5ccb-7f97-8523-bb111dfe44ce
 X-ICL-Info: GAtbRVYDBVFFSlVFSgQFUFUKE0oWX1gHVQoPB0UCBltbQVNZSQYBTEFORhIcDVMBHRAWFhZXdg8UEApZAUUYBxEMRhEcDVsDHBVIDg0eUwYAWRQURV1fEQYcEBJJcF8BGRYTE1ZTWQ9VEQMbFw1bAxwVSxseARsEQU5IEBdfUQ4QVwUYFRBGFgdECxYRXBsOE0hLEUwHGAUaFgEbHR5VDRhZAhNFXVcLGVQfAlVVUhdbS1ZFTQEHUkFXARYIQEURGA0WWRtfW0IYEAJKRHN3JCMbOTNMZUQkLx41I0EGVyMvGFZBPQNXFR4zMRo+CHtaHR8IWjV+URJGMicWLnd3BTUUBx4UHlEPFBAKWRtfW1w=
 X-ICL-Score: 2.33303322432
@@ -15,9 +15,9 @@ Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=mail.yu.edu
 X-DMARC-Policy: v=DMARC1; p=quarantine; rua=mailto:g-dmarc-reports@yu.edu; pct=100;
 X-DMARC-Info: pass=pass; dmarc-policy=quarantine; s=r1; d=r0; pdomain=mail.yu.edu
 Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=mail-yu-edu.20251104.gappssmtp.com header.i=@mail-yu-edu.20251104.gappssmtp.com header.b=Rqs39cur
-Received-SPF: pass (spf.icloud.com: domain of recipient3@example.com designates 209.85.167.47 as permitted sender) receiver=spf.icloud.com; client-ip=209.85.167.47; helo=mail-lf1-f47.google.com; envelope-from=recipient3@example.com
-Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of recipient3@example.com designates 209.85.167.47 as permitted sender) smtp.mailfrom=recipient3@example.com
-Received: by mail-lf1-f47.google.com with SMTP id 2adb3069b0e04-5ba3ac592faso2273227e87.0 for <recipient4@example.com>; Thu, 08 Oct 2026 23:03:24 -0700 (PDT)
+Received-SPF: pass (spf.icloud.com: domain of recipient3@mail.yu.edu designates 209.85.167.47 as permitted sender) receiver=spf.icloud.com; client-ip=209.85.167.47; helo=mail-lf1-f47.google.com; envelope-from=recipient3@mail.yu.edu
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of recipient3@mail.yu.edu designates 209.85.167.47 as permitted sender) smtp.mailfrom=recipient3@mail.yu.edu
+Received: by mail-lf1-f47.google.com with SMTP id 2adb3069b0e04-5ba3ac592faso2273227e87.0 for <recipient4@icloud.com>; Thu, 08 Oct 2026 23:03:24 -0700 (PDT)
 ARC-Seal: i=1; a=rsa-sha256; t=1791525804; cv=none; d=google.com; s=arc-20260327; b=cMnWoBuDKRqE9AyjrLNH3WkypAATAMnLb8ancJ21QXpaOCkQ/ZN4YRVXS4VJSgTJq7 YgRErN7jJm1uLltnqcDtTQIIg0rnBlGDzhAduV8mAYpYFrhrQfj6OzF6nscygbjUo3IJ AwuWTmCXnwkjr6+Q/ehPMGi6gYEKdcpcQpQWP+mkWflOXcJE+YtD3Nc6JJKK6OFbZ0PG UgqgvFycaEAF4bX7JmeUM3pLqWNuv6ciMOlvPBCHUsuUBf3/aSQpxtj5/W/yaKqR+DX+ BSNZBZz8pxvGydJp94WPWxk8BjCAE4mw8M59KueYo6NfSgT8tlsSMtFlLbTyRc8Px3zp VxSQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :dkim-signature; bh=/Jsi9QaG3ZyP53kBVMNOV704fefwSdmRN7V2oKLKcm8=; fh=3ClIDg5b67LXaGR7goKN8pe7Y6IIKk21Rpv8cDjWNBs=; b=MckPst88wODnXFBXwwPKZjrSQs+BwK4V9fpwdQkQgH4Z1DZYcVXsR422eGVW96Qid9 gZSQWVC47qkcWJsT9sJ3RWwUOHDQtl9yhzzdCwrEemDi5pxoxpNfCS+lPDwTdBley/XH wYOnrxlxTkLupUeJ9i+4unxxUrpnmGp+ZoFyglB0R0KOp5GrJ12tam3Qwgn+aSj3upZA ONx9BTHcA+gqcnTAyjVRajgA98rIA/vK9Qz18fszv5Pd7bxYuaPAQjXdFhhOlN8yNzZW vMsxy1ZXuJLtVKt2NjTl+SfgYp6vHaLQ4497oHVuXEW87+ypI/62pVA+e3cP/gV6KO6f h9hg==; darn=icloud.com
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
@@ -29,12 +29,12 @@ X-Received: by 2002:a05:6512:3f20:b0:5b6:4ae:d87 with SMTP id 2adb3069b0e04-5bcd
 MIME-Version: 1.0
 References: <SJ0PR04MB74398526EFB8851C115F3C5FFB932@SJ0PR04MB7439.namprd04.prod.outlook.com>
 In-Reply-To: <SJ0PR04MB74398526EFB8851C115F3C5FFB932@SJ0PR04MB7439.namprd04.prod.outlook.com>
-From: Recipient 1 <recipient3@example.com>
+From: Recipient 1 <recipient3@mail.yu.edu>
 Date: Thu, 8 Oct 2026 23:03:13 -0700
 X-Gm-Features: AclHuK9BR4NMTP-Ow1POCWHHIpeNCGNZngClCwn0w7L8T8ZYsv2sgAImwr2Qhs4
 Message-ID: <CAFVb_D4UrFZgST96aAZa06E3awkJWmF8M8hfn-MNgp3KAaVGAg@mail.gmail.com>
 Subject: Fwd: Volunteers Needed: IEEE Healthcom Conference - Oct. 19, 20, 21 at YU Museum
-To: recipient4@example.com
+To: recipient4@icloud.com
 Content-Type: multipart/alternative; boundary="0000000000002aaf5e065d621bfe"
 X-MANTSH: 1TFkXHBEKWUQXY156U3NCG3lAG20RCllNF2RFRE8RCl9ZFxkbEQpfTRdkRURPEQp ZSRcHGXEbBgccdwYYGAYaBhoGGxgGGnEaEBp3BhoGGgYaBhoGGgYacRoQGncGGhEKWV4XY255E QpDThcHR3BBfxJIXXVQcm9BcmtQUltveHlQU2ZYfBgab3NHfxEKWFwXGQQaBB8SBRsaBBscHwQ YGAQYHxoQGx4aHxoRCl5ZF0IFQ0JgEQpNXBcYHhEKTFoXaGlNa2sRCkxGF2xNaxEKQ1oXGBoTB BIfBBscHQQeHREKQl4XGxEKQkUXaR5LSH8aR39TQm0RCkJOF2F9SBlIZBtfXXlNEQpCTBdnfX5 ZSxlEWkgcRREKQmwXYBJfT0UcTEtMHUkRCkJAF2seb1xdTWtlW3J+EQpCWBdlexxTRkMSWR4ce hEKWlgXHxEKcGcXbBt+T29FXFlNWR0QGhEKcGgXZmcBYBhBUF9YegEQGhEKcGgXZ3gfHmFuSUJ va38QGhEKcGgXYkVQSXpATll8aFwQGhEKcGgXbHx9Rh5tRV9LYBkQGhEKcGgXZBh/ZV4cYU5/W 3kQGhEKcGgXbGhOSRpfZlIfbF4QGhEKcGgXZntFGRJcG30ZU3MQGhEKcGgXYmFNT0wYQlxIS0A QGhEKcH8XbFpgZRN/Z2RgEkQQGxIRCnBfF2xNfkh+U2UfclxDEBsZEQpwfRdiGn9AbEtlS35Sa xAaEQpwfRdsAVhJQlhgewVIQxAaEQpwfRd6Gx14ThtTfXtwRRAaEQpwfxdvRGFQEhN/GxwSfhA HGxkdEQpwXxdiY2sfUGNMHkZAGRAHGRMRCnB9F2BkAWNBRklyU2xvEBoRCnBnF2NMc2JSQ3Ica VxBEBoRCnB9F2B4BU9lUmweU2tGEBoRCnB9F2tzYxxZf158cF4eEBoRCnB9F21QcHtCTVtdU31 gEBoRCnB9F2wfWVBhU2hfYmVaEBoRCnB9F3oeZ21weHpGRGRCEBoRCnB9F2ZTEnlheHpzR1AFE BoRCnB9F29PaVB9QmRJemBgEBoRCnB9F2JrTGV6XxMaUGUfEBoRCnB9F25mWF5zUmhBG00ZEBo RCnB9F2ROc2JrfRJNBWxLEBoRCnB9F2ZBfWxvYH9Zf39gEBoRCnB9F2V7Q1gBREFeQUlTEBoRC nB9F2MdaGRbQUdLZlp/EBoRCnB9F2hEeHwaZkdQYX1hEBoRCnBsF2hIQ3xyR0NwS0JBEBoRCm1 +FxoRClhNF0sR
 X-Authority-Info: v=2.4 cv=Q8ffIo2a c=1 sm=1 tr=0 ts=6ac883ae cx=c_apl:c_pps a=OjAXoK3CVIMGaZH8qBVlRA==:117 a=660iZSQnnn4A:10 a=blVJeQLp3zIA:10 a=UqCG9HQmAAAA:8 a=MXId6NQwAAAA:8 a=Co9I5cVLAAAA:8 a=1XWaLZrsAAAA:8 a=_s65MrKEAAAA:8 a=jU4qhlNgAAAA:8 a=BkpHzsgbAAAA:8 a=3j4BkbkPAAAA:8 a=Vbsb0hm0tuvMD5s28aAA:9 a=9Eet9b+U1HWTmJSF4vyRs7J9/dY=:19 a=QEXdDO2ut3YA:10 a=Ag9OQJRruW50UyXy2bsA:9 a=SqRpbvRe3Dj1En1m:21 a=lqcHg5cX4UMA:10 a=PRpDppDLrCsA:10 a=KxAj9-1vOUtomdMwRjfv:22 a=lIZc0Wzf1BUKZDvQp553:22 a=3JgJrvkSJXbuRFogcBxr:22 a=wrF_smXS0vhCx4xdyhua:22 a=jtvoC9Dg37K_z6X5jtdD:22

@@ -1,10 +1,10 @@
 Return-path: <support@joinhandshake.com>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-smtpin-us-central-1n-20-percent-9 by p115-mailgateway-smtp-7796596c5c-8rfqp (mailgateway 2624B114) with SMTP id 98fbd041-1f20-406b-a105-c0da2fcb1709 for <recipient4@example.com>; Mon, 29 Jun 2026 17:04:09 GMT
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-20-percent-9 by p115-mailgateway-smtp-7796596c5c-8rfqp (mailgateway 2624B114) with SMTP id 98fbd041-1f20-406b-a105-c0da2fcb1709 for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:09 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 98fbd041-1f20-406b-a105-c0da2fcb1709
-Received: from mta-out8.pod23.use1.zdsys.com (mta-out8.pod23.use1.zdsys.com [192.161.149.38]) by p00-icloudmta-smtpin-us-central-1n-20-percent-9 (Postfix) with ESMTPS id 2B4CCC000CC for <recipient4@example.com>; Mon, 29 Jun 2026 17:04:05 +0000 (UTC)
+Received: from mta-out8.pod23.use1.zdsys.com (mta-out8.pod23.use1.zdsys.com [192.161.149.38]) by p00-icloudmta-smtpin-us-central-1n-20-percent-9 (Postfix) with ESMTPS id 2B4CCC000CC for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:05 +0000 (UTC)
 X-ICL-RepId: 019f1456-9380-7f09-a38d-59682f84176d
 X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBD1BbSFBGVgECW1tKXlcdVAsRAAkWGApEdggaEAgfGV5SER0YDRJWU1kPVR8CShJfXwwdGAgTC1hXCRBXBRgVEEQBSBQPBAtVQAdEOQ8UFF9DBlsaCRpYWFMOGkQLAxkdWRcBQUgHF1QEUVsMFRJJHkwGBgAVWRtfW0IFDRRKFURXTxoMEk9WQFkGR0pIAgtVB0wPHRUOCx5VDRhZAhNFWlkLGxEHGRxDXgMeHEgUF10WDxwdW0tKBAEwLCEjICh7eD1DGFJFGQUOVhYaVhZObwRQQhtXRhlUDgBHTQNEJ0NGEAANJg0dXlIHBhJIFBddCA==
 X-ICL-Score: 2.33303302423
@@ -17,11 +17,11 @@ X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=joinhandshake.
 Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=joinhandshake.com header.i=@joinhandshake.com header.b=VkHz2g0p
 Received-SPF: pass (spf.icloud.com: domain of support@joinhandshake.com designates 192.161.149.38 as permitted sender) receiver=spf.icloud.com; client-ip=192.161.149.38; helo=mta-out8.pod23.use1.zdsys.com; envelope-from=support@joinhandshake.com
 Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of support@joinhandshake.com designates 192.161.149.38 as permitted sender) smtp.mailfrom=support@joinhandshake.com
-Received: from zendesk.com (unknown [127.0.0.6]) by mta-out15.pod23.use1.zdsys.com (Zendesk) with ESMTP id c7a21856-1e2a-4345-bdfa-086b8ce48ebe for <recipient4@example.com>; Mon, 29 Jun 2026 17:04:04 +0000 (UTC)
+Received: from zendesk.com (unknown [127.0.0.6]) by mta-out15.pod23.use1.zdsys.com (Zendesk) with ESMTP id c7a21856-1e2a-4345-bdfa-086b8ce48ebe for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:04 +0000 (UTC)
 Date: Mon, 29 Jun 2026 17:04:04 +0000
 From: Handshake Support <support@joinhandshake.com>
 Reply-To: Handshake Support <support@joinhandshake.com>
-To: recipient4 <recipient4@example.com>
+To: recipient4 <recipient4@icloud.com>
 Message-ID: <247RYXEWPKN_6a42a584cc0a6_227b11ad8b24e3_sprut@zendesk.com>
 In-Reply-To: <6E62504A-C5E3-42C8-92A2-0A2C0DC8C0E7@icloud.com> <247RYXEWPKN_6a3ab9106f72e_4a1678c7d649e1_sprut@zendesk.com>
 References: <247RYXEWPKN@zendesk.com> <6E62504A-C5E3-42C8-92A2-0A2C0DC8C0E7@icloud.com>

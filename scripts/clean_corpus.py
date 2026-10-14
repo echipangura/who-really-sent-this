@@ -8,9 +8,11 @@ Usage (from the repo root):
 For every .eml or .txt file in RAW_FOLDER this script:
   1. normalizes the headers (engine/normalize.py): unfolds lines, fixes
      line endings, drops the body and any junk pasted above the headers;
-  2. replaces each --redact value with an example.com placeholder
-     (brief, Section 8.2: keep institutional domains, Received hostnames
-     and IPs, since those are the evidence);
+  2. replaces each --redact value with a placeholder. For an address
+     only the username changes (you@gmail.com becomes recipient1@gmail.com)
+     so SPF, DKIM and DMARC alignment still match the real message
+     (brief, Section 8.2: keep the domains, Received hostnames and IPs,
+     since those are the evidence);
   3. writes the clean headers to tests/fixtures/<same name>.eml;
   4. writes corpus_report.csv with one row per sample so you can see what
      was fixed and what still needs a look;
@@ -90,8 +92,8 @@ def build_redactor(values: list[str]):
         if "@" in value:
             addr_n += 1
             local, domain = value.rsplit("@", 1)
-            full.append((value, f"recipient{addr_n}@example.com"))
-            full.append((f"{local}={domain}", f"recipient{addr_n}=example.com"))
+            full.append((value, f"recipient{addr_n}@{domain}"))
+            full.append((f"{local}={domain}", f"recipient{addr_n}={domain}"))
             locals_.setdefault(local.lower(), f"recipient{addr_n}")
         else:
             name_n += 1
@@ -138,12 +140,12 @@ def build_redactor(values: list[str]):
 
 
 def privacy_leftovers(headers: list[tuple[str, str]]) -> str:
-    """Recipient addresses that are still not example.com: review these."""
+    """Recipient addresses whose username was not replaced: review these."""
     left = set()
     for name, value in headers:
         if name.lower() in _RECIPIENT_HEADERS:
             for addr in _ADDR_RE.findall(value):
-                if not addr.lower().endswith("example.com"):
+                if not re.match(r"recipient\d+@", addr.lower()):
                     left.add(addr)
     return " ".join(sorted(left))
 

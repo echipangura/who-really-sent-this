@@ -1,10 +1,10 @@
 Return-path: <under_the_black_dog@i.softbank.jp>
-Original-recipient: rfc822;recipient4@example.com
-Received: from p00-icloudmta-smtpin-us-west-1a-100-percent-1 by p115-mailgateway-smtp-677f4d6665-9d9kf (mailgateway 2638B134) with SMTP id 2b4006e7-8578-4c3a-893d-76a7decb40d2 for <recipient4@example.com>; Mon, 28 Sep 2026 09:14:45 GMT
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-1a-100-percent-1 by p115-mailgateway-smtp-677f4d6665-9d9kf (mailgateway 2638B134) with SMTP id 2b4006e7-8578-4c3a-893d-76a7decb40d2 for <recipient4@icloud.com>; Mon, 28 Sep 2026 09:14:45 GMT
 X-Apple-MoveToFolder: INBOX
 X-Apple-Action: MOVE_TO_FOLDER/INBOX
 X-Apple-UUID: 2b4006e7-8578-4c3a-893d-76a7decb40d2
-Received: from icmsa400601.i.softbank.jp (imsa4006.mailsv.softbank.jp [101.110.9.82]) by p00-icloudmta-smtpin-us-west-1a-100-percent-1 (Postfix) with ESMTPS id E030E1800232 for <recipient4@example.com>; Mon, 28 Sep 2026 09:14:42 +0000 (UTC)
+Received: from icmsa400601.i.softbank.jp (imsa4006.mailsv.softbank.jp [101.110.9.82]) by p00-icloudmta-smtpin-us-west-1a-100-percent-1 (Postfix) with ESMTPS id E030E1800232 for <recipient4@icloud.com>; Mon, 28 Sep 2026 09:14:42 +0000 (UTC)
 X-ICL-RepId: 01a0e74b-8acc-7e0f-8346-63bdb6026220
 X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBBlNbSFdHVgkYWkdZAxNFRVgGEAs5AxBVaQAZGAUcJ1RZBTUQSAQXVkIAFBcNWRJAFgQRRA9ZC19QFhcYCBxWWkZCBxpbGhFDRQcDHFc3EVNaDQAdSBQXXRYKEBUJShFTWxEUTVZHTgAHTBxXFRgeRFQDGxJIHQgQRhYHRA8aC1ECUkVPSBoZWVoRA1cVGB5EVAMbEkgdCBBSBkgQSAQXVkIAFBcNWRJAFg8cHVtLSgAEVEVAVE9ICQdWQUlTTkgeeywyMUhBSQABTBwaCwQZBAZSQ0lXWREeRQ0TDQQWFlsYCAU5DxQVQ1dWRUlQR0keWwMcFRUBVkNZBAEbBxkTHlwSSw==
 X-ICL-Score: 2.33303302423
@@ -17,10 +17,10 @@ X-DMARC-Info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1; pdomain=i.softbank
 Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=i.softbank.jp header.i=@i.softbank.jp header.b=MPnpwpL7
 Received-SPF: pass (spf.icloud.com: domain of under_the_black_dog@i.softbank.jp designates 101.110.9.82 as permitted sender) receiver=spf.icloud.com; client-ip=101.110.9.82; helo=icmsa400601.i.softbank.jp; envelope-from=under_the_black_dog@i.softbank.jp
 Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of under_the_black_dog@i.softbank.jp designates 101.110.9.82 as permitted sender) smtp.mailfrom=under_the_black_dog@i.softbank.jp
-Received: from mail07.i.softbank.jp by icmsa400601.i.softbank.jp with ESMTP id <20260928091440590.MNGH.6107.icmsa400601.i.softbank.jp@icmsa400601.mailsv.softbank.jp> for <recipient4@example.com>; Mon, 28 Sep 2026 18:14:40 +0900
+Received: from mail07.i.softbank.jp by icmsa400601.i.softbank.jp with ESMTP id <20260928091440590.MNGH.6107.icmsa400601.i.softbank.jp@icmsa400601.mailsv.softbank.jp> for <recipient4@icloud.com>; Mon, 28 Sep 2026 18:14:40 +0900
 From: =?utf-8?B?VVNfUG9zdGFsX1N1cHBvcnTCrg==?= <under_the_black_dog@i.softbank.jp>
-To: =?utf-8?B?cmVjaXBpZW50NA==?= <recipient4@example.com>
-Subject: =?utf-8?B?cmVjaXBpZW50NEBleGFtcGxlLmNvbQ==?=
+To: =?utf-8?B?cmVjaXBpZW50NA==?= <recipient4@icloud.com>
+Subject: =?utf-8?B?cmVjaXBpZW50NEBpY2xvdWQuY29t?=
 Date: Mon, 28 Sep 2026 17:14:40 +0800
 X-Priority: 3
 Mime-Version: 1.0
