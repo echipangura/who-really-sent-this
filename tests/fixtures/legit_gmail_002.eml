@@ -1,0 +1,21 @@
+Delivered-To: recipient1@example.com
+Received: by 2002:a05:7412:4a46:b0:1ff:c373:efb6 with SMTP id sg6csp4132265rdb; Sun, 20 Sep 2026 22:53:34 -0700 (PDT)
+X-Received: by 2002:a05:622a:610e:b0:531:85a:25db with SMTP id d75a77b69052e-532b7225e1cmr87293041cf.11.1789970014062; Sun, 20 Sep 2026 22:53:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789970014; cv=none; d=google.com; s=arc-20260327; b=GIIR4iEBe2rvag4iX0gKHmqB2idnxqTrqGuaejXywiJBXBlU62yOqpj7mdWZmd/XpI C2UYhTHl2ZWlThNTZHsb4CID8j+1n677dV9cQvPyBm6oJgxJDJakF4WZfRgdHF4eCG9A zmlrArb3ViwwZc+Dh7BMYbPI0FR0Q85CwVHBJHRrhD4QB4envQvAJRoUj8ASUoQPCMEC hA12WOuxEhNS/XPJblg7qH204w9X3f+wYWJrw9sNQlAONTpm7EOmsEDnE2AFOpbnzj4G jf4Fip0/pBeFLtkeCUydGslneMGod8kO1zpFMf+jVmS2JfV5LILfji0XuSWF6Qz123iq yLpQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=content-transfer-encoding:mime-version:subject:message-id:to:from :date:dkim-signature; bh=xUqP94eTJneDWpwHvVUxj05cBfDGWdm+ZbD7T/FSluU=; fh=OzFlwD9hNN68ElBu5nvxufBzo9qpDqanMVYUS8/SKCo=; b=euiwEO7UeIFzQdcdXTf4Wvt4aMdXramJ97bRGYdeJMvXA6LE6+VUlnggK19N4+iept Mi3IBmAsrVTPWL2A4kGQOjqXlPxAYUMFPkcs5WMmokZPbV4eG40UwkkYR490dWn3wU/4 Bm2xfdchUgS2710iuGk5jiP8PmqkapxUDO+rqFUT2JDYKT9bUf7kek+g8iw4+N+dv4N9 ybjwtTLPyQIEuE55QfFINAqSjLGcHB5gC5diIKUAl+LWcB/YOPCk4X5BBZRFu9lomFXA JVPWQwtUSQNLZspz+X9YxnodqEAMVu8EGLyvytP6N9GIXiJG9AT4h6qnujoO19rmZ+Gu PZjA==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@github.com header.s=pf2023 header.b=Kbp0ilNe; spf=pass (google.com: domain of noreply@github.com designates 192.30.252.143 as permitted sender) smtp.mailfrom=noreply@github.com; dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <noreply@github.com>
+Received: from out-44.smtp.github.com (out-44.smtp.github.com. [192.30.252.143]) by mx.google.com with ESMTPS id 6a1803df08f44-91260c21238si72328856d6.280.2026.09.20.22.53.33 for <recipient1@example.com> (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256); Sun, 20 Sep 2026 22:53:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@github.com designates 192.30.252.143 as permitted sender) client-ip=192.30.252.143;
+Authentication-Results: mx.google.com; dkim=pass header.i=@github.com header.s=pf2023 header.b=Kbp0ilNe; spf=pass (google.com: domain of noreply@github.com designates 192.30.252.143 as permitted sender) smtp.mailfrom=noreply@github.com; dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com; s=pf2023; t=1789970013; bh=xUqP94eTJneDWpwHvVUxj05cBfDGWdm+ZbD7T/FSluU=; h=Date:From:To:Subject:From; b=Kbp0ilNeRu1ikjpKTuhzDvvBltvbdAKVINALEXKkLpHpBHQQ94fp3oFHJwZibwiH6 Sq6qvHcB6GRCaMbKaSglX45gXS0JhbgzCf112Wc2oigjA94d2AZphblksL4IS7TKhN VaYyRN8IjmdpISLfzNLCyYLbsXvPYNc3xnMtSCrw=
+Received: from github.com (hubbernetes-node-8826932.ash1-iad.github.net [10.56.86.30]) by smtp.github.com (Postfix) with ESMTPA id AE1948402BB for <recipient1@example.com>; Sun, 20 Sep 2026 22:53:33 -0700 (PDT)
+Date: Sun, 20 Sep 2026 22:53:33 -0700
+From: GitHub <noreply@github.com>
+To: recipient1 <recipient1@example.com>
+Message-ID: <6ab0c65d886e1_ca11c832423@sharedworker-78d859b677-47dgx.mail>
+Subject: [GitHub] A first-party GitHub OAuth application has been added to your account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All

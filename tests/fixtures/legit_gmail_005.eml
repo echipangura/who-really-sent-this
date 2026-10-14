@@ -1,0 +1,24 @@
+Delivered-To: recipient1@example.com
+Received: by 2002:a05:7412:4a46:b0:1ff:c373:efb6 with SMTP id sg6csp9319536rdb; Thu, 24 Sep 2026 14:05:47 -0700 (PDT)
+X-Received: by 2002:a05:6870:658f:b0:491:b7fa:76f8 with SMTP id 586e51a60fabf-491e4f6043amr3722660fac.0.1790283947099; Thu, 24 Sep 2026 14:05:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1790283947; cv=none; d=google.com; s=arc-20260327; b=SZ312VDiCCYd22K1bxwXjFacTirt26vZvdeexUOesg4XEoAtRwYPBSTt1rdxGeAFh8 EMNOEYcKRBTbMCaKllX3wnh9wRArWN1sgxHLP+ZHXQqCVcwTNWRZGF3f+yVR53ucWo6e NgFIsGNk4dfcW3bUbQMpLbCG8Yo2T5PoSiazQmkSfiVcf4vyFj5XEMEymKVQEpAdPGfc JEdQdfQ9sa25n8YA9Yil40WcJiCWhoqdC39OAJuIjBpEZ3YymQaTb9eyFGX2tYmg0BJN fMUjyuuF7KfBlhrnCGw7vb5L2fWuDmOEWfJXNV0NIaPTzskZSpbnL5UP6YY/10PUMmUb kEYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=to:subject:message-id:mime-version:from:date :content-transfer-encoding:dkim-signature:dkim-signature; bh=lZEeYvYQk4J7zxVNqVycvyEjzIdwpgyu+A6KdeYgYCY=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=ki07q1A5pns3SzBekiUc48P6aHRLfi1lRRWoAWxNoA6Cwqc1bsIlrEjCnWyrDTwNtV OcpJv2/xR6orXj41+vne7d+v9EhQonZNLABSm4KnozEIgJkLYnj8qU3D9g/2W0jqZ7QE IDAar41bNQgPpy3fcozwUek0bTPKjaj+wDdIgolNtzLJMf9hLtdP6O+OWon+lWi82yJF 2FfusTCaqGzSdWlwoEqoQPV7nqhooIcfda8HAPCEKpZ/Mdi55Xs3iyekmXC3mFhwoJ/R H1kHeYOJiPoPFsKzsFxezlmBA6dMo3o41ano9FTGf0G7m4YOUC2e/bz5PchZgAMZw5mg 1PVA==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@onepay.com header.s=s1 header.b=cEUH6KvR; dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FGTm3QSg; spf=pass (google.com: domain of bounces+19903745-5780-recipient1=example.com@em621.onepay.com designates 149.72.176.243 as permitted sender) smtp.mailfrom="bounces+19903745-5780-recipient1=example.com@em621.onepay.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=onepay.com
+Return-Path: <bounces+19903745-5780-recipient1=example.com@em621.onepay.com>
+Received: from o1.ptr5707.servicing.one.app (o1.ptr5707.servicing.one.app. [149.72.176.243]) by mx.google.com with ESMTPS id 586e51a60fabf-493351192a5si523410fac.87.2026.09.24.14.05.46 for <recipient1@example.com> (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128); Thu, 24 Sep 2026 14:05:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+19903745-5780-recipient1=example.com@em621.onepay.com designates 149.72.176.243 as permitted sender) client-ip=149.72.176.243;
+Authentication-Results: mx.google.com; dkim=pass header.i=@onepay.com header.s=s1 header.b=cEUH6KvR; dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FGTm3QSg; spf=pass (google.com: domain of bounces+19903745-5780-recipient1=example.com@em621.onepay.com designates 149.72.176.243 as permitted sender) smtp.mailfrom="bounces+19903745-5780-recipient1=example.com@em621.onepay.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=onepay.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=onepay.com; h=content-transfer-encoding:content-type:date:from:mime-version:subject: to:cc:content-type:date:feedback-id:from:subject:to; s=s1; t=1790283946; bh=lZEeYvYQk4J7zxVNqVycvyEjzIdwpgyu+A6KdeYgYCY=; b=cEUH6KvRojn3WeQzJ5xiLCQdvm9qyQFN3RxbybHohX8xZe/bzWhygqyao6KUPsj+PVyD /82MTrScaJgE7Rq2xvEAkHxCGoM+rR9rp4AgjDFAa9qqNndL9sXkcgucMod9vMTHi7zPzO QVIyYpGlG8neJzJevE7pIzHHl96a9bauNcFQtXDdnNYfh3cE5rvmNMojgPvcJv+w/PvA+k G/pGXnp7/cDcI0NhYuIonL4UHynDjCivTrdUdU5ErQ99Cr60GkNEXs44fmYtfKzxt1+0n3 ERW7cDsPTiBFipvlR0onFk/xte7yNwmhTGppeEpREbqLd72G1G4JkXAEZZUjF+xg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info; h=content-transfer-encoding:content-type:date:from:mime-version:subject: to:cc:content-type:date:feedback-id:from:subject:to; s=smtpapi; t=1790283946; bh=lZEeYvYQk4J7zxVNqVycvyEjzIdwpgyu+A6KdeYgYCY=; b=FGTm3QSg8FM7BBH/OamfCG34lybK41lfzOjj2UV109OvyTy5TgsojIoKjx2yfQW2tRPd WBm3fu0aPYxpDUlifraICQ+fUuI1O/t/+gsXNCVmSKxYKhai8JVb31BWbm6MAxFrlk9ZII k7tKXem7SrywonKTMbWEfu23fmFNZTAgQ=
+Received: by recvd-6b6b4b5b69-276pp with SMTP id recvd-6b6b4b5b69-276pp-1-6AB590AA-B0 2026-09-24 21:05:46.573894564 +0000 UTC m=+4810.341276122
+Received: from MTk5MDM3NDU (unknown) by geopod-ismtpd-28 (SG) with HTTP id -gcIJ83fR5S4fCf81vxkAA Thu, 24 Sep 2026 21:05:46.569 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Thu, 24 Sep 2026 21:05:46 +0000 (UTC)
+From: OnePay <noreply@onepay.com>
+Mime-Version: 1.0
+Message-ID: <-gcIJ83fR5S4fCf81vxkAA@geopod-ismtpd-28>
+Subject: Your OnePay verification code is 328876
+X-SG-EID: =?us-ascii?Q?u001=2EoA3IWchkPdyasZLCE0q+Ipf27GGB5fH7=2FxjsNaUj7HsgvzWxsyAxg05Ue?= =?us-ascii?Q?GM3pA7yXiLPu7cBOHEj5884k67ndcQLk5dkRsrf?= =?us-ascii?Q?yI=2FvBwQt034ZQrMpQc48IxbOU2bdOIHEOrqNHPA?= =?us-ascii?Q?KyfX+9Ft=2FwozJCIICWCYSmQI7YYuotnoqXl0R=2F=2F?= =?us-ascii?Q?G00vbkBhRsxpzaCjOdVBYtccfVit08c2YtKVlSN?= =?us-ascii?Q?c5Z7BaAsJ3OgHtA2oBoYEY=3D?=
+To: recipient1@example.com
+X-Entity-ID: u001.DhQVCHMDPCnBfviMPWIFwQ==

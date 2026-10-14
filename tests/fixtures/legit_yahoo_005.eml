@@ -1,0 +1,23 @@
+Received: from 127.0.0.1 by atlas-production.v2-mail-prod1-ir2.omega.yahoo.com pod-id atlas--production-ir2-7657ff95b6-5mccm.ir2.yahoo.com with HTTP; Sat, 3 Oct 2026 04:33:35 +0000
+Return-Path: <010101a10009f19d-3974f5ba-2312-47ff-99c7-76d6c974e0fb-000000@us-west-2.amazonses.com>
+X-Originating-Ip: [54.240.27.60]
+Received-SPF: pass (domain of us-west-2.amazonses.com designates 54.240.27.60 as permitted sender)
+Authentication-Results: mta.yahoo.com; dkim=pass header.i=@remitly.com header.s=wsya25yj2tz5erzgmetnhaw5j4d7cvnw arc_overridden_status=NOT_OVERRIDDEN; dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv arc_overridden_status=NOT_OVERRIDDEN; spf=pass smtp.mailfrom=us-west-2.amazonses.com arc_overridden_status=NOT_OVERRIDDEN; dmarc=pass(p=REJECT) header.from=remitly.com arc_overridden_status=NOT_OVERRIDDEN;
+X-Apparently-To: recipient2@example.com; Sat, 3 Oct 2026 04:33:35 +0000
+X-YMailISG: a76o0zYWLDukcsiVqXFGiMJMA5nt1BlUU08wIcka5FMFi217 5IFFs3oTLLnvxviBO.V_SXWoHhksiLwxU_e6XTpJQKcNOO_.Oq4WGi.126Bc rtoi0ZtWsDS6FHDrnA_oMZA_hjyWzLjjoEFvCjvcU0n_iUpWbGESIMEAk0Dc 6bt4UFewyrY7kG2KPQBfKyue9rhzxy4SePaunWSqSUyyoyP5CunP74pID5tu 8z4puvhaNyx2rtJaREFbk2Gmyn4Rpkp9JyfnF7CtA.KCAfDUcoFbJ.IVWyUP lHqgU4VdAC_CTCnGPIu.AIaZobVWDllULwV_JynkxbzNyvDDVwu1nmjzXPgV BUB3AxI8gnagtu7JcnMpWE_NjODKjShKML9WM8t0JwLNlNWL6_P_zaJA2ACQ OJepytvneaZCFdxdahE5sXmCPxhwJPju1rgYZwYJFstTHSjmX.FLv7GFtaXA rtzSmS9s3qgGpLRmV8TFuy7XIuZdIScYhQjOo5TPnToHGHBJT.8q0x9BGVTu cAZ37mohh88DWK.Ncorhs0F4XiX12hg18pqVHX54MCs9URMn6dX1Oqy0r5pQ DPmnf5CaGSaWzh8nzoHY5lAMfMpgnc7GTBqRLTtsf3oZbPQn9HOBzCoQXCnA jMZgcSXUBQxcTrQhFI20NdUSOVTKc81YBCIfuEBZsw3rWoagANiRBlK7ySjL usO_01ThsOFZcDJDQnBvP_zdmcZrimbiRG3lW0ylnVSQjUQF1nzqo7sVvJpZ xCeFnjOchuYuJSHN70nhjrxiCIgZwtKIF1cYl5.Vw3qJshfkKMeircNbch.Z VEBEiipuUeLtRJe6vp4ZwFt1WaWaBKaEQWsVlOU8eHYSSh6Ma31YbBDkpJxv 0jhvI8bEVBgVE_umQEkJiU5jSYF.ZqFN2XnmRR2kU7Q63PpOWlSW4ikrDemn nQZ3ky2g6M5ZIrf3oySOpdRdDEdw8XYmBVaQI4ini3o6YReK_4VV2TngZ2aI FN3Mg9Nf7NRY1CeUVU_zEyUro9nxoJWj0rJqnFSWI0Ge9EEdgQwz0tfdyMkg 1aRqJm78G9f.5N23vhJDOcVomczWYORyjUJyhAWklLg.XnUIhFBB7MU0kbMb ZabASM7YeODQ6hlxMQ0awByob_BB6QiTSEyO5jWkCuW0PwicF74WVw70C48E 6xFDizM5bh1oR6YtQFkeoDzbNLld4RUZ8L0IqsZ4osp.9IKu8XfhBO8flkHk pdsb
+Received: from 54.240.27.60 (EHLO a27-60.smtp-out.us-west-2.amazonses.com) by 10.200.78.122 with SMTPs (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256); Sat, 03 Oct 2026 04:33:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=wsya25yj2tz5erzgmetnhaw5j4d7cvnw; d=remitly.com; t=1791002014; h=Mime-Version:Date:Reply-To:From:To:Subject:cc:Content-Type:Message-ID; bh=Hwz2X1wFPmg4poFCRt8R7epReUovjs4germKtG9RwXM=; b=Xl417XxthM0XrTI78i9DGwZgcVbbUa2icvHuj4usx5UpS14oKgL77DNpnztAjqsV 30l1VSrnLPZYzqWEF6PohcwJhISZxooOdc0B/STEN5UMA+wf62ET4iyXz5s4N3BpAYj s0lL002DnNcm9AjflmMv5zwYBMdqC2bwey2nQUmk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=hsbnp7p3ensaochzwyq5wwmceodymuwv; d=amazonses.com; t=1791002014; h=Mime-Version:Date:Reply-To:From:To:Subject:cc:Content-Type:Message-ID:Feedback-ID; bh=Hwz2X1wFPmg4poFCRt8R7epReUovjs4germKtG9RwXM=; b=TbuLo48fiu9gKf+sP7Hu6KZaYYTBa9uGe3HWEZ6B8Tt5ejbe0nRylBmSzdgHDEpH RwLYBDlmQ02WKB8tbHJ8+htpa0wcxd0z31d1YUolT5G3nQobjOplw9aT/b/skLwghEe pl/wszdkwjBW8O+uflYUA+i8maKm+zENgqwlusUw=
+Mime-Version: 1.0
+Date: Sat, 3 Oct 2026 04:33:34 +0000
+Reply-To: no-reply@remitly.com
+notiserv-id: 533d8c54-1c55-4871-8031-83d23a745d79
+From: Remitly <no-reply@remitly.com>
+To: recipient2@example.com
+Subject: Status Update: The latest on your transfer to Joseph Tatenda
+cc: 
+Content-Type: multipart/alternative; boundary=d2d461381ee236500a2010c9844bdabd47ec4f917a51d9ba2216c6468e1b
+Message-ID: <010101a10009f19d-3974f5ba-2312-47ff-99c7-76d6c974e0fb-000000@us-west-2.amazonses.com>
+Feedback-ID: ::1.us-west-2.A0H6txzSqSrJsSHt+Dzy13gHp35k/H1VdANRivYebAk=:AmazonSES
+X-SES-Outgoing: 2026.10.03-54.240.27.60
+Content-Length: 35676

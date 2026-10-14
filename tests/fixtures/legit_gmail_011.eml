@@ -1,0 +1,26 @@
+Delivered-To: recipient3@example.com
+Received: by 2002:ab3:74d9:0:b0:314:e04a:dfcb with SMTP id l25csp1459856lti; Sat, 26 Sep 2026 06:23:43 -0700 (PDT)
+X-Received: by 2002:a05:6000:29c2:b0:488:79d6:a4a6 with SMTP id ffacd0b85a97d-48879d6a64fmr7860652f8f.8.1790429023122; Sat, 26 Sep 2026 06:23:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1790429023; cv=none; d=google.com; s=arc-20260327; b=gE4asU3U79FmmeqlAjcQlV3BSfjysYXfUOSXwEXjZkFzsmGGMnOXRZJr73tgDBp6wC 1aDb+fID0ZzV3vUQYNKiLGykP3+4qn7tntBFcyV1lfOp96XYKRHkFvma1Fke5OgUBuWh txvGb07p7RWbEk2A5M0+tnvezQbMrFr46UKOfdgu4FOA0CqQ1m1A7I1rzQMXLsMaEL4Y XSoeFCI4Vt3Je3VlvaqJk5eqjzqei/OQrn48JuYvtTM0+2YFozGlmutrXiIYELru/08K 6wDL3F/yB5zF2ZwaNeuWEFtGdIR5NMs2jmayq+24/nJoP7oUSWWy65REtv6XNXyMOsUd yw5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=mime-version:subject:message-id:to:sender:from:date:dkim-signature; bh=Zdt5WYkRi5vJNhlWysNGyMta5iu22p99SXHAJ5b3sek=; fh=KPRUpbBMccuIe/rKeGynk18PHexd52IDeWYibNxVqus=; b=ZoxtczL3Iwuv8fSYyDoPVLfb9d6mcNYiJ9Zzt6hPFBst1TChB5hM6lw3PcYr2crgg8 DeIf6ICbH8EGq4aFQy9w+nudAgKWYknBJ01gme0U4d0rB1AroFpwYL26o7D3h90pa8om bB4HBDtNjWxWGkijN8WMoamx7972LVX3CbZVl8Njk+oeoR1mDhBgQlrkTlstWQ0tf1Zx KONgbLlUexSwrunX/cGrrtWvb8ig7mpxOG+ekdVc9LtX5hKjjUaPYVEQErg8WfsPjgdM e+Wn3RVNACaVRNwmRxAG+5sWDxMaQ35ibBEvcrBUPqUJLSkcMEdUU1UtkMh79FbcoRru OGNQ==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@smartrecruiters.com header.s=mta header.b=03GH71OH; spf=pass (google.com: domain of bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com designates 161.38.207.9 as permitted sender) smtp.mailfrom="bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=smartrecruiters.com
+Return-Path: <bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com>
+Received: from o1.mailgun.smartrecruiters.com (o1.mailgun.smartrecruiters.com. [161.38.207.9]) by mx.google.com with UTF8SMTPS id ffacd0b85a97d-4887a84ddc1si10623237f8f.256.2026.09.26.06.23.42 for <recipient3@example.com> (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128); Sat, 26 Sep 2026 06:23:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com designates 161.38.207.9 as permitted sender) client-ip=161.38.207.9;
+Authentication-Results: mx.google.com; dkim=pass header.i=@smartrecruiters.com header.s=mta header.b=03GH71OH; spf=pass (google.com: domain of bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com designates 161.38.207.9 as permitted sender) smtp.mailfrom="bounce+8f3111.408a5-recipient3=example.com@smartrecruiters.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=smartrecruiters.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=smartrecruiters.com; q=dns/txt; s=mta; t=1790429022; x=1790436222; h=Content-Type: MIME-Version: Subject: Subject: Message-ID: To: To: Sender: Sender: From: From: Date; bh=Zdt5WYkRi5vJNhlWysNGyMta5iu22p99SXHAJ5b3sek=; b=03GH71OH17FmqCYy9yc+OfoBsfKDOaKtN3rdQSyZv4uJJjYeg7r4M2jrAxvFukUwDNHN8yKtzh6kG70TEBSgIl03fZ79U8GdSt3X1ksa82P5xoCC85c9g5FN13INUihswa9YZXhVx1D1mIETtEp/9TNL+YZSlqNlufuleA0OHis=
+X-Mailgun-Sid: WyJiMjBlZSIsImVjaGlwYW5nQG1haWwueXUuZWR1IiwiNDA4YTUiXQ==
+Received: by f968d8547cb258283e0ea1492bae1fc74b63a1773d3d799f7284f483d68c0ad8 with HTTP id 6ab7c75ebe909708ef457e8c; Sat, 26 Sep 2026 13:23:42 GMT
+X-Mailgun-Sending-Ip-Pool-Name: Transactional Emails IPs
+X-Mailgun-Sending-Ip-Pool: 61499fb8717102d51bf62d51
+X-Mailgun-Sending-Ip: 161.38.207.9
+X-Mailgun-Tag: CANDIDATE_AUTO_REPLY
+X-Mailgun-Variables: {"companyId": "61f045e51a486479af8ce1e4", "emailHistoryId": "6ab7c75d0d98b50ff90e87a5", "emailType": "CANDIDATE_AUTO_REPLY", "messageId": "0dac0b8e-0c3d-4146-81ba-f4dbf6e1eb29", "originEnvironment": "fran"}
+Date: Sat, 26 Sep 2026 13:23:42 +0000 (UTC)
+From: Syncreon Consulting <notification@smartrecruiters.com>
+Sender: Syncreon Consulting <notification@smartrecruiters.com>
+To: recipient3@example.com
+Message-ID: <1515512022.268740.1790429022409@email-sender-84fb899c54-p2fb8>
+Subject: Thank you for applying to Syncreon Consulting
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_268739_1956571317.1790429022409"

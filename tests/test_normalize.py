@@ -51,6 +51,47 @@ def test_skips_gmail_show_original_summary():
     assert n.get("SPF") is None
 
 
+def test_skips_icloud_web_screen_text():
+    pasted = (
+        "\r\nInbox\r\nApple\r\n10:51 PM\r\nTo:\r\nrecipient1@example.com\r\n\r\n"
+        "Return-path: <noreply@email.apple.com>\r\n"
+        "Received: from a.apple.com by p00-icloudmta (mailgateway)\r\n"
+        "Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=email.apple.com\r\n"
+        "From: Apple <noreply@email.apple.com>\r\n"
+    )
+    n = normalize(pasted)
+    assert n.headers[0][0] == "Return-path"
+    assert N.LEADING_TEXT_REMOVED in n.warnings
+    assert len(n.get_all("Received")) == 1
+
+
+def test_icloud_screen_text_with_no_blank_line():
+    pasted = (
+        "Junk\nUS_Postal_Support\nYesterday at 2:14 AM\nTo:\nrecipient1\n"
+        "Return-path: <x@i.softbank.jp>\n"
+        "Received: from a by p00-icloudmta\n"
+        "From: USPS <x@i.softbank.jp>\n"
+        "recipient1@example.com\n"
+    )
+    n = normalize(pasted)
+    assert n.headers[0][0] == "Return-path"
+    assert N.MALFORMED_LINE_JOINED not in n.warnings
+    assert n.get("From") == "USPS <x@i.softbank.jp>"
+
+
+def test_trailing_body_text_without_blank_line_is_dropped():
+    pasted = (
+        "Received: from a.apple.com by p00-icloudmta\n"
+        "From: Apple <noreply@email.apple.com>\n"
+        "X-Country: US\n"
+        "Your Apple Account was used to sign in to iCloud via a web browser.\n"
+    )
+    n = normalize(pasted)
+    assert n.get("X-Country") == "US"
+    assert N.BODY_REMOVED in n.warnings
+    assert N.MALFORMED_LINE_JOINED not in n.warnings
+
+
 def test_bytes_and_bom():
     n = normalize(b"\xef\xbb\xbf" + GMAIL.encode())
     assert n.headers[0][0] == "Delivered-To"

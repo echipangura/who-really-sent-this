@@ -106,11 +106,28 @@ def normalize(raw: str | bytes) -> NormalizedHeaders:
     text = text.replace("\r\n", "\n").replace("\r", "\n").replace(" ", " ")
     lines = text.split("\n")
 
-    # 1. Find where the real headers start.
-    start = None
-    for i, line in enumerate(lines):
-        m = _HEADER_RE.match(line)
-        if m and m.group(1).lower() in _TOP_HEADERS:
+    # 1. Find where the real headers start. A paste copied from a mail
+    # app's screen can carry stray lines such as "To:" above the real
+    # headers, so prefer the first candidate whose block (up to the next
+    # blank line) contains a Received header.
+    def _is_candidate(i: int) -> bool:
+        m = _HEADER_RE.match(lines[i])
+        if not m or m.group(1).lower() not in _TOP_HEADERS:
+            return False
+        # An empty "To:" followed by an unindented line is a label from
+        # the mail app's screen (iCloud web), not a header.
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
+        return bool(m.group(2).strip()) or nxt[:1] in (" ", "\t")
+
+    candidates = [i for i in range(len(lines)) if _is_candidate(i)]
+    start = candidates[0] if candidates else None
+    for i in candidates:
+        block = []
+        for line in lines[i:]:
+            if not line.strip():
+                break
+            block.append(line)
+        if any(l.lower().startswith("received:") for l in block):
             start = i
             break
     if start is None:
@@ -122,11 +139,21 @@ def normalize(raw: str | bytes) -> NormalizedHeaders:
     # 2. Collect header lines until the first blank line (start of body).
     headers: list[list[str]] = []
     body_seen = False
-    for offset, line in enumerate(lines[start:]):
+    block = lines[start:]
+    end = next((k for k, l in enumerate(block) if not l.strip()), len(block))
+    # Index of the last real header line in the block. Plain text after
+    # it (no blank line in between) is body text that a web mail app
+    # copied along with the headers, for example iCloud's message preview.
+    last_header = max(k for k in range(end) if _HEADER_RE.match(block[k]))
+    for offset, line in enumerate(block):
         if not line.strip():
             body_seen = True
-            if any(l.strip() for l in lines[start + offset + 1:]):
+            if any(l.strip() for l in block[offset + 1:]):
                 result.warnings.append(BODY_REMOVED)
+            break
+        if offset > last_header and line[:1] not in (" ", "\t"):
+            body_seen = True
+            result.warnings.append(BODY_REMOVED)
             break
         if line[:1] in (" ", "\t"):
             # Continuation of the previous header: unfold.

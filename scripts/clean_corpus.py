@@ -23,7 +23,10 @@ The raw folder is never modified. Keep it out of the repository.
 from __future__ import annotations
 
 import argparse
+import base64
+import binascii
 import csv
+import quopri
 import re
 import sys
 from pathlib import Path
@@ -40,7 +43,8 @@ REPORT_COLUMNS = [
     "auth_results", "arc", "from", "warnings", "privacy_check",
 ]
 
-_ADDR_RE = re.compile(r"[\w.+'-]+@[\w-]+(?:\.[\w-]+)+")
+_ENCODED_WORD_RE = re.compile(r"=\?([\w-]+)\?([BbQq])\?([^?\s]*)\?=")
+_ADDR_RE =re.compile(r"[\w.+'-]+@[\w-]+(?:\.[\w-]+)+")
 _RECIPIENT_HEADERS = ("to", "cc", "delivered-to", "x-original-to", "x-apparently-to")
 
 
@@ -73,22 +77,62 @@ def detect_provider(auth_results: list[str], received: list[str]) -> str:
 
 
 def build_redactor(values: list[str]):
-    """Return a function that swaps each redacted value for a placeholder."""
-    rules = []
+    """Return a function that swaps each redacted value for a placeholder.
+
+    For an address like you@gmail.com it also catches the forms that
+    bulk senders and spammers use: the bounce (VERP) encoding
+    "you=gmail.com@..." and the bare username "you" on its own.
+    Plain names are matched as whole words.
+    """
+    full, locals_, names = [], {}, []
     addr_n = name_n = 0
     for value in values:
         if "@" in value:
             addr_n += 1
-            repl = f"recipient{addr_n}@example.com"
+            local, domain = value.rsplit("@", 1)
+            full.append((value, f"recipient{addr_n}@example.com"))
+            full.append((f"{local}={domain}", f"recipient{addr_n}=example.com"))
+            locals_.setdefault(local.lower(), f"recipient{addr_n}")
         else:
             name_n += 1
-            repl = f"Recipient {name_n}"
-        rules.append((re.compile(re.escape(value), re.IGNORECASE), repl))
+            names.append((value, f"Recipient {name_n}"))
 
-    def redact(text: str) -> str:
+    rules = [(re.compile(re.escape(v), re.IGNORECASE), r) for v, r in full]
+    # Longest first, so "user1981" is replaced before "user1".
+    for local in sorted(locals_, key=len, reverse=True):
+        rules.append((re.compile(rf"(?<![\w.+]){re.escape(local)}(?![\w])", re.IGNORECASE), locals_[local]))
+    for v, r in sorted(names, key=lambda x: len(x[0]), reverse=True):
+        rules.append((re.compile(rf"\b{re.escape(v)}\b", re.IGNORECASE), r))
+
+    def plain(text: str) -> str:
         for pattern, repl in rules:
             text = pattern.sub(repl, text)
         return text
+
+    def encoded_word(m: re.Match) -> str:
+        # RFC 2047 encoded words (=?utf-8?B?...?=) can hide a name or an
+        # address from a plain search. Decode, redact, and re-encode in
+        # the same charset and encoding so the header keeps its shape.
+        charset, enc, data = m.group(1), m.group(2).upper(), m.group(3)
+        try:
+            if enc == "B":
+                raw = base64.b64decode(data + "=" * (-len(data) % 4))
+            else:
+                raw = quopri.decodestring(data.replace("_", " ").encode(), header=True)
+            decoded = raw.decode(charset, errors="strict")
+        except (ValueError, LookupError, binascii.Error):
+            return m.group(0)
+        cleaned = plain(decoded)
+        if cleaned == decoded:
+            return m.group(0)
+        if enc == "B":
+            body = base64.b64encode(cleaned.encode(charset)).decode()
+        else:
+            body = quopri.encodestring(cleaned.encode(charset), header=True).decode()
+        return f"=?{charset}?{m.group(2)}?{body}?="
+
+    def redact(text: str) -> str:
+        return plain(_ENCODED_WORD_RE.sub(encoded_word, text))
 
     return redact
 
@@ -163,7 +207,9 @@ def main() -> int:
         w.writeheader()
         w.writerows(existing + added)
 
-    flagged = [r for r in rows if r["warnings"] or r["privacy_check"]]
+    # Removing a body or screen text is routine; anything else needs a look.
+    routine = {"NORM_BODY_REMOVED", "NORM_LEADING_TEXT_REMOVED"}
+    flagged = [r for r in rows if set(r["warnings"].split()) - routine or r["privacy_check"]]
     print(f"Cleaned {len(rows)} samples into {args.out}/")
     print(f"Report: {args.report}  |  Manifest: {len(added)} new rows added")
     print(f"{len(flagged)} samples need a look (see warnings / privacy_check columns)")

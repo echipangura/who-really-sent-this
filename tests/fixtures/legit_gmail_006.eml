@@ -1,0 +1,26 @@
+Delivered-To: recipient1@example.com
+Received: by 2002:a05:7412:b10:b0:1ea:9de7:4406 with SMTP id e16csp2208609rdc; Sat, 12 Sep 2026 22:09:19 -0700 (PDT)
+X-Received: by 2002:a05:6214:498e:b0:90e:8356:9bd8 with SMTP id 6a1803df08f44-912120864e7mr194764876d6.11.1789276159082; Sat, 12 Sep 2026 22:09:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789276159; cv=none; d=google.com; s=arc-20260327; b=TFuXtSmxI+yv1ZoEWTxBeQ9i5KhCa6uU5m54jQcCsa0XkU1bH9HTFsA0iF2pgW1UqY pQPW8q1WbnaWe3zINh9Y4u95WsdOm+lwPBql4U+VouHhduzxvtvsf/aaTY+BqYK0fCtA jqjBnzzdUx/suzCMThT9HPsuzskNkxRCghIPQLSDNVpSbkgg5vRF/bpKKVFo/4HTEsT9 1COrPiMWj+ToAXDi3yGgTod023V/hbAKXRMCq0DrWRbQMN/FNHY9L9o1zEpjbI539Vry Wkp8mk/vF1oaxXT+UTU4Nuyb6869FYmtLdqhrzAfMKP7lXqMgKtUN024fYEIY4V0WS1C ZDCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=feedback-id:date:auto-submitted:mime-version:message-id:subject:to :reply-to:from:dkim-signature:dkim-signature; bh=ECKXuhhF/+/QQVpSviwd9W1wIUfQsIbg/DRUZPvb1Pg=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=nj1uqMj6HbXzFcZQBTJbEXXdUqiqKDGIRoL5nGDpKWkAxZQDkpU9ugGVDR3QvUTnd8 0PhPIWJuribh3oUxWWyJd6+KVz63bXHaKXbXR5yjBah+HyxgCwO4uTAIl8wAkmm3qQoy YW4sZ9EYSghX9cq/0kXQsV6G89W0TDpUf/ZdzHzA+1WpIBkwqCfPsg5+HWcGz2b2ndfV 2Odw07Sq6le0z1IMECmxneoLj5PHIV28KQJZpSJ+CEySYo5hSHHzK1soqJ38bMum+iIo VbALCXSv1bYkkaq70R+/buyoQTIYUeW2DOfvr1IhA4rRjSSW/yUEmwVYstrd8P5rD1cf FaQg==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@slack.com header.s=tkhfeyvtyenekygct2suh5ibxstdlkhq header.b=EHnAPo0n; dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b="qiH4tj/R"; spf=pass (google.com: domain of 010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com designates 76.223.142.186 as permitted sender) smtp.mailfrom=010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=slack.com
+Return-Path: <010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com>
+Received: from c142-186.smtp-out.amazonses.com (c142-186.smtp-out.amazonses.com. [76.223.142.186]) by mx.google.com with ESMTPS id 6a1803df08f44-9120f3152e6si91733106d6.47.2026.09.12.22.09.18 for <recipient1@example.com> (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128); Sat, 12 Sep 2026 22:09:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com designates 76.223.142.186 as permitted sender) client-ip=76.223.142.186;
+Authentication-Results: mx.google.com; dkim=pass header.i=@slack.com header.s=tkhfeyvtyenekygct2suh5ibxstdlkhq header.b=EHnAPo0n; dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b="qiH4tj/R"; spf=pass (google.com: domain of 010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com designates 76.223.142.186 as permitted sender) smtp.mailfrom=010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@mail.slack.com; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=slack.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=tkhfeyvtyenekygct2suh5ibxstdlkhq; d=slack.com; t=1789276158; h=From:Reply-To:To:Subject:Message-ID:Content-Type:MIME-Version:Date; bh=gNkbWG0TED4Tth+A6LI6KUb97Ie0jde81MqkrBk1jkE=; b=EHnAPo0n9AZVT9UiqjhV/vFZlgH+p8uLCRNGkmgbpxWF0BOytxM+00prOiYIAafM ramlzVvqTzeFTuDuM09XxXCd0/vDqZL73iuufh5VcKydT4wmPfjqHLDnbF++fJAudYv 51Wp8XOP/G9IId1hbzrmG6VBK4FTjoBIVW3Ua7kasifrMUfc4NtjjCXpaZYk9FTNJWR t+KLa8VNFxD51VYMcQ9Dfw0qpEY+1fCfvsYzOTjCV5yEE6QvhKKvydTSyQwsp0EtZzE UI9msJcQslXFEWmFNerwtOhOQ1St+f4yeDi5P1Ed0JhGZrYEeX40hq1m+5vDl+BtCqP v4c/M0JKNw==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1789276158; h=From:Reply-To:To:Subject:Message-ID:Content-Type:MIME-Version:Date:Feedback-ID; bh=gNkbWG0TED4Tth+A6LI6KUb97Ie0jde81MqkrBk1jkE=; b=qiH4tj/R8O/WzkQ+FESV2vG/nwlqKw13SbEwhEwGCoNijW67cmDBznlzGgoYVm6c Wg3GZN3iiAXK1DYz630XmeJ9K2FiqKURl8yuqEaYM1Y2lvSBLwYuSC5H5TlSO13HT9D 88/qnlbbqhAsYo9qkM/jWXtFUwQzB00ezGyiuPM4=
+From: Slack <no-reply-MXnxTe9kI0HF5hcgYDDpeVVd@slack.com>
+Reply-To: no-reply-MXnxTe9kI0HF5hcgYDDpeVVd@slack.com
+To: recipient1@example.com
+Subject: =?utf-8?Q?Slack_confirmation_code=3a_SNF=2dZU=34?=
+Message-ID: <010001a0992b7abe-53e97147-9e33-44c7-aa60-e20aae77d222-000000@email.amazonses.com>
+Content-Type: multipart/alternative; boundary="=_ac799f4f-19f1-441c-b3e2-e5005403b23d"
+MIME-Version: 1.0
+Auto-Submitted: auto-generated
+X-Slack-Message-ID: ob-rtvlrdz3ussl6hjbe6o2qxpyae
+X-Slack-Email-Template: email\confirmation_email_code
+X-Slack-Email-Priority: PRIORITY_CRITICAL
+Date: Sun, 13 Sep 2026 05:09:18 +0000
+Feedback-ID: ::1.us-east-1.Ogx872wQZgyZvaPBLu0pURFKFGfNFh60HJtsllAt3Dc=:AmazonSES
+X-SES-Outgoing: 2026.09.13-76.223.142.186

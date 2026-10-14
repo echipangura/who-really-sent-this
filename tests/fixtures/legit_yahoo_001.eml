@@ -1,0 +1,25 @@
+Received: from 127.0.0.1 by atlas-production.v2-mail-prod1-ir2.omega.yahoo.com pod-id atlas--production-ir2-6d895bddf4-8dgcb.ir2.yahoo.com with HTTP; Thu, 24 Sep 2026 01:51:43 +0000
+Return-Path: <s-2gv7lmu9v2wmj7nl10rhxaxuywf03s644j93irqyqvyuk882njfugkl0@bounce.linkedin.com>
+X-Originating-Ip: [108.174.6.195]
+Received-SPF: pass (domain of bounce.linkedin.com designates 108.174.6.195 as permitted sender)
+Authentication-Results: mta.yahoo.com; dkim=pass header.i=@maile.linkedin.com header.s=d2048-202308-0e arc_overridden_status=NOT_OVERRIDDEN; dkim=pass header.i=@linkedin.com header.s=d2048-202308-00 arc_overridden_status=NOT_OVERRIDDEN; spf=pass smtp.mailfrom=bounce.linkedin.com arc_overridden_status=NOT_OVERRIDDEN; dmarc=pass(p=REJECT) header.from=linkedin.com arc_overridden_status=NOT_OVERRIDDEN;
+X-Apparently-To: recipient2@example.com; Thu, 24 Sep 2026 01:51:43 +0000
+X-YMailISG: XJRkzxwWLDtUNrYSBBkWjv7RaVEw0EY9F4CQTys_Em80tfEL Rz0NBF207E_eJhBy5iJmyULllg2ccyq16EMybsqTUzY6Ew2hQEVGkgHGFDDU ITt_Teanq.orCwBvxIdxaAj93xX0WMb4kMU9Zo3mt6t7BqcOccN3uyUbhF_w sSGNaZz7.yT7GGLojs.XiVFyClVNvdBiK6uB9Wag3EgSclWzJC1ciplqKnoS CxemK6D95FvQCd6YRh6fd5ZA5GaSDFirkqHuCe08WBBlqQ47wf7XCIqXMB6f EtBrqkD0suMjN5xFdDacu7GfR6jgzP2OgClbrEgFIHlvuXjVF6AlktO_XDvK BNSuo9Pp_Ue5oMRcn8_xVcOFwawb1MJLv1ss2mAriKiM9QU4tYFv6Ja3hjFi .D08CKyHhgf6Z8W663xwtLoH.nn48p2NniwFV_3ugZmzQb8dHVdK6haFZPpI e9htvw5QNSvioKlKMlEvtN06h5qG_mwgFWudKH4KuK7LF1xZSMKUwFUfIM9W 45L1rmfX5gbbjLV8NYtyfeSj.nve7QlgWm022LnaSYAjuq3_jXios9Vg6SVI UvSLNyT48tbq1mFg7.w0bMTgYEwRlb1KdwHTnIp6VejLngGs8rRGWUqlJLNb eygbR.B4Gk1BzIUSitaI.tsrj4mAE2aA.VhPEwk4iIgRQ.54Wcx0jJbIWOVg DAP3QW6QNte6ClLZZOCyo.71M4de43qLqfi4xbxXPNuvqPFNjooSwG50f9Ld JPW5Z0rrYvwjQqeGEDFm6ASJuWOUK_OkH_.3FXVD3GTrMMxDMPK3P32xcTjt xuAaJpCMDUNdkWH4qy2NES0uSo_4kMq_53Sr6Qfczb7sTRYVJ05Acq5dxUio 6789dN31yfkq0h6meiWCcbrk7BxIeIU8X4xnSZrdLc02jAKjVlB1HufTfN89 xIH5GWD71O8ZJb5oFHC5uROA.KCMx6fmFHF.HMxNCeQVuA.8JCJ6md6Rzb1V lGSUb7NV1rDxU.1cSIeGYYQQQm7L0BKtjlmgBAokcig56dzvaIjZ3w3WFU3. V7otQqbVcIQz_rp3uUySICmNsgEyMjNArw7i.KGfjn.NB6ZsSFGOCNbiGHPM qn0mMYsJ1hcGxVzIAaJ6bg0wH5FV4ElclCo0ZX_GiqclUi6.Pmrb6TRk_PJz mjXrVLCNv17_QLrYcEzOh1ZUa_27RmtfSeGLO9qAuqzdx2f.yqs9IianFt6g r3wzHQbwJmVs9RLr5D5bHrpD.WMVdsy2UurecgTDmK7Tm7.x8qPi_X7UEyee
+Received: from 108.174.6.195 (EHLO maile-cc.linkedin.com) by 10.200.73.56 with SMTPs (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256); Thu, 24 Sep 2026 01:51:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maile.linkedin.com; s=d2048-202308-0e; h=list-unsubscribe-post:list-unsubscribe:x-linkedin-fbl:x-linkedin-template: x-linkedin-class:to:content-type:mime-version:subject:message-id:from:date: from; bh=dJaoo23DVNW+NQ8haiu6KlctYwVvfTyBNYo8JPIA2YQ=; b=cQZGg52fThw16KteNU3y9X8Q6/XrWirhjagZ0FvlGaZ7rLV3SdKi2RUdlLu2KAZpVx7VQOZ5eUNKS hCIJK0SlqUtUNFL+yFzGRVFaDcNuB8eh/6viwJnmLOU43pCUwF0DBy9v/HezlYV8ifrPHpKY20ITIj Dbuc8X8UNqemkycQCgTmGWdDnXMlyIkhKf+l3MbutcMWq1bmJs/Uy6+0WG1HUDe+O8+F1ZJPfC80JX cryg1MGRI+048wXq+J538tRXPtV5fsbiXrF5O76/TYNxCsOev1DNLjA0bMVjrhTSj89hijv8BWcXGJ 43W8jLvD2wpzWtlkxb6CjYtpq0Ghkdg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linkedin.com; s=d2048-202308-00; h=list-unsubscribe-post:list-unsubscribe:x-linkedin-fbl:x-linkedin-template: x-linkedin-class:to:content-type:mime-version:subject:message-id:from:date: from; bh=dJaoo23DVNW+NQ8haiu6KlctYwVvfTyBNYo8JPIA2YQ=; b=onkooTbw+qtbqNqFtXAshFGVe1zfkn/yW5hk/PCbwL8pi+quhZBX0XyYYP3xu4PNiW1I6ZOLMk6yL KYj6vjIN/Y2+6CR7hDW51Uiawm8epqg7TZjXXY3v5PaqSPCi8H65Jf25GYOi2GMHyf1hrYMZ9vtIUj a/XY2hd8ClD+tv7To9UW2BHiY/exGMtjZznJhNezgoBb48j/5bZe0JA3g4GXp4C6+L7Vq299/iYzL6 TDQVn3DDlFHbU4BAmuPp+9fcqO/+8kuRR9VrLMQ29MTyE+3dNDfeO2q6UGj5MhqUQpeIkAmjYBZ5kS swE+V4fUhj+Ij7TdR9JpF1G/MumGuXw==
+Date: Thu, 24 Sep 2026 01:51:41 +0000 (UTC)
+From: LinkedIn <messages-noreply@linkedin.com>
+Message-ID: <2054020531.1975457.1790214701572@lor1-app158959.prod.linkedin.com>
+Subject: Stephanie Zavala and Adam Schepps are hiring
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_1975454_1588688401.1790214701569"
+To: Recipient 1 <recipient2@example.com>
+X-LinkedIn-Class: EMAIL-DEFAULT
+X-LinkedIn-Template: email_career_insights_01
+X-LinkedIn-fbl: m2-aszolsa12jy0zo1mygr28jwc8l4broeyohmiy8azn8jh4pmojwzqu2ix205k68q1orf6cuwgztvyd59aov2t5x4zecjl8nfjakrbkl
+X-LinkedIn-Id: k00bth-muevlyhk-d6
+List-Unsubscribe: <https://www.linkedin.com/mysettings-api/settingsApiEmailSubscriptionPost?lipi=urn%3Ali%3Apage%3Aemail_email_career_insights_01%3BfytqxHhPT5iuoXux3AWpRg%3D%3D&midToken=AQFaa8Pqu2Hc1Q&midSig=3xprcGz8lLhIs1&trk=eml-email_career_insights_01-oneClickUnsub-0-oneClickUnsub&trkEmail=eml-email_career_insights_01-oneClickUnsub-0-oneClickUnsub-null-k00bth~muevlyhk~d6-null-null&eid=k00bth-muevlyhk-d6&loid=AQGnOWO_WAjatwAAAaDRHH-Fk-N4U0m7Px5zgk7UIIabO_fOFMyz4j1brROD8nKbf3wMvL4UHXQHIdAwdwH9VepH3sR-PCfZ1YX0Jy7A>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Require-Recipient-Valid-Since: recipient2@example.com; Mon, 6 Nov 2023 18:21:05 +0000
+Content-Length: 183531

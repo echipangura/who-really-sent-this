@@ -1,0 +1,45 @@
+Return-path: <mail@mail.adobe.com>
+Original-recipient: rfc822;recipient4@example.com
+Received: from p00-icloudmta-smtpin-us-east-2d-20-percent-5 by p115-mailgateway-smtp-677f4d6665-mnccz (mailgateway 2638B134) with SMTP id 061b32fa-9076-4e27-a0db-50df1380690a for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:03 GMT
+X-Apple-MoveToFolder: INBOX
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 061b32fa-9076-4e27-a0db-50df1380690a
+Received: from r24a.mail.adobe.com (r24a.mail.adobe.com [130.248.177.24]) by p00-icloudmta-smtpin-us-east-2d-20-percent-5 (Postfix) with ESMTPS id 8127EC006A8 for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:02 +0000 (UTC)
+X-ICL-RepId: 01a0e85a-d6af-7047-8042-7cb479ddbbff
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBBVJbS1JPVgEBVVtLUlcdVAsPFBAKNxVRXw5bGAIYGlUYARoURhEcDVsDHBVIFhxfVAdbGgkaWEJVXxgQFQQdRlNTNRAFGxdFUkwWFgtXEFVaDUgLVEMZHlsDHBVIFhxfVAdbGgkaWEBCEEgLVEMZHlsDHBVIFhxfVAdbGgkaWFRSXxgYDxtWUVINFxxIFBddFg8cHVtLNn1wJDE4VRMeAg9RTBhLQEgIU09BHAcTVQlVVUJUURMdAw4EREsAEhsHBlJCQCRCPHVXBhobAygbX0QSGxwRKBVZUj0FCwkTT3BbAxwVSBYcX1QHWxoJGkY=
+X-ICL-Score: 2.33303302423
+Authentication-Results: bimi.icloud.com; bimi=pass header.d=mail.adobe.com header.selector=default policy.authority=pass policy.authority-uri=https://vmc.digicert.com/2a8e034e-5113-4f1b-8b0b-02ce4511673d.pem
+BIMI-Location: v=BIMI1; l=https://vmc.digicert.com/2a8e034e-5113-4f1b-8b0b-02ce4511673d.svg a=https://vmc.digicert.com/2a8e034e-5113-4f1b-8b0b-02ce4511673d.pem
+X-BIMI-Indicator-Hash: h=WHmdMUPe34QKttQCn7c18rjHmGfp/iOgiuF5FQ9Nky0= a=sha256
+X-ARC-Info: policy=fail; arc=none; r1=-20; r2=0
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=mail.adobe.com
+X-DMARC-Policy: v=DMARC1; p=reject; sp=reject; pct=100; rua=mailto:adobe@rua.agari.com,mailto:dmarc_agg@dmarc.everest.email; ruf=mailto:adobe@ruf.agari.com,mailto:dmarc_fr@dmarc.everest.email; fo=1
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=mail.adobe.com
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=mail.adobe.com header.i=@mail.adobe.com header.b=uF1gqWc1
+Received-SPF: pass (spf.icloud.com: domain of mail@mail.adobe.com designates 130.248.177.24 as permitted sender) receiver=spf.icloud.com; client-ip=130.248.177.24; helo=r24a.mail.adobe.com; envelope-from=mail@mail.adobe.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of mail@mail.adobe.com designates 130.248.177.24 as permitted sender) smtp.mailfrom=mail@mail.adobe.com
+X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50IjoibWlzc2V2ZTFAaWNsb3VkLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; d=mail.adobe.com; s=adobecorp; c=relaxed/relaxed; bh=4NXjpAGvcNeQ9/rd3VbTF7hvWoHbpYig44EnHqeAn3c=; h=from:to:message-id:date:subject:content-type:mime-version: list-unsubscribe:list-unsubscribe-post; t=1790604661; b=uF1gqWc18a8O7+WIn8Y+SmrGOHSuZ+wkxwgbKndiMi2GYUjRlNWHzV9WpBN8ds9VNH/4pFWNl sNPvBqhvZg7SGVrKsKGgeZ73lhdh6Jd37aT/wc9rKgY81qp8j1cFhh4WLoq/416R20VGA/GFQ8u Ppr+b6NXsGl7TgWe6Aj0nzw+PbcqY2Nkp/TKWielgwdjmMNlDopr3FB75oYJs87oPrwxiBmu4Zl 9XyPilVN3ZsS4AFgRPOWiACEgROuo4rHk6cwU+pag7LkXOWnTC/lId7obgMbEVp3SRiJnbsss63 GNTx1kYRRfOK9lkrO/CYHIrZEvutGqXNXAlLR7y4iPUg==;
+Received: from r16.mail.adobe.com (10.1.1.118) by or2-prod1-kumo-mta-D-i-0512556619377d301 (KumoMTA 10.246.45.220) with ESMTP id 6f7d56e7bb4611f1bb860a279bccd90d for <recipient4@example.com>; Mon, 28 Sep 2026 14:11:01 +0000
+From: "Adobe Lightroom" <mail@mail.adobe.com>
+Subject: =?utf-8?B?TWFrZSBwcmljZWxlc3MgcGhvdG9zIHBlcmZlY3QgaW4gbWludQ==?= =?utf-8?B?dGVz?=
+Date: Mon, 28 Sep 2026 07:11:01 -0700
+To: <recipient4@example.com>
+Reply-To: "Adobe Lightroom" <mail@mail.adobe.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 8.9.3
+Message-ID: <NMFFDA3df2939a-708e-4ead-9c77-7de38f12fec70079B5DEadobe_corpnew_mid_prod7@mail.adobe.com>
+X-250ok-CID: adobeA817957_36699504_260928
+List-Unsubscribe: <https://unsubscribe-redirector.adobe.io/unsubscribe?api_key=unsuboneclick&token=%40S9QkhjHueeU%2BzpSi72cp75kLA0sQAsslc%2FXwvBq2aH0%3D&sclick=true&src=aciv8&le=19>
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Id: <99557889-de4b-445f-a60a-1dc15d6eaffc.neolane.client.com>
+Precedence: bulk
+Content-Type: multipart/alternative; charset="windows-1252"; boundary="----=_NextPart_734_FC8CF2C1.FC8CF2C1"
+X-MANTSH: 1TFkXGxsaGREKWUQXaG5pR1xwXl9fWXIRCllNF2JLRxEKX1kXGxEKX00XZEVETxE KWUkXGnEaEBp3BhhxGR8fEh8QGR4ZGxN3BhoGGhEKWV4XbGx5EQpDThdfUmd4SWwSS09neB97R H1SeUlrRGwYcG1GXBp8HBNvZBEKWFwXGQQaBB8SBRsaGgQSGAQbHxIEGB0QGx4aHxoRCl5ZF0I SaEV4EQpNXBceHhgRCkxaF2lCYUIaXREKTU4XbmgRCkxGF01NaxEKQ1oXGxkaBBgeEgQbHR0EG B4RCkJeFxsRCllFFxkRCkVJFxsRCkVmFxsRCkJGF2J6HH97ZxpQcHhvEQpCRxdoQxlQckJbZFx 6SREKQlwXGxEKQksXemUfZ3hwf3JyHEURCkJJF2JMS2JfWWxQe0liEQpCRRd6YVxjS05gQ2YBb BEKQk4XYkxLYl9ZbFB7SWIRCkJMF2Z5emt+HEBTQ0VCEQpCbBdjU35/Z0EZWU0BSBEKQkAXZH5 7XWVvTXt/EmsRCkJYF2V7HFNGQxJZHhx6EQpaWBcYEQpwZxd6E3NMTEBJZFp+ZBAHGxwRCnBoF 21lQxtLTWNwbFxsEAcdEhEKcGgXYBpYc0lIUhtzfV0QBxwZEQpwaBdsUmxdTXsfRH0TYRAHHBk RCnBoF2J/RngSWl5bbGJ6EAceGBEKcGgXZHIeWX5SX355bRIQBxwZEQpwaBdjWgVdfngbW1tLA RAaEQpwaBdjcBl9QBpYE3gdQRAHHB0RCnBoF29OHkZfHUsdbUQFEAccGREKcH8Xel9LZ3J6WR9 8SE8QBxkZEQpwXxd6GVlrY25mTFNERBAHGx0RCnB9F25TYlIfXl5nGR1SEBoRCnB9F2ZZG3luG U0TZGZfEBoRCnB9F2BcQ1xyWBwBSXNGEBoRCnB9F2NDTnNIb39db2dZEBoRCnBfF2UcX1h5fXt CcGJvEAccGxEKcH0XZ31cZUNdGEhefhIQBxwbEQpwfRdnfVxlQ10YSF5+EhAHHBsRCnBfF2QYR GBEWWRkZRoYEAceHBEKcH0XYXJHc3Jre2J8XHAQBx8aEQpwfRdnZ29jWUF9UGIbUBAaEQpwfRd vQGtrH11OaxxoGhAaEQpwXxdpHhJ/aW8BeFxZSRAHHxsRCnB9F2VnQWFGaUBicB1mEAccGREKc H0XYEZGX3IdZnxSRF0QBx8eEQpwfRdmcGFdH21pBR9QXhAaEQpwfRdsR3xNXB1uYkhPehAHHh4 RCnB9F2tDWGJySxNGb2wFEBoRCnB9F2RJGRxoSUsbUhlsEAccGBEKcH0Xb3kbbxtvWh9wSGQQG hEKcH0XbWZDWh9zZFxtGnMQBx4ZEQpwfRdjE2Z+Z2t+RFlybRAaEQpwfRdtWkRlYk8TTh1kWRA HHhkRCnB9F2dOUlhfQ2lrXQUcEBoRCnB9F25YaH1QEgF+U1xNEAceGxEKcH0XYmdAR2ZTZFx8E 0UQGhEKcH0XZm5NbRt/T0Zva2YQGhEKcH0XbHxsTFNgQWtLU0QQGhEKcH0XbwFteGBNSUFsfBM QGhEKcH0XZVtoHXpYHU1ucl8QGhEKcF8XZRtdWkAfQ21/HXIQBxgcEQpwfRdvfmRhZlpFQ3pES BAaEQpwfRdie0IaUmEdHhhQfRAaEQpwfRdja2BNARhYeVlkUhAaEQpwfRdrH15ZUgVyY0BZHRA aEQpwbBdifUhsGVMeHU5oGRAHHh0RCm1+FxoRClhNF0sR
+X-Authority-Info: v=2.4 cv=B5a0EetM c=1 sm=1 tr=0 ts=6aba7576 b=1 cx=c_apl:c_pps a=p0ytGp4ahtf6NwEOd0s3eA==:117 a=p0ytGp4ahtf6NwEOd0s3eA==:17 a=N659UExz7-8A:10 a=fGYPQxYm8b8A:10 a=VdqzKS8jKosA:10 a=5KLPUuaC_9wA:10 a=R9c1SxF-J0YA:10 a=r77TgQKjGQsHNAKrUKIA:9 a=RqOAJGx8AAAA:8 a=SlYRyC2kH4bdRZQsMWcA:9 a=QEXdDO2ut3YA:10 a=SSmOFEACAAAA:8 a=aBYFfiZfAAAA:8 a=axDou_qmvWwR5gGZJEUA:9 a=WsrtBzWxb14XrTJu:21 a=gKO2Hq4RSVkA:10 a=frz4AuCg-hUA:10 a=_W_S_7VecoQA:10 a=Ru97nHiPDtp4odn3vKgu:22 a=KoN4kochQwGiMspTK2Sq:22 cc=prm
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTI4MDA1NiBTYWx0ZWRfXzbOnyK/2Gwb4 BeRP+ciYXycs54QDTHrhB07lwkubl1i/BsYekNfQQazO2mhbFUr8i109/Ippqf9w8Q+6NWb4U0f L0l+1oF7VoKUrChkjyVt3d8AsXtbQNmpfMwIC+2GoKDtlBrV3ZqnAvoDGkhQ08TQea93WLiEv1G KgJ/CF1JgOq/mu1jM5XMNwL99CgBnwO1W0JMY9SzE5W6l4UGW5vls5gsX88n2XnfAGFbCBkbLAB k/UPcqebMUVKhGegUY5NtOrEfHgoccveN20iL6+DIOU9NSvFav2bED5AMFNTQMpFYyD77uAAHNr zX5tDdGLbj8ibOm6pQkTqET0O41lgq46n5SvaV+B8yVO4gf1FVWw3RmdiI5EmadF+Gnpwh8ZO85 FongE76C1j8AnPDTbanctyudltODq4peCgv7NktvEPeUnrtNv4iyxtxsLbTukVWDIgl7Py6G
+X-Proofpoint-GUID: uxMRcF8aeMR5QnWxScAnF2ZGlv0V69EN
+X-Proofpoint-ORIG-GUID: uxMRcF8aeMR5QnWxScAnF2ZGlv0V69EN
+X-JNJ: AAAAAAABfYtN4bLhjsvHcanSJ6g5ZOZmSIPdkRMIZnyFY2hvqvtGn/Dr6qPYVmy5D7kO4zs8lmDWiVxSAckavMLozSLRwD91croxzP0KjQIorQ8n214vmP00+drDietcrQziiMHmJB71j8mRCGuIuoYBfhShDxjxARVIUz8ahMWVg6V4nN3W2QJUM+f3hdzACRggld9luuO7gvHUql5C55G1+X8qHkZMhS9hOxbecZAovEzAy0BAtTnJdnKI6kIjMqMvd3IpKbMhUHHZKv0BFcL5nPh7dcCGx5bdU9DWdPR0fWfi15VCC+uEhlUTltRC6VePa64WV0HqiY8g4mSqS8drQTVW0JccICZCyPzLDnw0KKDYignWjo7GLrWbl4nQijPzljW+Uj0ubVYEd+Qz+NnhTjVHDu76YsIKyHlSm5ujfRyeLyF9oH5pBq4SYKx+8YIB3ZWlEUg6o/YV6BOtJCrEdeQgjsBR1QSkvPNsRNJUPevJ3xQG2wM0SD0f9UafovKYcPPE8xMxBgEPHohblc0Y4rGJiuiLZBumZrqOa/L5DKHN/CHP25+QiND2obsqge8Gy84W572Rd+7KuXHjwzyDGbV0FSn8zh+uP3OyU6sbbrP/0KSXYjtNpQcZ+prHdjcC+GKLk0kjDiUW10HFAgb/RnMtZcM61DJG9qoFAvoPmtFYHv3Zl+/JElZywgrfjCD7gaUVuwXdAiKFCTO8mDQgyHaB5iOqM202hu8dUzoqgrQ5l1z20QwxKGMe1NDzGs/CfmZJVMAFNwAcWGp3dJmjWDrSFZR9WYRgAddj/GpnnsdOxBiSQpWR5bbBEcB18va7dqkKBRc=

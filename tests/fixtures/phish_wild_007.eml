@@ -1,0 +1,36 @@
+Return-path: <under_the_black_dog@i.softbank.jp>
+Original-recipient: rfc822;recipient4@example.com
+Received: from p00-icloudmta-smtpin-us-west-1a-100-percent-1 by p115-mailgateway-smtp-677f4d6665-9d9kf (mailgateway 2638B134) with SMTP id 2b4006e7-8578-4c3a-893d-76a7decb40d2 for <recipient4@example.com>; Mon, 28 Sep 2026 09:14:45 GMT
+X-Apple-MoveToFolder: INBOX
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 2b4006e7-8578-4c3a-893d-76a7decb40d2
+Received: from icmsa400601.i.softbank.jp (imsa4006.mailsv.softbank.jp [101.110.9.82]) by p00-icloudmta-smtpin-us-west-1a-100-percent-1 (Postfix) with ESMTPS id E030E1800232 for <recipient4@example.com>; Mon, 28 Sep 2026 09:14:42 +0000 (UTC)
+X-ICL-RepId: 01a0e74b-8acc-7e0f-8346-63bdb6026220
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBBlNbSFdHVgkYWkdZAxNFRVgGEAs5AxBVaQAZGAUcJ1RZBTUQSAQXVkIAFBcNWRJAFgQRRA9ZC19QFhcYCBxWWkZCBxpbGhFDRQcDHFc3EVNaDQAdSBQXXRYKEBUJShFTWxEUTVZHTgAHTBxXFRgeRFQDGxJIHQgQRhYHRA8aC1ECUkVPSBoZWVoRA1cVGB5EVAMbEkgdCBBSBkgQSAQXVkIAFBcNWRJAFg8cHVtLSgAEVEVAVE9ICQdWQUlTTkgeeywyMUhBSQABTBwaCwQZBAZSQ0lXWREeRQ0TDQQWFlsYCAU5DxQVQ1dWRUlQR0keWwMcFRUBVkNZBAEbBxkTHlwSSw==
+X-ICL-Score: 2.33303302423
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none; r1=-20; r2=0
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=i.softbank.jp
+X-DMARC-Policy: v=DMARC1; p=quarantine; rua=mailto:softbankmail00001-ra@dmarc25.jp
+X-DMARC-Info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1; pdomain=i.softbank.jp
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=i.softbank.jp header.i=@i.softbank.jp header.b=MPnpwpL7
+Received-SPF: pass (spf.icloud.com: domain of under_the_black_dog@i.softbank.jp designates 101.110.9.82 as permitted sender) receiver=spf.icloud.com; client-ip=101.110.9.82; helo=icmsa400601.i.softbank.jp; envelope-from=under_the_black_dog@i.softbank.jp
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of under_the_black_dog@i.softbank.jp designates 101.110.9.82 as permitted sender) smtp.mailfrom=under_the_black_dog@i.softbank.jp
+Received: from mail07.i.softbank.jp by icmsa400601.i.softbank.jp with ESMTP id <20260928091440590.MNGH.6107.icmsa400601.i.softbank.jp@icmsa400601.mailsv.softbank.jp> for <recipient4@example.com>; Mon, 28 Sep 2026 18:14:40 +0900
+From: =?utf-8?B?VVNfUG9zdGFsX1N1cHBvcnTCrg==?= <under_the_black_dog@i.softbank.jp>
+To: =?utf-8?B?cmVjaXBpZW50NA==?= <recipient4@example.com>
+Subject: =?utf-8?B?cmVjaXBpZW50NEBleGFtcGxlLmNvbQ==?=
+Date: Mon, 28 Sep 2026 17:14:40 +0800
+X-Priority: 3
+Mime-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260928091440590.MNGH.6107.icmsa400601.i.softbank.jp@icmsa400601.mailsv.softbank.jp>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=i.softbank.jp; s=isoftbank202401; t=1790586880; bh=EByczeBpj4SLeYjycSTPwYxxnBKt6YMAzW9FfDy+HqA=; h=From:To:Date:Mime-Version:Message-Id; b=MPnpwpL7FmuumXgPjk9lP742Ifrw5s70jA9Nggn6oTtSDfDkSEaDraW+M9xxFPDUKyOgydGg 3YDKwRELeOPAwVrtW3xzvROzw8Hg5L9QGgTdT4P2WjRbPzcp6ouw/5tRpl06qZt0OT0jHxNF5I S52jxlnRZbUHPC33bLE6PEEToKN9dGKJU/jx/a0K0JmScEmqMg0nFQS5Y8EdiPBrdtPm/y+764 pYF1VrCoRfdMkVks4teBrOP8vAxgh4FCc11udDBbMR/yTVVus45BcbEPuFQeIt5CC8YYPjfluE 7vhhM8b2hLcQsK1OFX/BMGOcboDrD3trHUOkA8VyDrF5OMUQ==
+X-MANTSH: 1TFkXGxsaGREKWUQXaEQZZ0tmY2YTTnMRCllNF2JLRxEKX1kXBxwYGxEKX00XYF9 EQREKWUkXGnEaEBp3BgcbHxJxHxAYGBx3BgcYGgYaEQpZXhdsbHkRCkNOF01na1tvYE9DQmgba GxFb2lnXkNvZn5eHE5rex5Te0MSEQpYXBcZBBoEHxIFGxoaBB0bBBscGgQTGBAbHhofGhEKXlk XQh0TeU8RCk1cFxsSExEKTFoXbkIdbBlNEQpNThduaBEKTEYXTWsRCkNaFxsaGwQbGxoEEwQSG BEKQl4XGxEKWUUXGREKRUkXGxEKRWYXGxEKQlwXGxEKQksXbUAeeRlMb1xMGmARCkJJF2BdAWd AXmRmWmh5EQpCRRdrWwFhZU95GAUbbREKQk4XYF0BZ0BeZGZaaHkRCkJMF2xIbENNU3xlYH5fE QpCbBdlHU54H3tbZl9oGhEKQkAXZRtPQ1pcEmQZQBsRCkJYF2V7HFNGQxJZHhx6EQpaWBceEQp waBdtG2xBYBJfYmZ8RRAHHR0RCnBoF2xre30BQEhmGX1eEAcbGxsRCnBoF25LSXByYh8cThlyE AcdHREKcGgXaB9LbWBNXkdDUE8QBx0dEQpwaBdgWUFtQG9hG2BsaxAHGxsSEQpwaBdvfUZiWGR nTG9YXBAHExIRCnBoF28BSEB+WHtDGWlIEAcTEhEKcGgXb11SUBhGW1NLeWkQBx0fEQpwfxdmA XltGGhkcmhyZxAHHx0RCnBfF2ljUn5+Qlhlbmx4EAcbGxwRCnB9F2wFb1BcHksFf1IYEAcbGx8 RCnB/F2ZmZG1IZEJ6Y3gTEAceEhEKcF8XbkZfWWJvSB1taVwQBx4SEQpwfRdnYBkfbVJoWFpAX xAHHhIRCnBsF2dMb08cHkNvU2JlEAcbGxoRCnBMF2xYeGxlGE8SXkh/EBoRCm1+FxoRClhNF0s R
+X-Authority-Info: v=2.4 cv=D5xK6/Rj c=1 sm=1 tr=0 ts=6aba3003 cx=c_apl:c_pps p=g-l2SNRemOs9S0kV-zoA:9 p=4SZvwdqENDXOH5D5:21 a=0dvvVeVsq5meIdu+lsXc6w==:117 a=v3ZZPjhaAAAA:8 a=IkcTkHD0fZMA:10 a=6SWcPii2Ar0A:10 a=VdqzKS8jKosA:10 a=5KLPUuaC_9wA:10 a=M51BFTxLslgA:10 a=R3SZBx0AMW8A:10 a=KvIUGjmmAAAA:8 a=vUpuqNAgAAAA:8 a=rcg7GeeTSRscbqD9i0bNnzLlkvw=:19 a=_W_S_7VecoQA:10 a=XgntawE5ldQA:10 a=PRpDppDLrCsA:10 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=_1O36PYEZ9SXQrlErhUs:22 a=N9ZRbzUple54hw4RH3zV:22 a=2pIRM92CTGtHLGSMtHSR:22 a=Bho9c0fBagfJEIQBS7DQ:22
+X-Proofpoint-GUID: gMAqEJeihB1BFoECMtiELTt6dAQ4yQi8
+X-Proofpoint-ORIG-GUID: gMAqEJeihB1BFoECMtiELTt6dAQ4yQi8
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTI4MDAzNiBTYWx0ZWRfX1DKEHzUiNG4R C9Wc5VyltmLeO/LMnv4QxYvMXNYkwLtaO207IY5191O3ziPCudsEJHv2HKVkPmwXinByYSJVywA jX50v+maYAUeStlJ2GPmvR8ZnwCY6M96NFHFIA/e7m0dNzrjv5VwG3vWGsfJaHGOW4qvTfF6XLh XKp3eXnsNysk6Q6OKpFAw3yN/tZCTXpjtiAAwsco87LdNTV6NDTP56LFtMGc8QhO5YppjhGcS2o X/Vs7YbXc/x4oLLcp9Gxo5no61uf7XaBF2slgyN+84IDi5uQBv66W1mHlBVri6hH66SQpJyBK88 pxSWjnsTL0AA+ZMY3Vz3D8VVnslO+G6YG5V9r36IhRPt8C2BbPPgGmtijJs05UVsl7ygPUWlVMm 196fKj3INxan/DHE5MKa9SgEktm4gksS9WZrmblCOAXhnj6c7gNLnGwmsNfucXWiBsPFz8St
+X-JNJ: AAAAAAAB9cqA4JjZRMmc0D8IBgymcKkChoLEAX+hSj8vg1SBjHxbhHRSeN0VfFJcjZCsR/BLI+bnWjlBqw7taOC+6coR+Da0whLY2GoPP0v43P7CefJGtgh5aLUyTBceEkxePDEIIMWAOOa9Q3Gue9CTwdC9CnqkoHn4Ad8Oj8uq/fJ0ZkJP8kBSG6Ye3HRbkI+gmYwrsDLA1LlyyqnLEtTEime/ws0ObpH2GWco3Te1CQKYO7sC1hFBz2FLXitX5/fM0NDt/iIfv2YVosqN8Lj0BzCaZ+IISt7U2Oovy+a9fcsjp4pLDWgkiGXqzJKfsmITEO56lseRjaAewjMRS9MQe0T226eEEGhIS7+IRsCIiGb8pFl3UW9l4QiTB0J7BI/vEIIU4MPnHuHhWuKIzfbM0iD3wEpVJZjI2dJ7qIWB9GCiWPE3jXNgX0vgWpizqk10Q0OwUYSzkmADJO+Hpz8V6qloFnJMXCqMz1meWK3v9JnArlDghr95rJpcigt3xf4GljemMJU6CryJR5ScOtEYCpmRYjE95OmeGF7tSiATKMnIM6XFD9DF+GABLnz99wgGQnzsnHbNWXd2eT3U+E/vpBmGotQo3fZLWuGoOVSh7OPgsMYAB56gbx4M8SWo/LeaMVLj6ljQA4s/PdPX5uugV9va2k2cArn/v49q7iLAJAHAnY9aCo5JAXYbEL3+HMtqbi/l1hxaxfCh1oCPp3JrvO+TGcO2o9VrsZheSzdmLR2uZr1g2VH07s9x8wFjVsuZvJXEoKOjazCAWKxj1ylGss8k3TGSYUynb2rUDdnT6HpIwVJMY5aUfA8x+2+CNEYMTHadeHAhs7/yFSPUD/nH9qHQVBto/pNbHYukdc9RWp/QR5eRN6P3IG41NzdbhcsS1mmV1+3UyEAO1X5P+HDHouu4QO3QHw9deZ7PJsU+8XWnXO/eu28C9dqmAxWHWIN8TA==

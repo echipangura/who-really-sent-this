@@ -1,0 +1,33 @@
+Delivered-To: recipient1@example.com
+Received: by 2002:a05:7412:4a46:b0:1ff:c373:efb6 with SMTP id sg6csp2939804rdb; Sat, 19 Sep 2026 14:54:27 -0700 (PDT)
+X-Received: by 2002:a05:622a:58ca:b0:532:b327:fae7 with SMTP id d75a77b69052e-532b73d3281mr33600911cf.62.1789854867278; Sat, 19 Sep 2026 14:54:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789854867; cv=none; d=google.com; s=arc-20260327; b=EDsb1l+wQs0xy6azg/yAJ5F3prPnQmnSuRVUoABScyRZJLec1IrFXT6yGf3RJ0UKEH CNnNA4hrKP+OAL5yktHpYEqc1ELsDmXyZN8HhS3i4Li0W346d3KB2rb071o5UOJtufx3 XHk2f+L/m6pALk5bzlNgCAnkuNGzCmNNZsTYN++YBZHQEYqPXnLdHkUvDxYU7HGDWiDA oM9NnIVNTAJj896So+58mh7fTwNujMjMVboUdGzIFK7mi0mVIbICSsIgHHVxe/pdNHqc wquxCDmv2J06rplF1RyMSYHNFfWevHH9uhzO3ktpF61KuUCXsjmjBK8uGUx/zOXbVihY OGPg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=content-transfer-encoding:message-id:sender:reply-to:bimi-selector :to:from:subject:mime-version:date:dkim-signature:dkim-signature; bh=KJI0uP0I4TXkrEqdmuUVAOcVcE8YlEZ/24KLQQEz6sE=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=IEUm8IPp5pS8ufP4GiWjKPA7cFpNDADLNP0gKEfX7ZvhBK3Bn0scdXRkYApK7XsBk0 U+muQmh4hrriN3xN7pRocTmUcwT2j+TNuYS285dchajHc3/cltppqVBXIXj70MBaSvyn gYglErsKFuSk5Rx5qgvHm5jYkd0bIWSzlVtP0o51R3KxDwO5PytDXViUFMnRzZZboBri FTBCaysayqpGsecaZmZAe9QI80EBe1lcuV0da/MES+C5laR9vspMPr/xi5a0h9x3W8sI jdg6SdXGesM/IQoJceTq8u/e/9L2+KNBrXldd1Sx2qUvx/4IIwBm1cPd3ypeLfc4vEaW IIug==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@prod.walmart.com header.s=prodmg header.b=TCucHcJR; dkim=pass header.i=@mailgun.org header.s=mg header.b=oi0iS3M6; spf=pass (google.com: domain of bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com designates 198.244.53.160 as permitted sender) smtp.mailfrom="bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=walmart.com
+Return-Path: <bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com>
+Received: from 160.ptr.prod.walmart.com (160.ptr.prod.walmart.com. [198.244.53.160]) by mx.google.com with UTF8SMTPS id 6a1803df08f44-912609c83a3si45407666d6.28.2026.09.19.14.54.26 for <recipient1@example.com> (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128); Sat, 19 Sep 2026 14:54:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com designates 198.244.53.160 as permitted sender) client-ip=198.244.53.160;
+Authentication-Results: mx.google.com; dkim=pass header.i=@prod.walmart.com header.s=prodmg header.b=TCucHcJR; dkim=pass header.i=@mailgun.org header.s=mg header.b=oi0iS3M6; spf=pass (google.com: domain of bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com designates 198.244.53.160 as permitted sender) smtp.mailfrom="bounce+11716b.6f8df2-recipient1=example.com@prod.walmart.com"; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=walmart.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=prod.walmart.com; q=dns/txt; s=prodmg; t=1789854866; x=1789862066; h=Content-Transfer-Encoding: Content-Type: Message-Id: Sender: Sender: Reply-To: To: To: From: From: Subject: Subject: Mime-Version: Date: X-Feedback-Id; bh=KJI0uP0I4TXkrEqdmuUVAOcVcE8YlEZ/24KLQQEz6sE=; b=TCucHcJRVYvEQprlJZLMgLj1T3iEzllztshaWs5bC7/ZDk0Po2b+X1/tu8iRRzpcByYfSkyob75vpOeGeB3vM0Z97NDd+In57AhxkRlx/aEwsx+M7c+hLR1yL0oBVzK2dygLJpesB/McIpYcFSGXKfDyZmpVbPUFmpOodhj+9iQ=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1789854866; x=1789862066; h=Content-Transfer-Encoding: Content-Type: Message-Id: Sender: Sender: Reply-To: To: To: From: From: Subject: Subject: Mime-Version: Date: X-Feedback-Id; bh=KJI0uP0I4TXkrEqdmuUVAOcVcE8YlEZ/24KLQQEz6sE=; b=oi0iS3M6o0nF0OxJZg37kkoU7/6BiWkqBJl0gybhXgAGmsgZMnVIH/O7wWxnfNh3mX0/OOdUJNB8S2DYem7cGdadVxe22TQTOAX5ZY19sTOE4LtrhKwmNymIDu4OSdCs2BL1NurbZjhraS2TRLxEJyAm0hCEjQGcp30xEfxqtEk=
+X-Mailgun-Sid: WyI4Y2JmZCIsImVjaGlwYW5ndXJhQGdtYWlsLmNvbSIsIjZmOGRmMiJd
+X-Feedback-Id: postmaster@prod.walmart.com::64e72d3f16266e632e63d37e:mailgun
+Received: by 38860d7e19057c69d30af5231a7fa4fd6581a861aeb3f8acf9a526fe38e2a9be with HTTP id 6aaf049201c7199a20b93743; Sat, 19 Sep 2026 21:54:26 GMT
+X-Mailgun-Sending-Ip-Pool-Name: prodRampingPool-66fea115d722cdb2a9558a2a
+X-Mailgun-Sending-Ip-Pool: 66fea115d722cdb2a9558a2a
+X-Mailgun-Sending-Ip: 198.244.53.160
+Date: Sat, 19 Sep 2026 21:54:26 +0000
+Mime-Version: 1.0
+Subject: Review your order updates
+From: Walmart.com <help@walmart.com>
+To: recipient1@example.com
+X-Mailgun-Drop-Message: false
+Bimi-Selector: v=BIMI1; s=spark;
+Reply-To: donotreply@walmart.com
+X-Hermes-Origin: true
+Sender: help@walmart.com
+X-Clientmsgid: 7ab20f93cdc7c44c4441be4d9ba80bef00073bea
+X-Mailgun-Variables: {"command": "DEFAULT", "platformVersion": "HERMES", "requestId": "0~0~oms~7ab20f93cdc7c44c4441be4d9ba80bef00073bea", "sessionToken": "2101:44#644275531#5=230261174", "template": "email~0~0~oms~subs-nil-pick~nil-pick~default~oaoh", "testFlag": "false"}
+Message-Id: <20260919215426.1a76ee45c4e536ba@prod.walmart.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
