@@ -1,0 +1,25 @@
+Delivered-To: recipient1@gmail.com
+Received: by 2002:a05:7412:622:b0:213:3411:42e1 with SMTP id 34csp329551rdj; Wed, 14 Oct 2026 05:41:17 -0700 (PDT)
+X-Received: by 2002:a05:701b:205b:20b0:141:5281:8a41 with SMTP id a92af1059eb24-16a5e49fdf9mr19986421c88.9.1791981677315; Wed, 14 Oct 2026 05:41:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791981677; cv=none; d=google.com; s=arc-20260327; b=WJIXSY808ringNmE3kuBEJOjh9ae8/8oU+Emd61IhbNvV8c+Pc/k8EljVD1Kn+ssCv 5V/0Tsp4YsQ+Bf5cPpFm1ZRSxZ22wHwA4zkpRVWYCMTo2+pyBzsZQvWRl4qYwsTbAI/A Nr2xTSqShFoSpklksi7otXbfVtO669vlYO87ghpVUpwaQ5AtHRiLX0I5i+ELhsuPid2B gNCYDrKRrpsgiPl00I1aEExFZKo2Oimn0M4k/EpxM0tfwR3UIZmOQmUEJJp7peI+kWBG 2c7xtU7TsTSqmPkY4PfAzdAERjIYVkuTaL2ahnAhnHoD+EkPTMOJYF6KZsK4F0x7eqzK GHrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=reply-to:precedence:subject:from:list-unsubscribe-post:mime-version :date:to:message-id:list-unsubscribe:dkim-signature; bh=2pTIe8IpAzoWtUL1KQ8v0nLdTHH+0UC3ORRDS+6r2Mw=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=UubOiI4yczMKt9A/Zc4zzZsRORjvj/s3YM+ZPrUMNL3aVgG3s1SLukcwaN9D0HujP7 GqENn8nTrO68FsNT3xoDnKfVBWKC7gua/Ryi26hY/KQwgKZrFwVM9KKUMIVWFjHaMfIN 9LQ9OJmqScCWbHMiOFhXesF0slhwavTsoXs7cGSRg5sjuWoUsa2WYMre4NL9WYI8ZNfO vc8xGN+HtG6xPmMVMkt6c5YtY/8wtZ6KbHH37NL0ijdKQhmCa13ugCnDuJWRWKDc4TQE A1kqRjBFN/WwNNZAc69vrCMjYC+ffqadNGGjj+bSB/qrEHGTQLIad9uKQkCz1aUjJueT nnnA==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@m.utest.com header.s=scph0319 header.b=WiBBcDJe; spf=none (google.com: msprvs1=20747r9uovj_i=bounces-44585-123@bounces.mauticsparkt3.com does not designate permitted sender hosts) smtp.mailfrom="msprvs1=20747R9uOVJ_I=bounces-44585-123@bounces.mauticsparkt3.com"; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=utest.com
+Return-Path: <msprvs1=20747R9uOVJ_I=bounces-44585-123@bounces.mauticsparkt3.com>
+Received: from mta-80-61.sparkpostmail.com (mta-80-61.sparkpostmail.com. [192.174.80.61]) by mx.google.com with ESMTPS id a92af1059eb24-169a60231bcsi47737300c88.82.2026.10.14.05.41.16 for <recipient1@gmail.com> (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256); Wed, 14 Oct 2026 05:41:17 -0700 (PDT)
+Received-SPF: none (google.com: msprvs1=20747r9uovj_i=bounces-44585-123@bounces.mauticsparkt3.com does not designate permitted sender hosts) client-ip=192.174.80.61;
+Authentication-Results: mx.google.com; dkim=pass header.i=@m.utest.com header.s=scph0319 header.b=WiBBcDJe; spf=none (google.com: msprvs1=20747r9uovj_i=bounces-44585-123@bounces.mauticsparkt3.com does not designate permitted sender hosts) smtp.mailfrom="msprvs1=20747R9uOVJ_I=bounces-44585-123@bounces.mauticsparkt3.com"; dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=utest.com
+X-MSFBL: sza0/tIMYu3bXP+Fzt4ArdbOt266ScYvqK3HW7LhqWg=|eyJzdWJhY2NvdW50X2l kIjoiMTIzIiwibWVzc2FnZV9pZCI6IjZhYzUxODMyY2Y2YTc0NDIxYzMwIiwiY3V zdG9tZXJfaWQiOiI0NDU4NSIsInRlbmFudF9pZCI6InNwYyIsInIiOiJlY2hpcGF uZ3VyYUBnbWFpbC5jb20ifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=m.utest.com; s=scph0319; t=1791963672; i=@m.utest.com; bh=2pTIe8IpAzoWtUL1KQ8v0nLdTHH+0UC3ORRDS+6r2Mw=; h=List-Unsubscribe:Message-ID:To:Date:Content-Type: List-Unsubscribe-Post:From:Subject:From:To:Cc:Subject:Feedback-Id; b=WiBBcDJegMFFv2daV6TiDiGm1UCy5kBbsL0x3n6ukeTRyip3tEwgjwWu8UaW7oNDM 37jy4XFuuUu17giMKXYZpcmbSV7f6FQhYkMvAKjsCAla8Vd/Vw/yM93uM9pzikdKWp xNw0tEsJFitYef9GlrRb/R3U8wBO4fWMPxPE6rPE=
+Received: from [10.90.2.90] ([10.90.2.90]) by i-05e821888b1c43292.mta1vrest.sd.prd.sparkpost (ecelerity 5.3.0.76471 r(msys-ecelerity:tags/5.3.0.24)) with REST id 03/C1-10446-8123FCA6; Wed, 14 Oct 2026 07:41:12 +0000
+List-Unsubscribe: <https://www.m.utest.com/email/unsubscribe/6acf3215a7dc5102140795/recipient1@gmail.com/af1ea18c8405764736ea14dab8881814ce580c3306d3f12787d9debe3d258cb8>
+Message-ID: <03.C1.10446.8123FCA6@i-05e821888b1c43292.mta1vrest.sd.prd.sparkpost>
+To: recipient1@gmail.com
+Date: Wed, 14 Oct 2026 07:41:12 +0000
+Content-Type: multipart/alternative; boundary="_----q6MZoyisHSLTyKkBjTCDKw===_FE/B1-10446-8123FCA6"
+MIME-Version: 1.0
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-EMAIL-ID: 15384
+From: "Elinor Tilles Levi, uTest " <etilleslevi@m.utest.com>
+Subject: Still Interested? Your Data Collection Opportunity Is Open
+Precedence: Bulk
+Reply-To: etilleslevi@applause.com
