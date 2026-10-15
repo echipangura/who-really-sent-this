@@ -1,0 +1,11 @@
+Delivered-To: recipient1@gmail.com
+Received: by 2002:a05:7412:5a10:b0:1ff:1234:abcd with SMTP id synth05; Thu, 15 Oct 2026 12:30:19 -0700 (PDT)
+Authentication-Results: mx.google.com; spf=fail (google.com: domain of no-reply@irs.gov does not designate 192.0.2.66 as permitted sender) smtp.mailfrom=no-reply@irs.gov; dmarc=fail (p=QUARANTINE sp=QUARANTINE dis=QUARANTINE) header.from=irs.gov
+Received: from vps-1187.hosting-example.net (vps-1187.hosting-example.net. [192.0.2.66]) by mx.google.com with ESMTP id synth05mx; Thu, 15 Oct 2026 12:30:18 -0700 (PDT)
+Return-Path: <no-reply@irs.gov>
+From: Internal Revenue Service <no-reply@irs.gov>
+To: recipient1@gmail.com
+Subject: Tax refund pending - verify your identity
+Date: Thu, 15 Oct 2026 19:30:12 +0000
+Message-ID: <synth005@vps-1187.hosting-example.net>
+MIME-Version: 1.0

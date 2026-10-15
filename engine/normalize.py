@@ -104,7 +104,9 @@ def normalize(raw: str | bytes) -> NormalizedHeaders:
     # CRLF and lone CR to LF; non-breaking spaces that come from copying
     # out of a web page become ordinary spaces.
     text = text.replace("\r\n", "\n").replace("\r", "\n").replace(" ", " ")
-    lines = text.split("\n")
+    # Trailing newlines at the end of a paste are not a header/body
+    # separator; dropping them lets a cut-off paste be detected.
+    lines = text.rstrip("\n").split("\n")
 
     # 1. Find where the real headers start. A paste copied from a mail
     # app's screen can carry stray lines such as "To:" above the real

@@ -116,6 +116,12 @@ def test_truncated_paste_flagged():
     assert N.POSSIBLY_TRUNCATED in n.warnings
 
 
+def test_truncated_paste_with_trailing_newline_flagged():
+    n = normalize("Received: from a by b\nAuthentication-Results: mx.google.com;\n spf=pass (google.com: domain of\n\n")
+    assert N.POSSIBLY_TRUNCATED in n.warnings
+    assert N.BODY_REMOVED not in n.warnings
+
+
 def test_missing_auth_results_flagged():
     n = normalize("Received: from a by b\nFrom: x@example.org\n")
     assert N.MISSING_AUTH_RESULTS in n.warnings
