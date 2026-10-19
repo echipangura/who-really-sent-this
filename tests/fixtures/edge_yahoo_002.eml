@@ -1,0 +1,32 @@
+Received: from 127.0.0.1 by atlas-production.v2-mail-prod1-ir2.omega.yahoo.com pod-id atlas--production-ir2-7657ff95b6-dnhtw.ir2.yahoo.com with HTTP; Thu, 1 Oct 2026 14:07:08 +0000
+Return-Path: <010101a0f7ca535e-3ccb95ba-1553-458e-869e-e0e703c560c6-000000@us-west-2.amazonses.com>
+X-Originating-Ip: [54.240.27.48]
+Received-SPF: pass (domain of us-west-2.amazonses.com designates 54.240.27.48 as permitted sender)
+Authentication-Results: mta.yahoo.com; dkim=pass header.i=@askmigration.com header.s=tttiehqx6wcovevgh2qikv7imnueair5 arc_overridden_status=NOT_OVERRIDDEN; dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv arc_overridden_status=NOT_OVERRIDDEN; spf=pass smtp.mailfrom=us-west-2.amazonses.com arc_overridden_status=NOT_OVERRIDDEN; dmarc=pass(p=NONE) header.from=askmigration.com arc_overridden_status=NOT_OVERRIDDEN;
+X-Apparently-To: recipient2@yahoo.co.uk; Thu, 1 Oct 2026 14:07:08 +0000
+X-YMailISG: Xs0KThcWLDtni0hR9LyKLoKlt2go6o7ULjxrIaQu7kST7E4t m2LRI5ORIKgypublnRiXK5kxczQNaAKI0foOmo0bqPMonREB45Jpe3yi0z3H 2KHg.CXSSiaB6urqWWRCTm2eyU_n8eaaCKZ0oTPLUR9iDo5Zs1ajImeKylhp WQwEz5Q.i36bqLnmWF4AtXcKws6kMgr42k.yZGIZ36898rYeuJGyDR6v1x1g JfXTTrLK6auWx3uBbjwX35HSGD9NFVXV2XAVRVUEVvRj7Xh4Dg38KE50S_rk Hsn3VMXAAR4dZSHEJXMHi41u4kY0P4iuiMW7Dumjs1xFjjsXs.qqyRTPMzDS 9Rp.JBUz46Fu4MsEXqohJ.qwB9weTSPk8H91zENdglIWFCUocQ8n1ES34Nm9 S5prUy5dcchAWgXI1iXRzu9fxTRI2nmiShYYyEUSpJzgSS2hHb69qyUeos8a 8PgINQ1t0xUW1KNFZmiFy1H5TSOT4UYGOjYwvxId3ksXDd4pE41lHhEc7qGZ 26XckrS5RCmtSjgqsJcIUHCBRbuupkaIFCM6YZeX6c1aOV5K7hSB9JrWTnEi 09UfF6seOd4qTukGFmC3Du6JKria0WfWaVn_ILU1b.0EhhiytXV_oBYH4HvU atuS1IIzKXRpHBZeqYwxQNVPB1NUnzN5.w6txvlRgcYavaXt_iQSV_5v6__M UBijrCXim43y0H6x4DXQr.WRg0z1zhb3DgTZXgObyZ5mBdMjzGZ20mlXQiTx CSDuk43OSkN449aQRJ54yf4xgHxUtYBTPExY4TEsrB70xuA0hbjgT_TVU8m8 vtO3VGAChaCFey1mZ30s01LMVflPijvOs8NtLbxFp.oOIlshrhgabU0txruv MzDvEV3ULLMQZb_wkzzr2sBSVWqgwOr_8IjKVt.pw3tx28BwjQAupNevquH5 ZUwK0gaYuelYWkrqgUVLq8x_Yj.zJFQGF0BlD5M3qHoHI7_9ZGrVC_Odykze f0Fk03vJmCuPU6_Drw6ZAjcvLShb4g.5hKiqfK9OT6SSBI5kEAYS205_Frvf dQstvm1Lbu7U35smDTpNnoresW4nlfNjMSxo1fwEiVLiNwgLnPW8lO9RbJTK h5o9Bxvi1IBvtavvrOFvOwLR0ex_j.Mb4_cYsBwi0ozKixwjyRWE6kJpLh.t AS0Tf3MIJmmIe8BEl2uhkzU45x4EPx011uJCy8dKw1bU0fZscR4z0ySskcNG 8IAHivuGwfl.gDIn_qyHD9TlJVvzT9ST9iI-
+Received: from 54.240.27.48 (EHLO a27-48.smtp-out.us-west-2.amazonses.com) by 10.200.78.49 with SMTPs (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256); Thu, 01 Oct 2026 14:07:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=tttiehqx6wcovevgh2qikv7imnueair5; d=askmigration.com; t=1790863627; h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:Date:Message-ID:Content-Type; bh=eVN5VaUbADqzUhXhRGI3BEVQMdjNXgXFESs0tqDDi1M=; b=LmMdYhkmIx1ckJWE6uZ//j82a+M0xNrYXuWQOmwCvKsCc3tLGbxpGxNeNwfj0wWQ Onnyfwm6CjxbLsaoMOh3Dfzu2mX8caV2VUCbefXSHWUEAAIBkFd8s+wTl5vHa2L8Ua7 fk6WQ54EWj4Dl66Vt/CAAYsr5p5C5kiK0wi75kZk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=hsbnp7p3ensaochzwyq5wwmceodymuwv; d=amazonses.com; t=1790863627; h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:Date:Message-ID:Content-Type:Feedback-ID; bh=eVN5VaUbADqzUhXhRGI3BEVQMdjNXgXFESs0tqDDi1M=; b=kaW2u/Z92OFWjUGYOkkrvFDk32BNSgurnsYjtPAeXpM8tvJ1pYO/wINmA5pa6Snd cOI3A4B3ZrUYgxqF2abC6o2cbov+XzDus6UjuNmGXGbPdr7eAEBFQQRsOLw4lgf484E m1VkSBDsCUpI0L+vlFlG5Ku50L2gz4uNBeviGUu0=
+From: CIIC <info@askmigration.com>
+To: Recipient 3 <recipient2@yahoo.co.uk>
+Subject: NEW: Data and broadband telecommunication technician Work Permit for Recipient 3
+X-Entity-Ref-Id: ffac9564-c801-43dc-957c-bf2c6a7cb76a
+X-EmailOctopus-Parent-Id: bcfda47e-bd8f-11f1-8418-e1a4d50c3b97
+X-EmailOctopus-Parent-Type-Id: campaign
+X-EmailOctopus-List-Id: 8778d648-a61a-11f1-9eb2-959e48e7bf28
+X-EmailOctopus-List-Contact-Id: 8a0609cc-b1c7-11f1-ac52-4f6b40ff1e3f
+X-EmailOctopus-Started-Preparing-At: 2026-10-01T14:03:54+00:00
+X-EmailOctopus-Sent-At: 2026-10-01T14:07:07+00:00
+X-EmailOctopus-Team-Id: fbbeb5c9-bd25-11e9-9307-06b4694bee2a
+X-EmailOctopus-Version: 5
+List-Unsubscribe: <https://berrima.eomail2.com/unsubscribe?ep=1&l=8778d648-a61a-11f1-9eb2-959e48e7bf28&lc=8a0609cc-b1c7-11f1-ac52-4f6b40ff1e3f&p=bcfda47e-bd8f-11f1-8418-e1a4d50c3b97&pt=campaign&pv=5&spa=1790863434&t=1790863627&s=751bb33ff87ce965cda738761e73b1da5db5011ceb68aa7408951ab2eec91198>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-EmailOctopus-Ses-Configuration-Set-Name: emailoctopus-92ac08625b86fcb74e8dc6e633188d55
+MIME-Version: 1.0
+Date: Thu, 1 Oct 2026 14:07:07 +0000
+Message-ID: <010101a0f7ca535e-3ccb95ba-1553-458e-869e-e0e703c560c6-000000@us-west-2.amazonses.com>
+Content-Type: multipart/alternative; boundary=0WRWe8xu
+Feedback-ID: ::1.us-west-2.sVwPAN+c9A8IJqnTPGp0V3RcCtwq0aNj3Brs4bhX59k=:AmazonSES
+X-SES-Outgoing: 2026.10.01-54.240.27.48
+Content-Length: 23008

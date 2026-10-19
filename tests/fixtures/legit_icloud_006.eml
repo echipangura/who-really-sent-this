@@ -1,0 +1,39 @@
+Return-path: <n_i_bounces@insideapple.apple.com>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-bulkin-us-central-1a-20-percent-1 by p115-mailgateway-smtp-f77b8c697-nb5g8 (mailgateway 2634B97) with SMTP id cb709ff2-bb93-4b8d-b459-e181380cff55 for <recipient4@icloud.com>; Tue, 15 Sep 2026 20:52:04 GMT
+X-Apple-MoveToFolder: INBOX
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: cb709ff2-bb93-4b8d-b459-e181380cff55
+Received: from mdn-epsmtap-mkt-lsndr14105.apple.com (mdn-epsmtap-mkt-lsndr14105.apple.com [17.32.227.240]) by p00-icloudmta-bulkin-us-central-1a-20-percent-1 (Postfix) with ESMTPS id 66113C0041F for <recipient4@icloud.com>; Tue, 15 Sep 2026 20:52:04 +0000 (UTC)
+Authentication-Results: bimi.icloud.com; bimi=pass header.d=InsideApple.Apple.com header.selector=default policy.authority=pass policy.authority-uri=https://www.apple.com/bimi/v2/apple.pem
+BIMI-Location: v=BIMI1; l=https://www.apple.com/bimi/v2/apple.svg a=https://www.apple.com/bimi/v2/apple.pem
+X-BIMI-Indicator-Hash: h=dpGHsU5Bu2SZy3DWazxD9zU3yePODqJnG07fkFwcckg= a=sha256
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=InsideApple.Apple.com
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=InsideApple.Apple.com
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=insideapple.apple.com header.i=@insideapple.apple.com header.b=1kvH5bE+
+Received-SPF: pass (spf.icloud.com: domain of n_i_bounces@insideapple.apple.com designates 17.32.227.240 as permitted sender) receiver=spf.icloud.com; client-ip=17.32.227.240; helo=mdn-epsmtap-mkt-lsndr14105.apple.com; envelope-from=n_i_bounces@insideapple.apple.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of n_i_bounces@insideapple.apple.com designates 17.32.227.240 as permitted sender) smtp.mailfrom=n_i_bounces@insideapple.apple.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=insideapple.apple.com; s=insideapple0517; t=1789505496; bh=BzC7G2k0uXyyaDTdzJXvPZySfga5bQrUm1E9j7xnvK4=; h=Date:From:To:Message-ID:Subject:Content-Type: List-Unsubscribe-Post:List-Unsubscribe; b=1kvH5bE+gBLow7YL+fsR084U9Rn9vgsfS0+PR71CPZgKz3CQGlio2QJoRFs+6tMvc ry5DKLGHgcTaE2yaoa19IY/3JTPlYzlDQFWyDuVXjp0QPW/vWUn+12LoyfoVxE/Gk3 tWN79HeeY+BERzg3nK67+GRlhUo2z5OpLIAthxsbEJkBx8qQyvItmSVRIBwvVbQ9oo cTMvmhPcgQBfd9+u39niQ7lxOSE9thXJrLbfKxAGLg6JosGmEXR1EQhBciywt4Eho+ sfWqGrDzzgYnXBF1WFxEFdfE9+SFKK7gMvLeYVZaR80mPtjzbRvRRQl/aPwrvG6Njf l4sySjoZBMtcg==
+Date: Tue, 15 Sep 2026 20:51:36 +0000 (GMT)
+From: Apple <News@InsideApple.Apple.com>
+To: recipient4@icloud.com
+Message-ID: <696343981.135139274.1789505496631@InsideApple.Apple.com>
+Subject: =?UTF-8?Q?=E2=8F=B0_Limited-time_college_offer_ends_soon.?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_135139272_1167980195.1789505496631"
+X-Attach-Flag: N
+X-Sent-To: recipient4@icloud.com,2,8w%2BvXLoOe%2FyPdV0vFeToEajdcNY528CWpg8xuHwjtgxbY7egcaG0OD%2BxwOdgauwH1jBkOGsYC72dCqMP5iFXoTN0h%2BDKCfXF0mnMKtp0Md0oLzthT16kvFEqyIaaowY3bT%2B14COTzNImBwiynqpTFhzvxFNuFbpi6EB6tNXGv%2BSL2CThY%2BgPjI62ykcu7CFveIthhY13WtbF2ZW0iXjnnPrxj8jodvFg0FyxYuDb7cMwr1BG9%2Bkx2QcjUqtjfPKQUHEeWKcXR%2FJibrWltBVtSQ%3D%3D
+X-TXN_ID: 92267425-8aae-41f2-9801-28e2d470e620
+X-DKIM_SIGN_REQUIRED: YES
+x-evs: BYPASS
+X-EmailType-Id: 181667
+X-Business-Group: 1272023
+X-MSG-LINK: 45c53eb7b1fa7300c37453b4ade13b91
+X-rpcampaign: M00000~c02183~r0001~1172911~45c53eb7b1fa7300c37453b4ade13b91
+X-Broadcast-Id: 181667
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://unsub.apple.com/c/GOHUr%2FsiX%2BZCLn7mqcXAz%2FoPJWjy9heiR7HbZNdQu%2FcXE6dp1lzGtfKuDUXKWdSQSVUZSps%2BOcBP6KtuQH8hLVXWqOiIgXZhikxNAcDbeB0%2BUhhMugOjvaoJtdehqQtK2MG%2Fk0iDrJajd2RTO3yAFbfvHZfc6503SaU%2BHtgBjn18ST2h9saxrZbe8UuSJpfr%2Buij1Y6rqEVaXHXjGC3ZMY9Dsp0x7DeB1FbtjqApQYyXWNyZOqjcgHg7BQrmlHByVb6HbMlc2b8SQ%2F7qBwpogJRjS6ho6HpMG8Q%2Frlk2xId9qFUn90LV2AwKZo3MJBL50tkNPh7aUOitJ5Edlb5cpOz%2B6Z7QykM8t6DmUEnXHHyTqbucIXJgFGmJeq78AVx2WEeEkaFGml16VZxCvBPDYHX5MhLPh4NZU1at2rDCV92s87T1htFyanSmJdNALVNyFRmyyYs6yzA9aUD%2FXrleXNcnFt2TZOzOxrUCIw1Zuslnd3PUHf9dOGKIPvSahHtT/2242da7dd2>
+Feedback-ID: M00000:c02183:News@InsideApple.Apple.com:7967215940
+X-BTPH: Reg
+X-mp: d

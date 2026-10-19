@@ -1,0 +1,60 @@
+Received: from DS7PR13MB4590.namprd13.prod.outlook.com (::1) by PH0PR13MB5923.namprd13.prod.outlook.com with HTTPS; Mon, 5 Oct 2026 20:49:47 +0000
+Received: from DUZP191CA0023.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:4f9::13) by DS7PR13MB4590.namprd13.prod.outlook.com (2603:10b6:5:297::12) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.472.20; Mon, 5 Oct 2026 20:49:45 +0000
+Received: from MAD0EPF000008B2.eurprd04.prod.outlook.com (2603:10a6:10:4f9:cafe::66) by DUZP191CA0023.outlook.office365.com (2603:10a6:10:4f9::13) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.472.20 via Frontend Transport; Mon, 5 Oct 2026 20:49:42 +0000
+Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP is 57.103.76.13) smtp.mailfrom=icloud.com; dkim=pass (signature was verified) header.d=icloud.com;dmarc=pass action=none header.from=icloud.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of icloud.com designates 57.103.76.13 as permitted sender) receiver=protection.outlook.com; client-ip=57.103.76.13; helo=outbound.st.icloud.com; pr=C
+Received: from outbound.st.icloud.com (57.103.76.13) by MAD0EPF000008B2.mail.protection.outlook.com (10.167.241.134) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.496.14 via Frontend Transport; Mon, 5 Oct 2026 20:49:42 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:00316B751891EC2C63C076242CDF7C97F9526FAE6DF524C7DB97F8A3DA9C8C3E;UpperCasedChecksum:87AC6CFE22EB02480BD0F8F1C0BE35E060D850786588A6C2A19EC29D8791B455;SizeAsReceived:3884;Count:18
+Received: from outbound.st.icloud.com (unknown [127.0.0.2]) by p00-icloudmta-asmtp-us-east-1a-10-percent-0 (Postfix) with ESMTPS id 51A1418000A2 for <recipient5@outlook.com>; Mon, 05 Oct 2026 20:49:39 +0000 (UTC)
+X-ICL-RepId: 01a10dd4-4b8a-717b-b2c7-1c7428b50f85
+X-ICL-Out-Info: HUtFAUMEWwJACUgBTUQeDx5WFlZNRAJCTQ5OHVwDXRxFDVYCXgBLVxQEFVoeRA5EFQg4Wg5bBEcUFxtcABcNVk1QG18CQg8cE1YVEx9UVgNQUR1fAgoERwRbF0YDU0VBBBcRUAFYHlZeWhdeTUcfQE1iSQFaGVscQBdKbk1TDw8ZWhRcGFNFUR9UWF4EU1YOQV9MVVlRCgFdD0pVVRpfARIMVVEIVF4fEw4dUA8OWwpJChsELVoOHBNWFQ1NQxJCFQQRUAFYHlY=
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com; s=1a1hai; t=1791233381; x=1793825381; bh=O6hNvIJkjIJ8a35mrCxsmWKhnOKtK9x2cg+82MTAohU=; h=To:From:Subject:Date:Message-id:Content-Type:MIME-Version:x-icloud-hme; b=qjgM/n/65pNpKOvDkDLHd6Mb1V+s1xu8t4R1Z22xigSHJgjUVKcJUtKTNzwwycAVVQGqq8VNHWjE6vCNuXQD82B2CF+W+uXxUgmmPbdzr45+7E+UJ0tYao/c2QBaZtZ7inwZm7LeTlOjMHmiIxI/FGeDVlfumcoOZDtSv7giYzBX5V9CrW8vjMDOSSTXXGqNYvwIoQtXEL50WWcSW+D7f38SrUx6gL0GI35OIPxqMjLY1MuRyiHnvIJwNia7zFlJUVxpQOu2oPLnk8NzX3vJd05VRn+n14OVKX0SsiOOeuuhHh/A5GQJcf5SzvJEsczr4uv3y4B3VUHoZqF+IIGbtw==
+Received: from p00-mailws2-55c5569cd7-l29pd (unknown [100.81.28.104]) by p00-icloudmta-asmtp-us-east-1a-10-percent-0 (Postfix) with ESMTPSA id 57F4818000A3 for <recipient5@outlook.com>; Mon, 05 Oct 2026 20:49:38 +0000 (UTC)
+To: recipient5@outlook.com
+From: Recipient 1 <recipient4@icloud.com>
+Subject: PROJECT
+Date: Mon, 5 Oct 2026 20:49:38 +0000 (GMT)
+X-Mailer: iCloud MailClient2636Hotfix65 MailServer2612B5.952a5ad53a12
+Message-id: <1f4f4fa3-62f8-43b5-bec5-c7ecb90893c7@me.com>
+Content-Type: multipart/alternative; boundary=Apple-Webmail-42--6911b348-3f93-49d2-9ce8-06cef36a49be
+X-Authority-Info-Out: v=2.4 cv=JMI2csKb c=1 sm=1 tr=0 ts=6ac40d63 cx=c_apl:c_pps:t_out a=5Riet6wZK7K2T4M952qk+w==:117 a=660iZSQnnn4A:10 a=x7bEGLp0ZPQA:10 a=qhS1q5EgwzQA:10 a=VkNPw1HP01LnGYTKEx00:22 a=bZkvB47-l627rLC5-QgA:9 a=QEXdDO2ut3YA:10 a=WHGgXWLBU4gcQ7LgGbQA:9 a=_W_S_7VecoQA:10 a=xo5jKAKm-U-Zyk2_beg_:22
+X-Proofpoint-ORIG-GUID: bXr0b3rSQFRRUBRuxmOMHD2PjcoTNxG-
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA1MDA4MiBTYWx0ZWRfXy4111iv28ZrD t4VDnQ0TmODnSRS3z3wT1CGjbJFwec1uGc9UeC43XHuRsvGir0qxyFSMf/C9tQ28EQkTSFP5MNW 42xkWe2a2/mNDJfjZmTsZFyEhbcTKg6XZDYPCLUNAAX9t+QFrifN9hjzI3e4U47/F7daA9aotBJ iMP5fY8cuViibAh3Ms2Bo7XN3zqzLFzRIA1vt2GqwUW/pWFON5+YdsovBXO+7j2VdNCzI3KRs6T jnByykVXbnFw4/2Su5lPOHvDfF0rRFjJ5zqiJXL/r1chOJmLqXbnv9EpY48LN9b744N47YTqJt3 1UFLWWWqtGVIoROqAlzU75+5alH+TI+nkuqNznPNnzFltLaHKArPTKrJQHfg4Y=
+X-Proofpoint-GUID: bXr0b3rSQFRRUBRuxmOMHD2PjcoTNxG-
+X-JNJ: AAAAAAAB56O2fwIKJU0jR6AIGmHhWgSimESozn6A9smEqNAcEzjCNrvbgOAe7hLaTZLQVM0CprcEMS2JC/4eVReOgU1uFUDKBnbIOv73MWbDqZoREvQF7y4WNNcmQzLXcml4J52gJfmremcethzN6n7sO3X263+hUtL32clLJN5awUZI0Qlyz81QeZysRoIZE8+4AgliD7VHQAOrcObrC9CVr4y2bMxHFOCNw9Ni8e83UrdAERTQVPETIuXiTwDDdkIEe9k+tSYsmft0+ofRIqwIwwMiw3vHmV6U53gzd/0jn2uX4Vj18R88E2Y6Nf2caTv1y+GvjZonBEX9nkaUzKXNHoz/vnPWY4oPIjCupzVcL3FGnsOEbmNISedhJnAD9QUFjyrgNB0p5o2cAAim3ZI4Rd0Vn6WjmbZJBFlZLNEybRIGIwlMs37k3PxvoRYbx1qdHX7MOPOj2dkbdRUOaG73PiqFBkftKR+6asfSggDgy8XDAsBMI40mu04v6OyzV8HwVen7ie7I/FPeaRmKJ6fZ55Gcf5ZUxMOd/fap9rHTeHf7zy4k7jI8anybhS8uHkGgiacwSdXKHgQ6I/ci5WwaoUOHMw5cvKajvgTgG0SCMbdSrPTsie/sK2HGcSAZaL0xG5Ny84c8wjeFxrQcDnerccBYXKKfbgwqBy8Ex21BFB+ByoDhIVKXMLyxQ8clCZ8cANFwCg4SzrodeLuAIKpIq4oVX8pdHS8lTlXXOzqE9OFi5/yYySx9DdWWKPsYUG3hza0J5q2WQUW1/fJU1dnP3jzrn3haNSciKvt0G8hpSxE1rZB28P/XgMFHX7le0jdgeoOCdOOth+lrPxRcLcBd+/hTVuZauf0qM5p5NomPE/4V6PvxUiXfX4XQhc1L+jS0cdtIf5yhm3Iw6S3S8aYRK2ychzRjqSlloBOx+u2fi4+P1+eQHPg7TZCsN3L1ATZXIHa6TNegZ7SRguEeOr46dZvngo1 wae2R30PL5mOYmpUfN3e671/AJkve+UaNIgZyrxWWd1TpSpMe/64d6QgDV7WARvN2sWTXZ8tFyw+bfxtMzSu6tuBpCU0MFTu/z7RewyKG1a7uLM5B46Fpwpg9ALxq9sa+B1FoKzQ5eFIf36kRc5no3GI9Sw0ZmBiver8sL8CqeAOn7ixH8H5dUNx8zkr6BUQuqiTQTWC8y0Sr2dLuCPpBulsVNmlcdBPK4aO6RbsUTH1+MjDt
+X-IncomingHeaderCount: 18
+Return-Path: recipient4@icloud.com
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Oct 2026 20:49:42.5962 (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: dd66da10-0407-4038-f091-08df23222e80
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MAD0EPF000008B2:EE_|DS7PR13MB4590:EE_|PH0PR13MB5923:EE_
+X-MS-Exchange-Organization-AuthSource: MAD0EPF000008B2.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 10/5/2026 8:43:35 PM
+X-MS-Office365-Filtering-Correlation-Id: dd66da10-0407-4038-f091-08df23222e80
+X-Sender-IP: 57.103.76.13
+X-MS-Exchange-EOPDirect: true
+X-SID-PRA: recipient4@icloud.com
+X-SID-Result: PASS
+X-MS-Exchange-Organization-SCL: 5
+X-Microsoft-Antispam: BCL:0;ARA:1444111002|3069299007|20103052903057|20103052901057|29090799004|260928210016899003|970799063|16110799025|260925184616899003|2700799033|260826003000599003|47200799027|58200799025|13020799009|20103052914048|20103052904057|3412199025|440099028|1380799030|1360799030|1370799030|30041999003|2607281247196008;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Oct 2026 20:49:42.3536 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd66da10-0407-4038-f091-08df23222e80
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource: MAD0EPF000008B2.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR13MB4590
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.7330260
+X-MS-Exchange-Processed-By-BccFoldering: 15.21.0472.005
+X-Microsoft-Antispam-Mailbox-Delivery: ucf:0;jmr:0;ex:0;auth:1;dest:J;OFR:SpamFilterAuthJ;ENG:(5062000311)(920221119095)(90000117)(920221120095)(90005022)(91005020)(90014020)(91030020)(91040095)(9050020)(9100341)(944500132)(2008001181)(4810010)(4910033)(9610028)(9560006)(10180024)(9320005)(9245025)(120001);RF:JunkEmail;
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MjtHRD0xO1NDTD02
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?bWxhbnJnRnVWRWpFWUl3SjQzcjJIVFJhcTVCV1NZdWtIWjRQbVkvOHhVZDgr?= =?utf-8?B?MUdNYzQva0d2aG9iZU9HaHJsQUZ3SWlxYnNVa1JTTmFNZCtXakY0TmpTVGJ6?= =?utf-8?B?aUczTkpvdkNEVTQ1Sm9pdzc5MjkxYWp2Rjloa2FMQ01YODZLTkY3MUZHRkVR?= =?utf-8?B?RThrN05WWkpkWG9lVzcramF4YThaMEpUNVVic2Nac2lJdnRMR2lIN1RicmxF?= =?utf-8?B?SlhFd2pMOVVHSHFGMnlVemJqRzhyczlncXZNT0ExVzlJaHRDdE4ycCtLNEp3?= =?utf-8?B?R3BIdDBTMVRaS1ovaG02YUwvcHdDeXBzUFhaKzhkaWpWM2xuQ0JGekZsZ1RQ?= =?utf-8?B?c2xIY0gva1gxK0tEZSs4bGxXdERTSi9OOS9FTFpid3NIdTFYT1dodGdPTzJS?= =?utf-8?B?MzNrSUdCQUw5cXVjdGlDMHNPSk1HUUwrcnA0OFJ3K21SVk9kQ1g2Sis5U1Bt?= =?utf-8?B?YUtpbGtvaHMwZlkzN28wTDJXWWdBRGw4YUo2TUYwU1AwOEZ1YTg4YnJqNDRi?= =?utf-8?B?UjlVdlJ1VUZKNnkwa21pdDB3dGZVbStPVk9iTTRES2ZJLzhCdno1U0JacS9y?= =?utf-8?B?RG5BM0wrSVpxSnI4Mmh6NU9BdVVTWFM5ekE1YXFwcjdCcDF2MTV6aUsyczF6?= =?utf-8?B?WWpScTU2YlYyeERFRE1rZWxJTWZobnBEdnJmZjJTK1orZk5aRDR3ejdYcWFs?= =?utf-8?B?UTA5WTVNVEJZS0ZvL1JNWTFES21RdzZjNFZZTmdSdkxWbGlzclM4d1kvaEZU?= =?utf-8?B?TVFNM3Q4TUd2V2xvc3JWN00vdVo4Zy9peERkZ2xwSmxmOE12NTZ3SzhyUkNp?= =?utf-8?B?M0lCK0xiZ0NpdDNCVmRWMXVKZ2p4VThiam82NG5oUy85WWQ3eDd2b0g0YVR0?= =?utf-8?B?aDk5M3lLYnVJbzhWeGpMRTdQTE82WFY1TitSU3lzd3RCcHkxME8wcHZHd2FM?= =?utf-8?B?dUg1bDFjaVdzNzZlaDJNcS9iZ1k2T21yKzEyWmY5K0U2ZmJ4Q1VGMm9rUWE0?= =?utf-8?B?N1V5K2pnbm0rMHRGR0orTWpkQXJPS1lTa04yWFVsbzBiN3ZSeENVSW5iTGRV?= =?utf-8?B?RXRQWmw1azFOU2tQbDFPUFcySUg4YVVwUmtTQXhPWkR3eHVNY2MrRUlvSTVU?= =?utf-8?B?cGs2QUVkTlVPKzlwT3F4WUg0NUhlUlVGSElEeldYZ3psSzZsdUdLSm91clhy?= =?utf-8?B?NndhZHlCQ053YWhBRlIrcWFFTVMvdVZHU0sxa1R3d2ZSY0VXdDErUmpFYlZI?= =?utf-8?B?cS9rYTBTeUEyVFQ1a25TR1p1VjIzY0I2NVY4STRoMVlxMEc0WC83T0pwcEN6?= =?utf-8?B?cHN3QmlGUDhUSjNwZEdLc0ZrOGZnekRCcWdGMmhUcjI2TEVBSjY0dFV5THp1?= =?utf-8?B?ZTczbGlkVFBCb0RWYmdDUkdQa2UxdjZJcGNxTHdJSlhvT0ZRQW5ST2FqSTZa?= =?utf-8?B?MHdhRXN6RnV1RmpOdjg4UGxPSlVwY2tHU1dyN1Z6VlMybjQxTmZ6NUIySGFC?= =?utf-8?B?ck9HUXRCYkNZbm9WVWZJemRUWXEzUjJydkE4VzhzYUxPUk42TDNPbG94cWVS?= =?utf-8?B?RWVQZE93cm5XdGVPa2pvNEdOMUhaQnZ5VHg3NVA0SFNZdGFYQmhnM2F1RTlo?= =?utf-8?B?NmptZGpxaXhOS014OGlrUVRTQjI1T1FyTko0TmJ3RFhORDBnRGZmTWNmK3BM?= =?utf-8?B?bmk5ZGJZN08rZ3Q2UkducmRsVzdVT2ZLMHZFem9HNUM2MlZQQklCY0ZmREto?= =?utf-8?B?clpTUTJGR0ZWSDJkRUVEUFJ4bHgvVW5Kc0JEcWR6UzJLOHErYU9YNWFBbVFs?= =?utf-8?B?OGdYNVpWR0RlSzViQmNKWjNKVmdNREZQZUNpQ1ZqQU9sTkkvMEhPUkNTWFRq?= =?utf-8?B?VnNuYmFSQjFhMHBYN3lXNVk0dlJGVjV6VGJSR3NIRlVkdS84WVE3WVpyTitL?= =?utf-8?B?QTlOcVV2RTFNWmFRamhBTmszL0l3QkZsNFBzZC96TzNFTVl1MjVDcC80TzBI?= =?utf-8?B?ZU1ZaGJxd3VkbTVSbGdlSzJoM1R0dElBcHp5dks5Z2txcGJaV2xQaDR1cFBj?= =?utf-8?B?WVhwL1dMZkkrOUJHNktZVnlFK20rUXl5WityeDFKdS9hYkdYYjdWWlE3TXhL?= =?utf-8?B?U0kwbG1jaTNuVGlhM1I4ZUl6Y2xUeFIxeGExTHJPRUZCWUVocGdZM2NRT0kr?= =?utf-8?B?d2l0ZSs1bDVhcnp4YW1QdHRxUzlDemRKS0QwWWI5elQxcmtwb2g5UCthajUy?= =?utf-8?B?SHllRXUvQVVHMVZoSWlhV09PY0FnWG0vSlpZOUFMdUtaMy9SWTBkR3k4WU01?= =?utf-8?B?c3VQUDN4bVBoaUhEckpMM2NpazF2ZTIrN09XY0dGTVErYzJSUjBkb29ndE41?= =?utf-8?B?c1gwQ2N5aDF2QWRhMUV2cWFiRS9JV3V4VGt1bzIwaUpueTlnRVdaajV6d21s?= =?utf-8?B?SUo5MXFQdTI4MzhxUDNJbVVSOWdJOFdqazVCUE1XbWRraVZFQVJIU3hHYVM0?= =?utf-8?B?M1lCTUMvbGFjdm1DTUVLb0s1bkttZ1J6MjJ4NDlYUkVSdDFKa240Zk9nVjQ5?= =?utf-8?B?U1pMWnJ0OENUbUx5Y0lnekoxZGpBNHljdk9Yd2tXcHVabitDQ1o5c09Fc2Fi?= =?utf-8?B?T1NhMUQxRzV1STY4U1JHdUFUVkNzZTQ3djFvYUpMSXgzOTdsS3ovL0p0WHE2?= =?utf-8?B?aDdJUGhTV3ZCaUk1NFhoUzZ0VXRJRnc4RkJqUHhSaC81bnFyL0d3OUhLei83?= =?utf-8?B?UVVRQ3ZSZHlqZzh5cUp6eXh5cjRzVHoyZ1pkVVRocEdvSlJXU1BKTllYcHQz?= =?utf-8?B?ODVCczRpeStyNzh3Q0hyOVB1V1llRDliZ1FBY0RaTzFlNjduSk9oelNQbll3?= =?utf-8?B?UzdMWFhBM2lLY0dSSS96WWhCR1BOdlhSakJhZ3BNUjhxU3FNWkpnNFRhTkFv?= =?utf-8?B?bzFkK28yUXM1STVlR0tBTHhvR0ZBWHBxL3JJWHBSTG9FdWZDalVWbHJjY3M1?= =?utf-8?B?ZmZFZmVrb2V6NzJCcUN0N3B1YmZjREdZU0Y0MkpkTGNTY1hZeDVNdGFDb0dT?= =?utf-8?B?RGFSczJ5d2JiVXAvMnhnZVlPRlAwYnZWb0RhZExiWURjcnE5dFRlVmIvRDJB?= =?utf-8?B?eGlsQ2dvMXVtVTZacEN3Y0Fzdi8vR1hmTVd4N1pTdmZEZ0FtVGRkbWNPTDVC?= =?utf-8?Q?ejYdPRXFaNKAUzEWFA1JAXOzXl1G?=
+MIME-Version: 1.0

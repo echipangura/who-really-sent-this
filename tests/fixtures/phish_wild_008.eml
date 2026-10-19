@@ -1,0 +1,37 @@
+Return-path: <admin@hash.asha-es.com>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-100-percent-13 by p115-mailgateway-smtp-65868d4df5-fhrrf (mailgateway 2632B98) with SMTP id 72b2bb91-5dd6-46f8-bbc4-ae498bc2584c for <recipient4@icloud.com>; Tue, 1 Sep 2026 21:36:25 GMT
+X-Apple-MoveToFolder: Junk
+X-Apple-Action: JUNK/Junk
+X-Apple-UUID: 72b2bb91-5dd6-46f8-bbc4-ae498bc2584c
+Received: from mail.hash.asha-es.com (mail.hash.asha-es.com [4.194.41.85]) by p00-icloudmta-smtpin-us-central-1n-100-percent-13 (Postfix) with ESMTPS id 39C56C00090 for <recipient4@icloud.com>; Tue, 01 Sep 2026 21:36:24 +0000 (UTC)
+X-ICL-RepId: 01a05ee6-e04a-7dd5-8129-c9470903e544
+X-ICL-Info: GAtbQ1YDBVFFTVJFTAQEUVUKE0oQVV8PERgKG1hDXxJITUhGQQQYVkRXXkJYVVJfFB0LHhZwXgMGEUgWC1hXTxAKSBQXXRYEEUQOFgtYGAMGEQdaHUMYARoURgUbDVsLBgoDAR0BdgsWFQkCHB5VDRhZDhIUXwsPFBAKWRBRRQpbGBUfGR1TEVsaCRpYQEIQSBQHHhQeXgMGEUgWC1hXTxAKSBQXXRYGEUQOFgtYGAMGEQdaHUMYARoURhoRVAteR0lUQUgJBlNHSFVBSgEYUUJLJTRMBQdRRjkLFhFcGAoUCg5ZGUNeA1gcFVkbX1tc
+X-ICL-Score: 4.33304424423
+X-Spam-Flag: yes
+X-Suspected-Spam: true
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+X-ARC-Info: policy=fail; arc=none; r1=-20; r2=0
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=hash.asha-es.com
+X-DMARC-Policy: v=DMARC1; p=none; aspf=r; adkim=r; rua=mailto:admin@hash.asha-es.com
+X-DMARC-Info: pass=pass; dmarc-policy=none; s=r1; d=r1; pdomain=hash.asha-es.com
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=hash.asha-es.com header.i=@hash.asha-es.com header.b=V0U3+ovy
+Received-SPF: pass (spf.icloud.com: domain of admin@hash.asha-es.com designates 4.194.41.85 as permitted sender) receiver=spf.icloud.com; client-ip=4.194.41.85; helo=mail.hash.asha-es.com; envelope-from=admin@hash.asha-es.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of admin@hash.asha-es.com designates 4.194.41.85 as permitted sender) smtp.mailfrom=admin@hash.asha-es.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hash.asha-es.com; s=mail; t=1788298581; bh=1YzfaL2j9MWcdpkWH2VCZA/Og1ovwY/jUruX3fTizjs=; h=From:To:Subject:Message-Id:From; b=V0U3+ovykoKbFH4hTN900b/FNU2nvixxPlClSk+5ZdGCFtKedE/PVdcWD/2VCqikX 5lMD7eG+sv6G34NTwuZH+lpipHvpZr01FntH8t5rpj1Ct6JnYo+ixuyd4ZS0pu5/3F hO0V5kOLpwKr3ZuRmSBZAyt/H82oY1VuRDmIuXbDDnyVW/h80rEPZifx65Ntqf1y+u AYOMz/kNM3219+OTGImCJQCJipYw7M02Ib6cnxoGAfmqv8Npr4Fs9ym2v4Bh7WxZvi zdFznDNwlHjfqFe08DuoLnVPTsHuUd/3v5HHBbgbo/LSoogqsqIXdv3zIpCwnC8m1G HoFiP1Xk7jVSw==
+From: =?utf-8?B?VS5TLiBQb3N0YWwgU2VydmljZQ==?= <admin@hash.asha-es.com>
+To: <recipient4@icloud.com>
+Subject: =?utf-8?B?cmVjaXBpZW50NEBpY2xvdWQuY29t?=
+Date: Wed, 02 Sep 2026 05:36:19 +0800
+X-Priority: 3
+Mime-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20260901213621.372CC45133@mail.hash.asha-es.com>
+X-MANTSH: 1TFkXBx4eEhEKWUQXZVteQ2R5ZmYeYxwRCllNF2BfREERCllJFwcbGBpxExIZBgc YHncGBxwTBhoGGgYfGwYHGBoacRoQGxoaHHcGGgYHGxoaBhoGGgYHGxoGGnEaEBp3BhoRClleF 2xseREKQ04XdU4ZbnseZkZmXR1gRgduRG1FckFfGF5bHxxOWl18XxIRClhcFxkEGgQfEgUbGho EEhgEHhgEGB0QGx4aHxoRCl5ZF0JQZURQEQpNXBcbGhkRCkxaF2JGbkIaTREKTU4Xbm4RCkxGF 2hra2tNaxEKQ1oXHgQbEx4EHhsEEh8RCkJeFxsRCkJcFxsRCkJLF2ROGUEdc0JTQl9OEQpCSRd nGUhjbRJEe24fHBEKQkUXZ0lyXENhH0QSYwERCkJOF2cZSGNtEkR7bh8cEQpCTBdraWZjY0xkH 39MHBEKQmwXaEFsRVhGZgUZQn0RCkJAF2UbT0NaXBJkGUAbEQpCWBdlexxTRkMSWR4cehEKcGc XZQVfWXJ5G0RGS1wQGhEKcGgXZX9LUFNnc1h5a34QBx8bEQpwaBdhWB9/SHhHSXBbHRAHHhwRC nBoF20eHllSZWNnUFBiEBoRCnBoF2tjSGFOZgFoaE5+EBoRCnBoF2t8ZEhvcl1rZUJOEBoRCnB oF2MceEd+ZFBcUFlCEAceHhEKcGgXYXpfR0teTkNTXl0QGhEKcGgXb3BfeFtOThwbTEwQGhEKc H8XZHh8cn8aclpBcl8QGhEKcF8XbUVHYAVNXWASX0wQGhEKcH0XZG9DUkZIYWVoG0sQGhEKcGw Xb2wTfRN4Z0QBGU0QBx4cEQptfhcaEQpYTRdLEQ==
+X-Proofpoint-GUID: _d3DQ4LlLw7Jl-DnGoXku2tq56dpwVu8
+X-Proofpoint-ORIG-GUID: _d3DQ4LlLw7Jl-DnGoXku2tq56dpwVu8
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAxMDE4OSBTYWx0ZWRfX03Ey+qRkboxS 8zm925u2KYjIcNlo1ez+ggzMF+XTYYaD7SVr2Rf/iunaDrEJjDooTjLtW581VmWlpQZX3txxkAd X4D7LMiCCUxFl2w5nULHBlGigdq1hsVFm8oYQMXfpysuirUhd5juC1+rRjZiesY1r/CzEsGo9KL vdZ5NFTHi3MyNaS0rE7usj5o8q6jqXN15wrBIgNQ67BGH9e7CAqCMLPjC8ua9aMj1P7FDn4N7o2 UbYwmzHllBLcgbfa8nMvmlDebM9imRa23D42++vyxCgmDhbq2eOeGrdZ6CivY7D1wcNKpbe2MCz OCEWThCFt3k5eF8Zxqd6IuhqCmZL1bVGrisBWpjxTP+z0Sb1m4L2C7rC7smt6bEnYW6+LnNs8jW HH25LmGG3Za9huJCHWUlgAfhBdZdUt7tZ8bEXn7kmsIGqHKKITA=
+X-Authority-Info: v=2.4 cv=ZOTaWH7b c=1 sm=1 tr=0 ts=6a974558 cx=c_apl:c_pps a=hlScOFyxR5HcdVGqnZwakw==:117 a=hlScOFyxR5HcdVGqnZwakw==:17 a=v3ZZPjhaAAAA:8 a=IkcTkHD0fZMA:10 a=6SWcPii2Ar0A:10 a=VdqzKS8jKosA:10 a=5KLPUuaC_9wA:10 a=M51BFTxLslgA:10 a=Qt-sp7xWrAYA:10 a=Gs2RG4qaAAAA:8 a=iUEwBfhfq5M81_NM4CkA:9 a=O8SSeaKzcYXJ2lqE:21 a=_W_S_7VecoQA:10 a=lqcHg5cX4UMA:10 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=s_KHD6aHcoUgXWm27CaZ:22 a=9Iqb7gs0yzei_DDM3w5k:22
+X-JNJ: AAAAAAABkmxd85fe5BRWG/q9FH92NEx/IC0ywAD9pDQV2ZxsJ7YMCaiY9RdyofMeFbj4Xwldyp/z1fkINXl0KvSjDGBcRuC0IsSCgepiQtmlar9P9J2eNOpKw+DkfvjVu0C4tUvWd7J+JQmo+ByOE09PmMNxlc68cJq2ac8++gJ3FWLfav66mIzBDO5U6qgTbcfxioMAm0H9p/YwGKtmPRdBC5BIHMBxiruIO2un3mwDhNPK/YB+EunhuWLFErQbrKJUn9+xrx5IVt1JPLCcWtH7rw6Iz4ujBRjcvSvOngCUjvIEQN2JsPHu8zJmaWcRKKpKrtrZT25FzGUC7ABXcF30rEL/qdOYh896OK33xfBUuY5ABkgdLEbsmbrNwYzv20hz4B2UvmSD+6YIM3q7MupP/B4B9Yd0XqvnDA/P4pOSAlzXhB0oAyAhuJ3iDJSKSEYSbam5ETP+ZK5CA2efkXCUt3JTNfX/UCTnOXmNJcAk+2cyW5d2s5G4bjYbb8EcYQAnn+F+FSYYTj+HkUNj3d3Ipe+r7rU30hcY7iR8oQOUYsT+H1hXQF3MOodIGxISAiE10h/qic8l1UfVXnaG97RjMdWakzhFp5NBElyYQElApMGnZsp8zAtjAc5k3iaZs21Ebo7CiBoJIMhXn2fhd+hTQZDkYRSpO9wVJst4OmUDcyfKKwO3LBbVEhlnuyjVzQQOg5XpuSbwIpIxR5wRFUfHZPP1jTW6khyRUCyL9HZlMdq5FGF+N9C4GTiR1tZ/jYrGqIiOYvE7YUMnJWkX47Mt9FskOTS901BaLo4Z+Wb2O+gYf4YRCKx4LGVeY18oIY3fwcdyfD3aC8APvznCPxdBLalRvQyuWxX4/RbhTbIQNRrjsF7RaPK15Olk3yjGgdhyvVxfwEQ6IEjPhl5fyxakka7vdGGgW3Aks/23oA7lIOnyLpg3hegtRWUqzwXgFGCzajc7ebWs42WpeLCFwURzbpq5Qe34cG94Jd95Vf42Y/Z83MIkiTQD4FW/gPeh7NtzDNt9Hwthji/dKYM6RGecOlJHhRP35gUDHVR6rznZe/tJ6PwU

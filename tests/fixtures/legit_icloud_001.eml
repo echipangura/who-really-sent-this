@@ -1,0 +1,35 @@
+Return-path: <noreply@email.apple.com>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-bulkin-us-west-1a-100-percent-5 by p115-mailgateway-smtp-677f4d6665-l7hm5 (mailgateway 2638B134) with SMTP id 902df484-3bac-45db-8ee8-d088be1295de for <recipient4@icloud.com>; Tue, 29 Sep 2026 05:50:59 GMT
+X-Apple-MoveToFolder: INBOX
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 902df484-3bac-45db-8ee8-d088be1295de
+Received: from rn2-txn-daspmsbadger03104.apple.com (rn2-txn-daspmsbadger03104.apple.com [17.132.110.18]) by p00-icloudmta-bulkin-us-west-1a-100-percent-5 (Postfix) with ESMTPS id F32CDC00050 for <recipient4@icloud.com>; Tue, 29 Sep 2026 05:50:58 +0000 (UTC)
+Authentication-Results: bimi.icloud.com; bimi=pass header.d=email.apple.com header.selector=default policy.authority=pass policy.authority-uri=https://www.apple.com/bimi/v2/apple.pem
+BIMI-Location: v=BIMI1; l=https://www.apple.com/bimi/v2/apple.svg a=https://www.apple.com/bimi/v2/apple.pem
+X-BIMI-Indicator-Hash: h=dpGHsU5Bu2SZy3DWazxD9zU3yePODqJnG07fkFwcckg= a=sha256
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=email.apple.com
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=email.apple.com
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=email.apple.com header.i=@email.apple.com header.b=JXdqRcCK
+Received-SPF: pass (spf.icloud.com: domain of noreply@email.apple.com designates 17.132.110.18 as permitted sender) receiver=spf.icloud.com; client-ip=17.132.110.18; helo=rn2-txn-daspmsbadger03104.apple.com; envelope-from=noreply@email.apple.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of noreply@email.apple.com designates 17.132.110.18 as permitted sender) smtp.mailfrom=noreply@email.apple.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.apple.com; s=email0517; t=1790661058; bh=Zmn64HU4kZ8R5+EJI3SVzrOaNjdsO8D5S7GKBgJMZYU=; h=Date:From:To:Message-ID:Subject:Content-Type; b=JXdqRcCKY7rzqEleqv1SlTmGUkfuYJ6RPugw5MW9odzs+ZZ5cVbjeOBQow3B+vARz ciRybq4ZuvOXqFImHIIgP6fqSNpv04sGwcWtcl65N2O1J5OKEjqmLwXwTSiM4ixP+n vm+HQ8DSvq9WrgJ95WLeL72PyUkVj1sipfDIBq41v+7G62aFIoy0HI/ZjIZ3eWkyCq Obx3ra1+3LYKYehaiS0YqoDGrrJIN0AyazcV3vNeDvrGz/kjOm8G0xf0rUgmtztnnB N4X/4wfm9a7ZehlnZ6cMnuZn4zbbllZDWh2C/O/opy3iyUjh8oCQN3ASpLD71wfg7n wvFTN0C6/E5Dw==
+Date: Tue, 29 Sep 2026 05:50:58 +0000 (GMT)
+From: Apple <noreply@email.apple.com>
+To: recipient4@icloud.com
+Message-ID: <109535929.175307675.1790661058900@email.apple.com>
+Subject: Your Apple Account was used to sign in to iCloud via a web browser.
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_175307673_234172369.1790661058900"
+X-Broadcast-Id: 1020771411
+X-Attach-Flag: N
+X-COMMS-C: false
+X-Reference: iCloudwebSessionID/9ee89471-d266-4892-a3bc-0899f902b579
+X-Sent-To: recipient4@icloud.com,2,vMnFBRWcYHFeU857h%2BZQfaDFqK%2BxdlLwzeIFaGZ6TxHQiV2Vo%2B53WTME8%2FHbU0WuadQWQg5n7srxayHkjo%2FRA%2FUzHIDT379JDSY0Ul9TKtrBSKcNz6hlc13T2K%2BhOAfoyQXcBr6bwQC3ElrQtXQp%2Bjyesiqjcj3n4m8byvwJ6ZGKA4YDqksJYaHHkfc7hxnhKMlr6rUYaYn8k5xmggHjZSENiAd4QqJxOt%2BBddRGVnCTsxEoNL2NGBWHyH9CQbvdXsMfsgO2DzmHd4j8caF1ZM3y%2Fxp57fosCCAf6iAqRJSAQm3HCZbgCtYIq4BNNswqd00Epzm17peU8glE%2FtqvLEaWnAJgvTs5NVaJ8A5BjuiGG5th3zXz6BTc2IKDuBSRG5PPIDlcltIm36%2F5A4ckFuz32Qf2AjdteW%2B2hsNERGqA4UA9FbgCDueiDanWgUAoBUBqJqkFv5KF2JLZ4pAzRvkvqN4V1Z7rfLlJ4V8ihrfIPGNXK0A4X69rStjMD4SmwRlsCxFZ9jDNeK5%2FS3o2vQ%3D%3D
+X-TXN_ID: 29278204-bb1c-4b20-a7ba-fa61c088b41b
+X-DKIM_SIGN_REQUIRED: YES
+X-EmailType-Id: 1020771411
+X-Business-Group: iCloud
+X-Request-UUID: 8faabd1a-56d9-4cfd-adc5-35e6b41088d6
+X-Country: US

@@ -1,0 +1,45 @@
+Return-path: <support@joinhandshake.com>
+Original-recipient: rfc822;recipient4@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-20-percent-9 by p115-mailgateway-smtp-7796596c5c-8rfqp (mailgateway 2624B114) with SMTP id 98fbd041-1f20-406b-a105-c0da2fcb1709 for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:09 GMT
+X-Apple-MoveToFolder: INBOX
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 98fbd041-1f20-406b-a105-c0da2fcb1709
+Received: from mta-out8.pod23.use1.zdsys.com (mta-out8.pod23.use1.zdsys.com [192.161.149.38]) by p00-icloudmta-smtpin-us-central-1n-20-percent-9 (Postfix) with ESMTPS id 2B4CCC000CC for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:05 +0000 (UTC)
+X-ICL-RepId: 019f1456-9380-7f09-a38d-59682f84176d
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQEUVUKE0oWX1gHVQoPB0UBD1BbSFBGVgECW1tKXlcdVAsRAAkWGApEdggaEAgfGV5SER0YDRJWU1kPVR8CShJfXwwdGAgTC1hXCRBXBRgVEEQBSBQPBAtVQAdEOQ8UFF9DBlsaCRpYWFMOGkQLAxkdWRcBQUgHF1QEUVsMFRJJHkwGBgAVWRtfW0IFDRRKFURXTxoMEk9WQFkGR0pIAgtVB0wPHRUOCx5VDRhZAhNFWlkLGxEHGRxDXgMeHEgUF10WDxwdW0tKBAEwLCEjICh7eD1DGFJFGQUOVhYaVhZObwRQQhtXRhlUDgBHTQNEJ0NGEAANJg0dXlIHBhJIFBddCA==
+X-ICL-Score: 2.33303302423
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none; r1=-20; r2=0
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=joinhandshake.com
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_agg@vali.email,mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=joinhandshake.com
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=joinhandshake.com header.i=@joinhandshake.com header.b=VkHz2g0p
+Received-SPF: pass (spf.icloud.com: domain of support@joinhandshake.com designates 192.161.149.38 as permitted sender) receiver=spf.icloud.com; client-ip=192.161.149.38; helo=mta-out8.pod23.use1.zdsys.com; envelope-from=support@joinhandshake.com
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of support@joinhandshake.com designates 192.161.149.38 as permitted sender) smtp.mailfrom=support@joinhandshake.com
+Received: from zendesk.com (unknown [127.0.0.6]) by mta-out15.pod23.use1.zdsys.com (Zendesk) with ESMTP id c7a21856-1e2a-4345-bdfa-086b8ce48ebe for <recipient4@icloud.com>; Mon, 29 Jun 2026 17:04:04 +0000 (UTC)
+Date: Mon, 29 Jun 2026 17:04:04 +0000
+From: Handshake Support <support@joinhandshake.com>
+Reply-To: Handshake Support <support@joinhandshake.com>
+To: recipient4 <recipient4@icloud.com>
+Message-ID: <247RYXEWPKN_6a42a584cc0a6_227b11ad8b24e3_sprut@zendesk.com>
+In-Reply-To: <6E62504A-C5E3-42C8-92A2-0A2C0DC8C0E7@icloud.com> <247RYXEWPKN_6a3ab9106f72e_4a1678c7d649e1_sprut@zendesk.com>
+References: <247RYXEWPKN@zendesk.com> <6E62504A-C5E3-42C8-92A2-0A2C0DC8C0E7@icloud.com>
+Subject: Re: Delete my account immediately
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="--==_mimepart_6a42a584dc7cb_12618186380db"; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Delivery-Context: rule-2-event-id-41579605444375
+X-Zendesk-From-Account-Id: 3555e94
+Auto-Submitted: auto-generated
+X-Auto-Response-Suppress: All
+X-Mailer: Zendesk Mailer
+X-Zendesk-Email-Id: 01KWA5D3BRW8ZSYNVZSKCJS7HA
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=joinhandshake.com; q=dns/txt; s=zendesk2; t=1782752644; bh=OJkHjIZ6pnIetAg9jO1HDhcBHFhBXFuxaUO/br4DEWE=; h=date:from:reply-to:to:message-id:in-reply-to:references:subject:mime-version:content-type:content-transfer-encoding; b=VkHz2g0pLbRDXEA4MvDv+HrDB64nSQjrZ+dEOe3xJXOuGF/4x6CqcoBcFhjV/klsINGeAcviUavUMZELnNfXGdXrpBUWFMOSmapiTy26D0EMIZfccmgR/Z0TzpHst4quNwdj+CJU0C9UC5nqZaF+zw77pogLHKZ5ICAe+bi4caCz92hasZSeqc0qg8W6Za2g0JY7e+dixAGmCB3+pZbCGCn4fF7W+0e4fk5VHuvuqkjEGtmXFW03qvgItyEMy0P4DCLK9ZTipsyKM9yOoECBNxBQ8q2yvmV3kolq5jnNrxXZD09LksHBYFwibx7o5ywvjKoQiwcHabABcMcSrRRyyA==
+X-MANTSH: 1TFkXGxoaHxEKWUQXYhIdT2UTX05CRmYRCllNF25PRkNcT1gRCl9ZFxwYGREKX00 XYktHEQpZSRcacRoQGncGGBsacRgfGRAadwYYGgYaEQpZXhdsbHkRCkNOF1wYRUNuTmF6SB5Tb hoaGhtmbBJpTh1zHU18HGJiGXwSEQpYXBcZBBoEHxIFGxoEGxwTBBsZHAQZGxAbHhofGhEKXlk XQk9vRUIRCk1cFx8dGhEKTFoXaGNNQWsRCkxGF01rY2JNaxEKQ1oXGxMYBBscGwQbHhMEGRIRC kJeFxsRCllFFxkRCkVJFxsRCkVmFxsRCkJcFxsRCl5OFxsRCkJLF2dJTmhIawVDGU9LEQpCSRd nSU5oSGsFQxlPSxEKQkUXYxNbf3JsGwFDSE0RCkJOF2dJTmhIawVDGU9LEQpCTBdrH0sFeF8eG E5sbhEKQmwXbH5HRUhJYnh5ZxIRCkJAF29oQUB8YGcdf25PEQpCWBdlexxTRkMSWR4cehEKWlg XHhEKcGcXZQVfWXJ5G0RGS1wQGRoRCnBoF2R7aFMZYG1NZVxZEBwSEQpwaBdlQlpjW08Bc1tsG RAZGhEKcGgXbWxCfXNme2tMcm4QHR4RCnBoF2ZJRWVnBRprbBJrEBkaEQpwaBdhQGV4clNEfkl QHhAZGhEKcGgXaAFSYE95R1t5ZUMQGRoRCnBoF29oTkRYTh5tEkcBEBkaEQpwaBdpRlB9ekloU 0VBWBAZGhEKcH8XZFNvAVNCa2BAHXgQHhwRCnBfF2ESbWUZWGdbT1pvEBkaEQpwfRdiYRhjcB5 4Ekt5bxAZGhEKcGwXbkJbUhl8GG15fxIQGRoRCm1+FxoRClhNF0sR
+X-Proofpoint-ORIG-GUID: v2oiDdKPb4yD0001LF8Cd7Y7gV6HH3V8
+X-Authority-Info: v=2.4 cv=JLY2csKb c=1 sm=1 tr=0 ts=6a42a586 b=1 cx=c_apl:c_pps a=XCaBq9ZOzcjTFEQe33iP0g==:117 a=XCaBq9ZOzcjTFEQe33iP0g==:17 a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=tyFeJ8zE3KYA:10 a=sWKEhP36mHoA:10 a=g8TUdU_LZmEA:10 a=v3ZZPjhaAAAA:8 a=-B5a0rHi8o3pjtPET8AA:9 a=QEXdDO2ut3YA:10 a=8nBmmgpqAAAA:8 a=TeuQqM9sAAAA:8 a=yyNmg3cVxQllno2ia3wA:9 a=mMNNuWOrQUZ8DwPv:21 a=frz4AuCg-hUA:10 a=_W_S_7VecoQA:10 a=zY0JdQc1-4EAyPf5TuXT:22 a=bfyjJSFVJUzR-EyeF7E_:22 cc=ntf
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI5MDE0MyBTYWx0ZWRfX5JfAUls5EnHo HgjRzBzlgUOHO2c38CaeW8QJE8Ezd1h+WVTJAEijpF1pcqTPPUFXttNwM3SDpnNGMBehHHmfE3U GQ+8vX8yW0Y1B/I6FnqOYc2QDzBWbM0EIsYeawqGVaRAaWzxMDC7hkAtxs14472nQzDGGEwXapv I22qechYsqvS490izbRyBUUb34GiV3QMbb9Pts9kON1fRru5IC82xlutXnbCpNck4kK0UlV/tjX oJxX6j+i8xXF6rpOtwHovCwHCTGWQ9VPlmW2fKkuk/MYCkoNpSkm2o3x2R56JGOk2PLuH7KuaqX wFI+uJGVwuTlcNAMUicfPzpJlmS8Bx7cxGWT3m/yFerRlDH1Dtz5/BsUhiyQAfuI1sLLejSU3pm tJ6+Kt5QmtdAZN/Fnt2lkAgo9BKFINCutgMIsXpGAjiUMYecnfuET1e1nQLyw5ypuwednaUkx/2 gZzDiWAkQFn7fkYUVWg==
+X-Proofpoint-GUID: v2oiDdKPb4yD0001LF8Cd7Y7gV6HH3V8
+X-JNJ: AAAAAAAB8tkOwm840iQROXFIwEnnl3+LELBDd89ba309ybvgbGP9mlA0O6OBLc10g2C/LQTPlQjAPGe/1G+hxZAUSIxa1Xcb6Zw4MKJyMkEAzlkcmfzUhiKlcad4uq2gzMZ83Rz16FWeVQ886p9NSaf2pP+18MkkSXgcwQIMMyCu9GShwB0ouGBxcyeKJi4wYk5Zce4mzV5YWkOZcwSOkaYathIXqlkISQp2fneQizHd1DfgYf7DDfDNEsGKx62TtdQdX3LEO/AwIxvVIRsgcTIRmVHMUv/NRuySDBxBWMU3Ch4G94iE5Sa8h7EpeX9H4T+aRVnElC51Xw+ed2VYyOkXH05NE8pQoGwycJjMGIjdJ8NW0LXdN6r9WwPf8HyVPfpg9VdTU+y8S3jI4J75QFmE9/veu/Ep5yrD+8gqHXgS9pFuX3vlAtu4QCZt0ZQBIXJqoqGYFOdovoOQPvE34+mPxNHd024cZDqmmRWiLQXmyF7J3ngHuRNlt8nsYND2mWpRLhS8ccDa7m9uMK8ExIgNOr2UHS4scAigRLvANAhMNm05WOkgXXm2+N6BtCRVZJLLQQp8BN8BfraFBxOcgMxpASbtAoZ1ivURnNP6TdZG3ODbQIhk0R9kBzdUTldGaf/GcZYbsVcjl9Kmno7y5Xei+MLVjhVt/6Cx298ySY0R72sMPGZNtgYvSX4iRsJ14F52xw1leb7qxMG4Kd43DQ==
+Re: Delete my account immediately

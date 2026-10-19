@@ -1,0 +1,24 @@
+Delivered-To: recipient1@gmail.com
+Received: by 2002:a05:7412:1418:b0:1ea:9de7:4406 with SMTP id p24csp10209604rdb; Sat, 5 Sep 2026 08:49:02 -0700 (PDT)
+X-Received: by 2002:a05:6870:f221:b0:475:e235:909 with SMTP id 586e51a60fabf-475e235102bmr6030692fac.39.1788623342215; Sat, 05 Sep 2026 08:49:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1788623342; cv=none; d=google.com; s=arc-20260327; b=THUzT5JZKvWvwosAzp3xXzSxe0ge2hbvL+/ehLRlxo2C1bvr/jfYa7TZOvFERejP/Z 71WclPS+OK1jmBZVT/TOB1uxim1rflL4126gyZr6Etlwpnuryo+OAXUVkihZMYnvu6Hu YHfl9ZXuHlJW8AL6IIE5wPu1jiER9g5U0wTRnmDS20Y30at2nck0aMNVunNDfLF7Z949 1epBkMhZy4D6uQX6bTV1eCSLN0YIh+n9iuURzwaXgJivMjJn9G9zM3lXllA+rmPh6Typ Y4S30Wan7aT9MiMvhgt60ME9J2jp5IOcm6aBV7IWv5+/MRkRhXN7bwnNNbbpl556V60/ aB2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327; h=retry-count:notification-id:content-transfer-encoding:mime-version :subject:message-id:to:from:date:dkim-signature; bh=aUkaIBxBns9iEnKH4iODLy52uB2rDYSSZAw8nVGdrQg=; fh=Ker9BIX+IjPI4eSMiV1AyDGMb1QycKfYcogvrTOleeg=; b=jB/vGfU0CZwZijppXC5FheAHxvALJCSDIlHAJg5Lo17lEWFNd4rs+iXr3Y/37dU8tZ cmZaQRC8xpXgJrmRXy+8kBIZNrttDr5rgpvJj1bCKE7laOS3SBmOeCeDwhcs+rokYgcB QTC2nOI0h4C7irA9eUmtyIf9J2LcXqM98irlTUs8rn2vVZhWz6zd2rNRK/d+TH1pc7rR TUPXq1spPTrgWP6HMsLWdkzrccfPPM6jjacYuUpYeAUJhqtC2pGl5/cqAPJhqkyGwAwE PMGUk1oHpotJ83hYtP7pHN9GFWtTNrrxS6mFshKDLkjXKMwpT5B8vWS1MzaIkuy8rI47 mrBA==; dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@chase.com header.s=d4815 header.b="6LbLw/My"; spf=pass (google.com: domain of no.reply.alerts.13@chase.com designates 146.143.8.26 as permitted sender) smtp.mailfrom=no.reply.alerts.13@chase.com; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chase.com
+Return-Path: <no.reply.alerts.13@chase.com>
+Received: from vsin80p3283.jpmchase.com (vsin80p3283.jpmchase.com. [146.143.8.26]) by mx.google.com with ESMTPS id 586e51a60fabf-4774e4a0f6dsi1776269fac.346.2026.09.05.08.49.01 for <recipient1@gmail.com> (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256); Sat, 05 Sep 2026 08:49:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of no.reply.alerts.13@chase.com designates 146.143.8.26 as permitted sender) client-ip=146.143.8.26;
+Authentication-Results: mx.google.com; dkim=pass header.i=@chase.com header.s=d4815 header.b="6LbLw/My"; spf=pass (google.com: domain of no.reply.alerts.13@chase.com designates 146.143.8.26 as permitted sender) smtp.mailfrom=no.reply.alerts.13@chase.com; dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chase.com
+Received: from pps.filterd (vsin80p3283.dmz.us.jpmchase.net [127.0.0.1]) by vsin80p3283.jpmchase.com (8.18.1.11/8.18.1.11) with ESMTP id 685FGHSM1161339 for <recipient1@gmail.com>; Sat, 5 Sep 2026 15:49:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chase.com; h= content-transfer-encoding:content-type:date:from:message-id :mime-version:subject:to; s=d4815; bh=aUkaIBxBns9iEnKH4iODLy52uB 2rDYSSZAw8nVGdrQg=; b=6LbLw/MyG/r6z17V6IgDwqxG11VCKU/rq4qziLCh8Z 5zbMsqs2gJmgrKpQ06foNFkMYqXLjl85gvWNNRjAI8gespOXN/8O6PBSb1jpHov6 FBzL920VsYVtPrnmu1IKkhp1XzBw3O0p5azLTBKD8VSOBTy4UtB0ro5Q1rTpu4Cw QyHMiR/Rluk9Qxgi34IkXcqljeljnbac7iAQ9/zfrlepQnNfI/3XwC5ukyeyz3Or 3ZPmOKenkg+7LiSQTJzlE4rHLDG8hpxCqjixDvQ5qgz95m0LTkSiib8+U4kY9JOP +zipVeWn055LEiqwwHuoc3OqxIBUsfM5oD7wwQEDQGyQ==
+Received: from vsin52p2155.nanw.jpmchase.net ([169.72.76.200]) by vsin80p3283.dmz.us.jpmchase.net (PPS) with ESMTPS id 4ggbhmj9wb-1 (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT) for <recipient1@gmail.com>; Sat, 05 Sep 2026 15:49:01 +0000 (GMT)
+Received: from iaasn00692058.nane.jpmchase.net (iaasn00692058.nane.jpmchase.net [169.101.110.218]) by vsin52p2155.nanw.jpmchase.net with ESMTP id 685Fn0rX1703759 for <recipient1@gmail.com>; Sat, 5 Sep 2026 15:49:01 GMT
+Date: Sat, 5 Sep 2026 15:49:00 +0000 (UTC)
+From: Chase <no.reply.alerts@chase.com>
+To: recipient1@gmail.com
+Message-ID: <313769102.35620836.1788623340825.JavaMail.webuser@iaasn00692058>
+Subject: Your credit card statement is available
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+NOTIFICATION-ID: NOTIFICATION-103326_psninputadaptor_PSN_ADAPTOR_PSNstart_5373910187233003868679602608886789849661851543960587909130850498_p242310455_x_PSNend-4480-09b46a85-f033-34d3-98d3-c0cbb37ebaa9
+RETRY-COUNT: 0

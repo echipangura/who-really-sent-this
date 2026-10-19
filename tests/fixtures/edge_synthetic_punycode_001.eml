@@ -1,0 +1,11 @@
+Delivered-To: recipient1@gmail.com
+Received: by 2002:a05:7412:5a10:b0:1ff:1234:abcd with SMTP id synth01; Thu, 15 Oct 2026 09:12:44 -0700 (PDT)
+Authentication-Results: mx.google.com; dkim=pass header.i=@xn--chse-63d.com header.s=s1 header.b=SyNtH001; spf=pass (google.com: domain of alerts@xn--chse-63d.com designates 203.0.113.25 as permitted sender) smtp.mailfrom=alerts@xn--chse-63d.com; dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=xn--chse-63d.com
+Received: from mail.xn--chse-63d.com (mail.xn--chse-63d.com. [203.0.113.25]) by mx.google.com with ESMTPS id synth01mx; Thu, 15 Oct 2026 09:12:43 -0700 (PDT)
+Return-Path: <alerts@xn--chse-63d.com>
+From: Chase <alerts@xn--chse-63d.com>
+To: recipient1@gmail.com
+Subject: Unusual sign-in to your account
+Date: Thu, 15 Oct 2026 16:12:40 +0000
+Message-ID: <synth001@xn--chse-63d.com>
+MIME-Version: 1.0

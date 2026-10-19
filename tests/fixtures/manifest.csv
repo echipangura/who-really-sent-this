@@ -1,1 +1,61 @@
-file,provider,expected_verdict,expected_flags,notes 
+file,provider,expected_verdict,expected_flags,notes
+edge_forwarded_outlook_gmail_001.eml,gmail,CHECKS_OUT,,"Forward from own Outlook to Gmail; Outlook internal ARC i=1 is all none, Gmail stamp passes. Tests ARC/forward handling"
+edge_gmail_001.eml,gmail,CHECKS_OUT,RETURN_PATH_MISMATCH,uTest via SparkPost; SPF none for bounce domain but DMARC passes via DKIM m.utest.com (relaxed alignment). Return-Path mismatch is normal ESP behaviour
+edge_gmail_002.eml,gmail,BE_CAREFUL,REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Legit uTest mail but Reply-To goes to applausemail.com (parent company); replies go to a different domain
+edge_yahoo_001.eml,yahoo,CHECKS_OUT,RETURN_PATH_MISMATCH,Passes auth via Amazon SES; job-offer spam. Example of passing is not the same as safe
+edge_yahoo_002.eml,yahoo,CHECKS_OUT,RETURN_PATH_MISMATCH,Passes auth via Amazon SES; work-permit offer. Example of passing is not the same as safe
+forwarded_gmail_icloud_001.eml,icloud,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned (gmail.com p=none)"
+forwarded_gmail_icloud_002.eml,icloud,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned; DKIM d=gappssmtp.com NOT aligned, DMARC passes via SPF. Tests alignment logic"
+forwarded_gmail_outlook_001.eml,outlook,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+forwarded_gmail_yahoo_001.eml,yahoo,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+forwarded_icloud_gmail_001.eml,gmail,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+forwarded_icloud_yahoo_001.eml,yahoo,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+forwarded_yahoo_gmail_001.eml,gmail,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+forwarded_yahoo_icloud_001.eml,icloud,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+legit_gmail_001.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_002.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_003.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_004.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_005.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_006.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_007.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_008.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_009.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_010.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_gmail_011.eml,gmail,CHECKS_OUT,,"DMARC pass, aligned"
+legit_icloud_001.eml,icloud,CHECKS_OUT,,"DMARC pass, aligned"
+legit_icloud_002.eml,icloud,CHECKS_OUT,,"DMARC pass, aligned"
+legit_icloud_003.eml,icloud,CHECKS_OUT,,header.from in mixed case (InsideApple.Apple.com): compare domains case-insensitively
+legit_icloud_004.eml,icloud,CHECKS_OUT,,"DMARC pass, aligned"
+legit_icloud_005.eml,icloud,CHECKS_OUT,,header.from in mixed case: compare case-insensitively
+legit_icloud_006.eml,icloud,CHECKS_OUT,,header.from in mixed case: compare case-insensitively
+legit_outlook_001.eml,outlook,CHECKS_OUT,,"DMARC pass, aligned"
+legit_outlook_002.eml,outlook,CHECKS_OUT,,"DMARC pass, aligned"
+legit_outlook_003.eml,outlook,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned; Outlook stamp has no authserv-id in older layout"
+legit_outlook_004.eml,outlook,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+legit_outlook_005.eml,outlook,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned"
+legit_outlook_006.eml,outlook,CHECKS_OUT,,"Sent by the fellow from her own account; DMARC pass, aligned; DKIM d=gappssmtp.com NOT aligned, DMARC passes via SPF"
+legit_yahoo_001.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
+legit_yahoo_002.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
+legit_yahoo_003.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
+legit_yahoo_004.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
+legit_yahoo_005.eml,yahoo,CHECKS_OUT,RETURN_PATH_MISMATCH,Remitly via Amazon SES; DMARC passes via DKIM remitly.com
+legit_yahoo_006.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
+phish_wild_001.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;RETURN_PATH_MISMATCH;HOP_ANOMALY,"Bradesco brand from atendimento.com.br; no DKIM, SPF/DMARC temperror; first hop is a cloud droplet (ubuntu-s-1vcpu); Return-Path has no domain. Needs rule: SPF temperror/none counts as not passing"
+phish_wild_002.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,"Microsoft account team from access-accsecurity.com; SPF none, DKIM none, DMARC permerror; replies go to Gmail. Needs rule: SPF none counts as not passing"
+phish_wild_003.eml,outlook,BE_CAREFUL,REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Dutch solar-panel spam; SPF/DKIM/DMARC none. Unsolicited but not impersonating an institution
+phish_wild_004.eml,outlook,BE_CAREFUL,DISPLAY_NAME_SPOOF;FREEMAIL_INSTITUTION,Banco do Brasil [BB] claim from a gmail.com account; DMARC passes for gmail.com. Brief v1 puts free-mail claims in yellow; consider red when a bank name is combined with free mail
+phish_wild_005.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Same campaign as phish_wild_002
+phish_wild_006.eml,gmail,BE_CAREFUL,NO_DMARC_POLICY,Fake job interview from fritconstructioninc.com (missing z); no DMARC record; arrived via university forward (ARC). Lookalike only catchable if the real company is on the watchlist
+phish_wild_007.eml,icloud,LIKELY_SCAM,DISPLAY_NAME_SPOOF,US Postal Support from i.softbank.jp; auth passes for the sender domain. Needs rule: watchlisted name in display name + unrelated From domain = red. Subject is the recipient address
+phish_wild_008.eml,icloud,LIKELY_SCAM,DISPLAY_NAME_SPOOF,U.S. Postal Service from hash.asha-es.com (p=none). Same rule as phish_wild_007
+phish_wild_009.eml,gmail,LIKELY_SCAM,RETURN_PATH_MISMATCH;HOP_ANOMALY;INVALID_FROM_DOMAIN,From domain uses a fake TLD (.iry) so no DMARC; DKIM permerror; first hop efianalytics.com unrelated; display name is the recipient username. To/Delivered-To me@aol.com/me@gmail.com are the sender fakes
+phish_wild_010.eml,gmail,LIKELY_SCAM,RETURN_PATH_MISMATCH;HOP_ANOMALY;INVALID_FROM_DOMAIN,Same campaign as phish_wild_009; fake TLD (.mot); DKIM fail
+edge_synthetic_punycode_001.eml,gmail,LIKELY_SCAM,PUNYCODE_DOMAIN;LOOKALIKE_DOMAIN;DISPLAY_NAME_SPOOF,Synthetic (hand-built) fixture. xn--chse-63d.com decodes to chase.com with a Cyrillic a. Auth passes for the fake domain. Brief: punycode impersonating a listed institution = red
+edge_synthetic_display_name_address_001.eml,gmail,LIKELY_SCAM,DISPLAY_NAME_SPOOF;FREEMAIL_INSTITUTION,Synthetic (hand-built) fixture. Display name is an email address (service@paypal.com) but the real sender is a Gmail account. Depends on rule: watchlisted name + unrelated domain = red
+edge_synthetic_reply_to_hijack_001.eml,gmail,BE_CAREFUL,REPLY_TO_MISMATCH,Synthetic (hand-built) fixture. Real school domain passes DMARC (e.g. compromised account) but Reply-To goes to Gmail. Passing is not the same as safe
+edge_synthetic_truncated_paste_001.eml,gmail,BE_CAREFUL,,Synthetic (hand-built) fixture. Paste cut off mid Authentication-Results; no From. Normalizer reports NORM_MISSING_FROM and NORM_POSSIBLY_TRUNCATED
+edge_synthetic_dmarc_fail_quarantine_001.eml,gmail,LIKELY_SCAM,HOP_ANOMALY,"Synthetic (hand-built) fixture. Spoofed irs.gov: SPF fail, no DKIM, DMARC fail with p=quarantine; first hop is an unrelated VPS. Brief: DMARC fail under quarantine/reject = red"
+forwarded_gmail_outlook_002.eml,outlook,CHECKS_OUT,,"Bank statement notice forwarded from own Gmail to Outlook; DMARC pass, aligned (gmail.com p=none). Outlook web copy had screen text and the forwarded body above the headers"
+forwarded_yahoo_gmail_002.eml,gmail,CHECKS_OUT,,"AliExpress customs notice forwarded from own Yahoo to Gmail; DMARC pass, aligned (yahoo.co.uk p=reject). Paste included Gmail's Show original summary table; tracking number zeroed out"
+edge_gmail_003.eml,gmail,BE_CAREFUL,REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Legit uTest marketing found in spam; DMARC pass via DKIM m.utest.com; Reply-To goes to applause.com (parent company). Gmail reports ~5h delivery delay (Date vs arrival): useful for hop timing

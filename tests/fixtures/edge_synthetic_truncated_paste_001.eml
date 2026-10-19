@@ -1,0 +1,6 @@
+Delivered-To: recipient1@gmail.com
+Received: by 2002:a05:7412:5a10:b0:1ff:1234:abcd with SMTP id synth04; Thu, 15 Oct 2026 11:45:02 -0700 (PDT)
+X-Received: by 2002:a17:90a:1234:b0:2a1:5678:9abc with SMTP id synth04x; Thu, 15 Oct 2026 11:45:02 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@usps.com header.s=s1 header.b=SyNtH004;
+       spf=pass (google.com: domain of
