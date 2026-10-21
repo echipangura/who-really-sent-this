@@ -42,10 +42,10 @@ legit_yahoo_004.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
 legit_yahoo_005.eml,yahoo,CHECKS_OUT,RETURN_PATH_MISMATCH,Remitly via Amazon SES; DMARC passes via DKIM remitly.com
 legit_yahoo_006.eml,yahoo,CHECKS_OUT,,"DMARC pass, aligned"
 phish_wild_001.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;RETURN_PATH_MISMATCH;HOP_ANOMALY,"Bradesco brand from atendimento.com.br; no DKIM, SPF/DMARC temperror; first hop is a cloud droplet (ubuntu-s-1vcpu); Return-Path has no domain. Needs rule: SPF temperror/none counts as not passing"
-phish_wild_002.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,"Microsoft account team from access-accsecurity.com; SPF none, DKIM none, DMARC permerror; replies go to Gmail. Needs rule: SPF none counts as not passing"
-phish_wild_003.eml,outlook,BE_CAREFUL,REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Dutch solar-panel spam; SPF/DKIM/DMARC none. Unsolicited but not impersonating an institution
+phish_wild_002.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH;HOP_ANOMALY,"Microsoft account team from access-accsecurity.com; SPF none, DKIM none, DMARC permerror; replies go to Gmail. Needs rule: SPF none counts as not passing"
+phish_wild_003.eml,outlook,BE_CAREFUL,REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH;HOP_ANOMALY,Dutch solar-panel spam; SPF/DKIM/DMARC none. Unsolicited but not impersonating an institution
 phish_wild_004.eml,outlook,BE_CAREFUL,DISPLAY_NAME_SPOOF;FREEMAIL_INSTITUTION,Banco do Brasil [BB] claim from a gmail.com account; DMARC passes for gmail.com. Brief v1 puts free-mail claims in yellow; consider red when a bank name is combined with free mail
-phish_wild_005.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH,Same campaign as phish_wild_002
+phish_wild_005.eml,outlook,LIKELY_SCAM,DISPLAY_NAME_SPOOF;REPLY_TO_MISMATCH;RETURN_PATH_MISMATCH;HOP_ANOMALY,Same campaign as phish_wild_002
 phish_wild_006.eml,gmail,BE_CAREFUL,NO_DMARC_POLICY,Fake job interview from fritconstructioninc.com (missing z); no DMARC record; arrived via university forward (ARC). Lookalike only catchable if the real company is on the watchlist
 phish_wild_007.eml,icloud,LIKELY_SCAM,DISPLAY_NAME_SPOOF,US Postal Support from i.softbank.jp; auth passes for the sender domain. Needs rule: watchlisted name in display name + unrelated From domain = red. Subject is the recipient address
 phish_wild_008.eml,icloud,LIKELY_SCAM,DISPLAY_NAME_SPOOF,U.S. Postal Service from hash.asha-es.com (p=none). Same rule as phish_wild_007

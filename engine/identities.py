@@ -83,6 +83,7 @@ class Identities:
     return_path: str | None = None
     return_path_org: str | None = None
     spf_org: str | None = None
+    spf_pass: bool = False
     dkim_pass_orgs: list[str] = field(default_factory=list)
     spf_aligned: bool = False
     dkim_aligned: bool = False
@@ -147,6 +148,7 @@ def extract_identities(headers: NormalizedHeaders, auth: AuthResults) -> Identit
     ids.return_path_org = registrable(_addr_domain(rp) if "@" in rp else None)
 
     ids.spf_org = registrable(auth.spf.domain)
+    ids.spf_pass = auth.spf.result == "pass"
     ids.dkim_pass_orgs = sorted({o for o in (registrable(d) for d in auth.dkim_pass_domains) if o})
 
     if ids.from_org:
