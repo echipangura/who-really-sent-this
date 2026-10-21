@@ -100,7 +100,7 @@ PSEG,pseg.com,psegliny.com,utility,PSEG;PSE&G;PSEG Long Island,US,
 Ameren,ameren.com,,utility,Ameren,US,
 Duke Energy,duke-energy.com,,utility,Duke Energy,US,
 PG&E,pge.com,,utility,PG&E;Pacific Gas and Electric,US,
-ZESA,zesa.co.zw,,utility,ZESA;ZETDC,ZW,yes
+ZESA,zetdc.co.zw,zesaholdings.co.zw,utility,ZESA;ZETDC;ZESAHOLDINGS,ZW,
 AT&T,att.com,,telecom,AT&T;ATT,US,
 Verizon,verizon.com,,telecom,Verizon;Verizon Wireless;Fios,US,
 T-Mobile,t-mobile.com,,telecom,T-Mobile;TMobile,US,
