@@ -1,0 +1,63 @@
+"""Run the whole engine on one message and return a JSON-ready report.
+
+This is the single entry point the interface (and the command-line tool)
+calls. It returns codes and values only, never English sentences; the
+interface turns codes into words through the locale files.
+
+The report shape (SCHEMA_VERSION) is what the Streamlit app will read, so
+changes to it should bump the version.
+"""
+
+from __future__ import annotations
+
+from dataclasses import asdict
+
+from engine.authresults import parse_auth_results
+from engine.identities import extract_identities
+from engine.normalize import normalize
+from engine.trust import find_trust_boundary
+
+SCHEMA_VERSION = "0.1"
+
+
+def analyze(raw: str | bytes) -> dict:
+    headers = normalize(raw)
+    trust = find_trust_boundary(headers)
+    auth = parse_auth_results(headers, trust)
+    ids = extract_identities(headers, auth)
+
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "normalize": {
+            "header_count": len(headers.headers),
+            "warnings": headers.warnings,
+        },
+        "trust": {
+            "provider": trust.provider,
+            "status": trust.status,
+            "boundary_index": trust.boundary_index,
+        },
+        "auth": {
+            "spf": asdict(auth.spf),
+            "dkim": [asdict(d) for d in auth.dkim],
+            "dmarc": asdict(auth.dmarc),
+            "arc": auth.arc,
+            "compauth": auth.compauth,
+        },
+        "identities": {
+            "from_display": ids.from_display,
+            "from_address": ids.from_address,
+            "from_org": ids.from_org,
+            "reply_to": ids.reply_to,
+            "return_path": ids.return_path,
+            "return_path_org": ids.return_path_org,
+            "spf_org": ids.spf_org,
+            "dkim_pass_orgs": ids.dkim_pass_orgs,
+            "spf_aligned": ids.spf_aligned,
+            "dkim_aligned": ids.dkim_aligned,
+            "aligned": ids.aligned,
+        },
+        # Codes raised so far; the rules engine (rules.py) will turn these
+        # into a verdict in a later step.
+        "codes": headers.warnings + ([trust.status] if trust.status != "TRUST_PROVIDER_STAMP" else []) + ids.codes,
+    }
