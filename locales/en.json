@@ -114,7 +114,8 @@
     "NORM_MISSING_AUTH_RESULTS": "The check results from your mail service are missing.",
     "NORM_INPUT_TOO_LARGE": "The paste is very long. Only the first part was checked.",
     "TRUST_NO_STAMP": "Your mail service's check results were not found.",
-    "TRUST_GENERIC_STAMP": "We did not recognize your mail service, so these results are less certain."
+    "TRUST_GENERIC_STAMP": "We did not recognize your mail service, so these results are less certain.",
+    "info_title": "Good to know (normal on its own)"
   },
   "journey": {
     "title": "The journey",
@@ -128,7 +129,8 @@
     "entry": "Your mail service received it here",
     "unknown_host": "unknown computer",
     "total": "Total trip time: {delay}",
-    "none": "No route lines were found."
+    "none": "No route lines were found.",
+    "inside": "inside your mail service"
   },
   "time": {
     "seconds": "{n} sec",
