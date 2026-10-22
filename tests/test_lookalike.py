@@ -70,7 +70,7 @@ def test_freemail_institution_even_for_providers_own_brand():
 def test_email_address_as_display_name():
     r = _look('"service@paypal.com" <help.desk.4471@gmail.com>')
     assert r.claimed.name == "PayPal"
-    assert {L.LOOK_DISPLAY_NAME_SPOOF, L.LOOK_FREEMAIL_INSTITUTION} <= set(r.codes)
+    assert {L.LOOK_DISPLAY_NAME_SPOOF, L.LOOK_FREEMAIL_INSTITUTION, L.LOOK_ADDRESS_IN_NAME} <= set(r.codes)
 
 
 def test_short_aliases_need_capitals():
@@ -109,4 +109,4 @@ def test_corpus_impersonation_flags_match_labels(row):
     n = normalize((FIXTURES / row["file"]).read_text(encoding="utf-8"))
     r = L.check_lookalike(extract_identities(n, parse_auth_results(n)))
     expected = {_MAP[f] for f in row["expected_flags"].split(";") if f in _MAP}
-    assert set(r.codes) == expected
+    assert set(r.codes) & set(_MAP.values()) == expected

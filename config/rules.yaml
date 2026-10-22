@@ -1,0 +1,103 @@
+# Verdict rules for "Who Really Sent This?" (brief, Section 5.4, version 1).
+#
+# Partners can tune these without touching code. Each rule has:
+#   id        a short name; the app shows it as a reason (locale key RULE_<id>)
+#   verdict   LIKELY_SCAM (red) or BE_CAREFUL (yellow)
+#   when      the condition, built from:
+#               all: [ ... ]   every item must be true
+#               any: [ ... ]   at least one item must be true
+#               not: item      the item must be false
+#             An item is either a CODE the engine raised (capital letters,
+#             e.g. LOOK_DISPLAY_NAME_SPOOF) or a signal (small letters):
+#               dmarc_pass      DMARC result is pass
+#               dmarc_fail      DMARC result is fail
+#               dmarc_missing   no usable DMARC result (none, temperror,
+#                               permerror, or no DMARC check at all)
+#               dmarc_enforced  the domain asks for quarantine or reject
+#               aligned         a passing SPF or DKIM domain matches From
+#               spf_pass        SPF result is pass (none/temperror do not count)
+#               dkim_pass       at least one DKIM signature passed
+#
+# The final verdict is the most serious one among the rules that match.
+# If no rule matches, the message CHECKS_OUT (green), always shown with the
+# note that passing checks do not prove a message is safe.
+
+version: 1
+
+rules:
+  # ---- Likely a scam (red) -------------------------------------------------
+  - id: DMARC_FAIL_ENFORCED
+    verdict: LIKELY_SCAM
+    when: {all: [dmarc_fail, dmarc_enforced]}
+
+  - id: UNAUTHENTICATED_IMPERSONATION
+    # Pretends to be an institution and nothing vouches for the sender.
+    verdict: LIKELY_SCAM
+    when:
+      all:
+        - not: aligned
+        - any: [LOOK_DISPLAY_NAME_SPOOF, LOOK_LOOKALIKE_DOMAIN]
+
+  - id: LOOKALIKE_INSTITUTION_DOMAIN
+    # chase-secure.com, xn--chse-63d.com: the scammer owns the lookalike, so
+    # it can pass every check; the domain itself is the trick.
+    verdict: LIKELY_SCAM
+    when: {any: [LOOK_LOOKALIKE_DOMAIN, LOOK_PUNYCODE_DOMAIN]}
+
+  - id: INSTITUTION_NAME_WRONG_DOMAIN
+    # "U.S. Postal Service" from a domain that is not theirs (and not a
+    # free-mail account, which is the yellow rule below).
+    verdict: LIKELY_SCAM
+    when:
+      all:
+        - LOOK_DISPLAY_NAME_SPOOF
+        - not: LOOK_FREEMAIL_INSTITUTION
+
+  - id: ADDRESS_DISGUISED_AS_NAME
+    # Display name "service@paypal.com" on a message from another address.
+    verdict: LIKELY_SCAM
+    when: {any: [LOOK_ADDRESS_IN_NAME]}
+
+  - id: INVALID_FROM_DOMAIN
+    # The From address ends in a top-level domain that does not exist.
+    verdict: LIKELY_SCAM
+    when: {any: [ID_FROM_DOMAIN_INVALID]}
+
+  - id: FORGED_PROVIDER_HOP
+    # A line the sender wrote pretends the user's own provider received it.
+    verdict: LIKELY_SCAM
+    when: {any: [HOP_FORGED_PROVIDER]}
+
+  # ---- Be careful (yellow) -------------------------------------------------
+  - id: INCOMPLETE_HEADERS
+    verdict: BE_CAREFUL
+    when: {any: [NORM_POSSIBLY_TRUNCATED, NORM_NO_HEADERS_FOUND, ID_FROM_MISSING]}
+
+  - id: NO_DMARC
+    verdict: BE_CAREFUL
+    when: {any: [dmarc_missing]}
+
+  - id: NOT_ALIGNED
+    verdict: BE_CAREFUL
+    when: {not: aligned}
+
+  - id: REPLY_TO_ELSEWHERE
+    verdict: BE_CAREFUL
+    when: {any: [ID_REPLY_TO_MISMATCH]}
+
+  - id: FREEMAIL_INSTITUTION
+    verdict: BE_CAREFUL
+    when: {any: [LOOK_FREEMAIL_INSTITUTION]}
+
+  - id: UNRELATED_FIRST_SERVER
+    verdict: BE_CAREFUL
+    when: {any: [HOP_ENTRY_UNRELATED]}
+
+  - id: ODD_ROUTE
+    verdict: BE_CAREFUL
+    when: {any: [HOP_TIME_REVERSED, HOP_LONG_DELAY]}
+
+# Deliberately NOT rules on their own (they are shown, but do not change the
+# verdict): a Return-Path on a mail service's domain (normal for Amazon SES,
+# SendGrid and other senders), a personal free-mail sender, and DMARC p=none
+# on a message that passed and is aligned.

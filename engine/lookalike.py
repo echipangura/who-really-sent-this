@@ -42,6 +42,7 @@ LOOK_DISPLAY_NAME_SPOOF = "LOOK_DISPLAY_NAME_SPOOF"
 LOOK_LOOKALIKE_DOMAIN = "LOOK_LOOKALIKE_DOMAIN"
 LOOK_PUNYCODE_DOMAIN = "LOOK_PUNYCODE_DOMAIN"
 LOOK_FREEMAIL_INSTITUTION = "LOOK_FREEMAIL_INSTITUTION"
+LOOK_ADDRESS_IN_NAME = "LOOK_ADDRESS_IN_NAME"      # the display name is a different email address
 
 WATCHLIST = Path(__file__).resolve().parent.parent / "data" / "impersonated_institutions.csv"
 
@@ -226,20 +227,22 @@ def check_lookalike(ids: Identities, watchlist=None) -> LookalikeResult:
 
     claimed = claimed_institution(ids.from_display, wl)
     from_org = ids.from_org or ids.from_domain
+
+    # A display name that is itself an address: "service@paypal.com" <x@gmail.com>.
+    m = _EMAIL_IN_NAME.search(ids.from_display or "")
+    if m and from_org and (registrable(m.group(1)) or m.group(1).lower()) != from_org:
+        res.codes += [LOOK_DISPLAY_NAME_SPOOF, LOOK_ADDRESS_IN_NAME]
+        shown = registrable(m.group(1))
+        claimed = claimed or next((i for i in wl if shown in i.domains), None)
+        res.claimed = res.claimed or claimed
+        if claimed and ids.from_org in FREEMAIL:
+            res.codes.append(LOOK_FREEMAIL_INSTITUTION)
+
     # Anyone can open a free account, so a free-mail domain never counts as
     # the institution's own here, even for Microsoft (outlook.com) or Google.
-    if claimed and from_org not in (claimed.domains - FREEMAIL):
+    elif claimed and from_org not in (claimed.domains - FREEMAIL):
         res.claimed = res.claimed or claimed
         res.codes.append(LOOK_DISPLAY_NAME_SPOOF)
         if ids.from_org in FREEMAIL:
             res.codes.append(LOOK_FREEMAIL_INSTITUTION)
-    elif not claimed:
-        # A display name that is itself an address: "service@paypal.com" <x@gmail.com>.
-        m = _EMAIL_IN_NAME.search(ids.from_display or "")
-        if m and from_org and (registrable(m.group(1)) or m.group(1).lower()) != from_org:
-            res.codes.append(LOOK_DISPLAY_NAME_SPOOF)
-            shown = registrable(m.group(1))
-            res.claimed = next((i for i in wl if shown in i.domains), None)
-            if res.claimed and ids.from_org in FREEMAIL:
-                res.codes.append(LOOK_FREEMAIL_INSTITUTION)
     return res
