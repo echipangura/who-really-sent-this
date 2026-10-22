@@ -14,11 +14,12 @@ from dataclasses import asdict
 
 from engine.authresults import parse_auth_results
 from engine.identities import extract_identities
+from engine.lookalike import check_lookalike
 from engine.normalize import normalize
 from engine.received import build_hop_map
 from engine.trust import find_trust_boundary
 
-SCHEMA_VERSION = "0.2"   # 0.2: added "journey" (hop map)
+SCHEMA_VERSION = "0.3"   # 0.2: "journey" (hop map); 0.3: "impersonation"
 
 
 def analyze(raw: str | bytes) -> dict:
@@ -27,6 +28,7 @@ def analyze(raw: str | bytes) -> dict:
     auth = parse_auth_results(headers, trust)
     ids = extract_identities(headers, auth)
     hops = build_hop_map(headers, trust, ids)
+    look = check_lookalike(ids)
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -59,6 +61,12 @@ def analyze(raw: str | bytes) -> dict:
             "dkim_aligned": ids.dkim_aligned,
             "aligned": ids.aligned,
         },
+        "impersonation": {
+            "claimed": ({"name": look.claimed.name, "category": look.claimed.category,
+                         "domains": sorted(look.claimed.domains)} if look.claimed else None),
+            "imitated_domain": look.imitated_domain,
+            "decoded_domain": look.decoded_domain,
+        },
         "journey": {
             "hops": [{k: v for k, v in asdict(h).items() if k != "raw"} for h in hops.hops],
             "entry_number": hops.entry_number,
@@ -66,5 +74,5 @@ def analyze(raw: str | bytes) -> dict:
         },
         # Codes raised so far; the rules engine (rules.py) will turn these
         # into a verdict in a later step.
-        "codes": headers.warnings + ([trust.status] if trust.status != "TRUST_PROVIDER_STAMP" else []) + ids.codes + hops.codes,
+        "codes": headers.warnings + ([trust.status] if trust.status != "TRUST_PROVIDER_STAMP" else []) + ids.codes + hops.codes + look.codes,
     }
