@@ -1,0 +1,164 @@
+{
+  "app": {
+    "title": "Who Really Sent This?",
+    "tagline": "Paste an email's headers. Find out who really sent it.",
+    "language": "Language",
+    "large_text": "Large text",
+    "paste_label": "Paste the email headers here",
+    "paste_help": "The full message is fine too. We only read the headers.",
+    "check_button": "Check this email",
+    "empty_paste": "Please paste the email headers first.",
+    "privacy": "Nothing you paste is saved or sent anywhere. It is checked here and then thrown away.",
+    "results": "Results"
+  },
+  "guide": {
+    "title": "How do I find the headers?",
+    "intro": "Every email has hidden lines called headers. They show where it really came from. Here is how to copy them.",
+    "gmail": "**Gmail:** open the email. Click the three dots (⋮) next to Reply. Choose **Show original**. Click **Copy to clipboard**.",
+    "outlook": "**Outlook.com:** open the email. Click the three dots (…). Choose **View**, then **View message source**. Select all and copy.",
+    "outlook_desktop": "**Outlook on a computer:** open the email. Choose **File**, then **Properties**. Copy the box called **Internet headers**.",
+    "yahoo": "**Yahoo Mail:** open the email. Click the three dots (…). Choose **View raw message**. Select all and copy.",
+    "apple": "**Apple Mail (Mac):** open the email. Choose **View**, then **Message**, then **Raw Source**. Select all and copy.",
+    "help_link": "Step-by-step help from {provider}"
+  },
+  "verdict": {
+    "CHECKS_OUT": {
+      "title": "Checks out",
+      "sentence": "This email really came from the address it shows."
+    },
+    "BE_CAREFUL": {
+      "title": "Be careful",
+      "sentence": "Something about this email is not right. Check it another way before you act."
+    },
+    "LIKELY_SCAM": {
+      "title": "Likely a scam",
+      "sentence": "This email is not from who it says. Do not click, reply, or pay."
+    }
+  },
+  "rule": {
+    "RULE_DMARC_FAIL_ENFORCED": "The real owner of this address asked mail services to block fakes. This email failed that test.",
+    "RULE_UNAUTHENTICATED_IMPERSONATION": "It uses the name of a known company or office. Nothing proves it came from them.",
+    "RULE_LOOKALIKE_INSTITUTION_DOMAIN": "The address looks like a real company's address, but it is a copy.",
+    "RULE_INSTITUTION_NAME_WRONG_DOMAIN": "The name says it is {name}. The address is not theirs.",
+    "RULE_ADDRESS_DISGUISED_AS_NAME": "The name shown is an email address. The real sender is a different one.",
+    "RULE_INVALID_FROM_DOMAIN": "The sender's address ends in a way that does not exist on the internet.",
+    "RULE_FORGED_PROVIDER_HOP": "The email contains a fake line that pretends your mail service handled it.",
+    "RULE_INCOMPLETE_HEADERS": "Some of the headers are missing. Copy them again, all of them, and check again.",
+    "RULE_NO_DMARC": "The sender's address has no clear proof that it is real.",
+    "RULE_NOT_ALIGNED": "The address you see is not the one that was checked.",
+    "RULE_REPLY_TO_ELSEWHERE": "If you reply, your answer goes to someone else.",
+    "RULE_FREEMAIL_INSTITUTION": "It uses the name of {name}, but it comes from a free email account. Real offices do not do that.",
+    "RULE_UNRELATED_FIRST_SERVER": "It started at a computer that has nothing to do with the sender.",
+    "RULE_ODD_ROUTE": "The times on this email's route do not make sense."
+  },
+  "note": {
+    "NOTE_PASS_NOT_SAFE": "This only shows who sent it. A real sender can still send a bad link. If it asks for money or passwords, check with them another way."
+  },
+  "who": {
+    "title": "Who it says it is from, and where it came from",
+    "shown_name": "Name you see",
+    "shown_address": "Address you see",
+    "vouched": "Domain that proved it sent this",
+    "vouched_none": "None. No domain proved it.",
+    "first_server": "First outside computer your mail service saw",
+    "unknown": "Not shown",
+    "claims": "This email says it is from **{name}**. Their real address ends in **{domains}**.",
+    "lookalike": "**{shown}** is made to look like **{real}**. It is not the same website.",
+    "punycode": "The address uses hidden foreign letters. It shows up as **{decoded}**."
+  },
+  "auth": {
+    "title": "The three checks, in plain words",
+    "spf_name": "SPF",
+    "spf_what": "Was the computer that sent this allowed to send for {domain}?",
+    "dkim_name": "DKIM",
+    "dkim_what": "Does the email carry a digital signature, and is it unbroken?",
+    "dmarc_name": "DMARC",
+    "dmarc_what": "Did it pass the test that the owner of {domain} set for real email?",
+    "result_pass": "Passed",
+    "result_fail": "Failed",
+    "result_softfail": "Weak fail",
+    "result_none": "Not checked",
+    "result_neutral": "No answer",
+    "result_temperror": "Could not check (temporary error)",
+    "result_permerror": "Could not check (broken setup)",
+    "result_policy": "Policy",
+    "result_missing": "No result",
+    "policy_reject": "The owner says: block fakes.",
+    "policy_quarantine": "The owner says: send fakes to spam.",
+    "policy_none": "The owner only watches. Fakes are not blocked.",
+    "aligned_yes": "The address you see matches a domain that passed a check.",
+    "aligned_no": "The address you see does not match any domain that passed a check.",
+    "your_provider": "These results were written by {provider} when the email arrived.",
+    "provider_generic": "your mail service"
+  },
+  "flags": {
+    "title": "Red flags",
+    "none": "No red flags found.",
+    "ID_REPLY_TO_MISMATCH": "Replies go to a different address: {reply_to}.",
+    "ID_RETURN_PATH_MISMATCH": "Bounced mail goes to a different domain. Mail services do this often, so on its own it is not a problem.",
+    "ID_FREEMAIL_FROM": "It was sent from a free email account.",
+    "ID_FROM_DOMAIN_INVALID": "The sender's address ends in a way that does not exist.",
+    "ID_FROM_MISSING": "There is no sender address.",
+    "LOOK_DISPLAY_NAME_SPOOF": "The name does not match the address.",
+    "LOOK_LOOKALIKE_DOMAIN": "The address is a lookalike of a real one.",
+    "LOOK_PUNYCODE_DOMAIN": "The address hides foreign letters that look like normal ones.",
+    "LOOK_FREEMAIL_INSTITUTION": "A company or office name, sent from a free email account.",
+    "LOOK_ADDRESS_IN_NAME": "The name shown is a different email address.",
+    "HOP_FORGED_PROVIDER": "A line in the route was faked by the sender.",
+    "HOP_ENTRY_UNRELATED": "The first computer has nothing to do with the sender.",
+    "HOP_TIME_REVERSED": "The route goes backwards in time.",
+    "HOP_LONG_DELAY": "The email waited more than a day somewhere on its way.",
+    "HOP_MALFORMED": "Some route lines are hard to read.",
+    "NORM_POSSIBLY_TRUNCATED": "The paste looks cut off.",
+    "NORM_NO_HEADERS_FOUND": "No email headers were found in what you pasted.",
+    "NORM_MISSING_AUTH_RESULTS": "The check results from your mail service are missing.",
+    "NORM_INPUT_TOO_LARGE": "The paste is very long. Only the first part was checked.",
+    "TRUST_NO_STAMP": "Your mail service's check results were not found.",
+    "TRUST_GENERIC_STAMP": "We did not recognize your mail service, so these results are less certain."
+  },
+  "journey": {
+    "title": "The journey",
+    "intro": "Each step is one computer that passed the email along, from the first one to your inbox.",
+    "step": "Step {n}",
+    "from_to": "{from} → {to}",
+    "at": "at {time}",
+    "after": "{delay} after the step before",
+    "trusted": "Written by your mail service",
+    "claimed": "Claimed by the sender (could be made up)",
+    "entry": "Your mail service received it here",
+    "unknown_host": "unknown computer",
+    "total": "Total trip time: {delay}",
+    "none": "No route lines were found."
+  },
+  "time": {
+    "seconds": "{n} sec",
+    "minutes": "{n} min",
+    "hours": "{n} hr",
+    "days": "{n} days",
+    "negative": "{delay} earlier (clock difference)"
+  },
+  "why": {
+    "title": "Why this answer",
+    "none": "Everything we can check passed, and nothing looked wrong."
+  },
+  "todo": {
+    "title": "What to do next",
+    "dont_click": "Do not click links or call phone numbers in the email.",
+    "go_direct": "Go to the real website yourself. Type the address. Do not use the email's links.",
+    "never_share": "Never send passwords, codes, or bank details by email.",
+    "ask": "Not sure? Call the company using a number you already trust, like the one on your card or bill.",
+    "report_in_app": "Report it in your email app: in Gmail, use the three dots and choose **Report phishing**. In Outlook, choose **Report** and then **Report phishing**.",
+    "report_title": "Report it",
+    "report_ftc": "Report scams to the Federal Trade Commission",
+    "report_ic3": "Report online crime to the FBI",
+    "report_irs": "Fake IRS or tax emails",
+    "report_uscis": "Fake immigration emails or notices",
+    "report_uspis": "Fake U.S. Postal Service emails",
+    "report_bank": "For a bank, call the number on the back of your card.",
+    "report_school": "For a school, call the school office directly."
+  },
+  "limits": {
+    "title": "What this tool cannot tell you",
+    "text": "A pass means the owner of the address sent the email. It does not mean the email is safe. A real account that was hacked will pass. So will a scam sent from an ordinary Gmail account. This tool reads only what you paste. It does not open links or look anything up."
+  }
+}
