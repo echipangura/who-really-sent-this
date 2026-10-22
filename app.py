@@ -33,6 +33,9 @@ REPORT_LINKS = {
 }
 PROVIDER_NAMES = {"gmail": "Gmail", "outlook": "Outlook", "yahoo": "Yahoo Mail", "icloud": "iCloud Mail"}
 BANNER = {"CHECKS_OUT": ("✅", st.success), "BE_CAREFUL": ("⚠️", st.warning), "LIKELY_SCAM": ("⛔", st.error)}
+# Shown, but as "good to know" rather than red flags: on their own they are
+# normal (a person's Gmail, a mail service's bounce address).
+INFO_ONLY = {"ID_FREEMAIL_FROM", "ID_RETURN_PATH_MISMATCH"}
 SHOWN_FLAGS = ("ID_", "LOOK_", "HOP_", "NORM_POSSIBLY", "NORM_NO_HEADERS", "NORM_MISSING_AUTH",
                "NORM_INPUT_TOO_LARGE", "TRUST_NO", "TRUST_GENERIC")
 
@@ -116,10 +119,13 @@ def render(report: dict, lang: str) -> None:
     # 4. Red flags.
     st.subheader(T("flags.title"))
     flags = [c for c in report["codes"] if c.startswith(SHOWN_FLAGS) and i18n.has(f"flags.{c}", lang)]
-    if flags:
-        st.markdown("\n".join(f"- 🚩 {T(f'flags.{c}', reply_to=', '.join(ids['reply_to']))}" for c in dict.fromkeys(flags)))
-    else:
-        st.markdown(T("flags.none"))
+    say = lambda c: T(f"flags.{c}", reply_to=", ".join(ids["reply_to"]))  # noqa: E731
+    red = [c for c in dict.fromkeys(flags) if c not in INFO_ONLY]
+    info = [c for c in dict.fromkeys(flags) if c in INFO_ONLY
+            and not (c == "ID_FREEMAIL_FROM" and "LOOK_FREEMAIL_INSTITUTION" in flags)]
+    st.markdown("\n".join(f"- 🚩 {say(c)}" for c in red) if red else T("flags.none"))
+    if info:
+        st.markdown(f"**{T('flags.info_title')}**\n" + "\n".join(f"- ℹ️ {say(c)}" for c in info))
 
     # 5. The journey: a numbered path, oldest first.
     st.subheader(T("journey.title"))
@@ -130,7 +136,8 @@ def render(report: dict, lang: str) -> None:
         st.caption(T("journey.intro"))
         out = []
         for h in hops:
-            src = h["from_ptr"] or h["from_host"] or h["from_ip"] or T("journey.unknown_host")
+            src = h["from_ptr"] or h["from_host"] or h["from_ip"] or (
+                T("journey.inside") if h["trusted"] else T("journey.unknown_host"))
             line = f"**{T('journey.step', n=h['number'])}:** `{T('journey.from_to', **{'from': src, 'to': h['by_host'] or T('journey.unknown_host')})}`"
             if h["timestamp"]:
                 line += f" · {T('journey.at', time=short_time(h['timestamp']))}"
@@ -153,9 +160,10 @@ def render(report: dict, lang: str) -> None:
     # 7. What to do next, with reporting links chosen by category.
     st.subheader(T("todo.title"))
     st.markdown("\n".join(f"- {T(k)}" for k in ("todo.dont_click", "todo.go_direct", "todo.never_share",
-                                                 "todo.ask", "todo.report_in_app")))
+                                                 "todo.ask")))
     if v["tier"] != "CHECKS_OUT":
         st.markdown(f"**{T('todo.report_title')}**")
+        st.markdown(T("todo.report_in_app"))
         cat = claimed.get("category", "")
         links = REPORT_LINKS.get(cat, []) + REPORT_LINKS["all"]
         items = [f"- [{T(k)}]({url})" for k, url in links]
