@@ -17,9 +17,10 @@ from engine.identities import extract_identities
 from engine.lookalike import check_lookalike
 from engine.normalize import normalize
 from engine.received import build_hop_map
+from engine.rules import decide
 from engine.trust import find_trust_boundary
 
-SCHEMA_VERSION = "0.3"   # 0.2: "journey" (hop map); 0.3: "impersonation"
+SCHEMA_VERSION = "0.4"   # 0.2: "journey"; 0.3: "impersonation"; 0.4: "verdict"
 
 
 def analyze(raw: str | bytes) -> dict:
@@ -30,7 +31,7 @@ def analyze(raw: str | bytes) -> dict:
     hops = build_hop_map(headers, trust, ids)
     look = check_lookalike(ids)
 
-    return {
+    report = {
         "schema_version": SCHEMA_VERSION,
         "normalize": {
             "header_count": len(headers.headers),
@@ -72,7 +73,9 @@ def analyze(raw: str | bytes) -> dict:
             "entry_number": hops.entry_number,
             "total_seconds": hops.total_seconds,
         },
-        # Codes raised so far; the rules engine (rules.py) will turn these
-        # into a verdict in a later step.
+        # Every code raised; rules.py (config/rules.yaml) turns them into the verdict.
         "codes": headers.warnings + ([trust.status] if trust.status != "TRUST_PROVIDER_STAMP" else []) + ids.codes + hops.codes + look.codes,
     }
+    v = decide(report)
+    report["verdict"] = {"tier": v.tier, "reasons": v.reasons, "notes": v.notes}
+    return report
