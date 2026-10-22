@@ -55,11 +55,11 @@ Itaú,itau.com.br,,bank,Itau;Itaú;Banco Itau,BR,
 Santander,santander.com,santanderbank.com,bank,Santander,US,
 HSBC,hsbc.com,,bank,HSBC,GB,
 Barclays,barclays.co.uk,barclays.com,bank,Barclays,GB,
-CBZ Bank,cbz.co.zw,,bank,CBZ;CBZ Bank,ZW,yes
-Stanbic Bank Zimbabwe,stanbicbank.co.zw,,bank,Stanbic;Stanbic Bank,ZW,yes
-CABS,cabs.co.zw,,bank,CABS;Central Africa Building Society,ZW,yes
-FBC Bank,fbc.co.zw,,bank,FBC;FBC Bank,ZW,yes
-Steward Bank,stewardbank.co.zw,,bank,Steward Bank,ZW,yes
+CBZ Bank,cbz.co.zw,,bank,CBZ;CBZ Bank,ZW,
+Stanbic Bank Zimbabwe,stanbicbank.co.zw,,bank,Stanbic;Stanbic Bank,ZW,
+CABS,cabs.co.zw,,bank,CABS;Central Africa Building Society,ZW,
+FBC Bank,fbc.co.zw,,bank,FBC;FBC Bank,ZW,
+Steward Bank,stewardbank.co.zw,,bank,Steward Bank,ZW,
 PayPal,paypal.com,,payments,PayPal;Pay Pal,US,
 Venmo,venmo.com,,payments,Venmo,US,
 Zelle,zellepay.com,,payments,Zelle,US,
@@ -70,8 +70,8 @@ Remitly,remitly.com,,payments,Remitly,US,
 MoneyGram,moneygram.com,,payments,MoneyGram,US,
 WorldRemit,worldremit.com,,payments,WorldRemit;World Remit,GB,
 Sendwave,sendwave.com,,payments,Sendwave,US,
-Mukuru,mukuru.com,,payments,Mukuru,ZA,yes
-EcoCash,ecocash.co.zw,,payments,EcoCash;Eco Cash,ZW,yes
+Mukuru,mukuru.com,,payments,Mukuru,ZA,
+EcoCash,ecocash.co.zw,,payments,EcoCash;Eco Cash,ZW,
 Coinbase,coinbase.com,,payments,Coinbase,US,
 Chicago Public Schools,cps.edu,,school,Chicago Public Schools;CPS,US,
 NYC Public Schools,schools.nyc.gov,,school,NYC Public Schools;NYC Department of Education;NYC DOE,US,
@@ -100,14 +100,14 @@ PSEG,pseg.com,psegliny.com,utility,PSEG;PSE&G;PSEG Long Island,US,
 Ameren,ameren.com,,utility,Ameren,US,
 Duke Energy,duke-energy.com,,utility,Duke Energy,US,
 PG&E,pge.com,,utility,PG&E;Pacific Gas and Electric,US,
-ZESA,zesa.co.zw,,utility,ZESA;ZETDC,ZW,yes
+ZESA,zetdc.co.zw,zesaholdings.co.zw,utility,ZESA;ZETDC;ZESAHOLDINGS,ZW,
 AT&T,att.com,,telecom,AT&T;ATT,US,
 Verizon,verizon.com,,telecom,Verizon;Verizon Wireless;Fios,US,
 T-Mobile,t-mobile.com,,telecom,T-Mobile;TMobile,US,
 Xfinity,xfinity.com,comcast.com;comcast.net,telecom,Xfinity;Comcast,US,
 Spectrum,spectrum.com,charter.com,telecom,Spectrum;Charter,US,
-Econet Wireless,econet.co.zw,,telecom,Econet,ZW,yes
-TelOne,telone.co.zw,,telecom,TelOne,ZW,yes
+Econet Wireless,econet.co.zw,,telecom,Econet,ZW,
+TelOne,telone.co.zw,,telecom,TelOne,ZW,
 U.S. Postal Service,usps.com,usps.gov,delivery,USPS;U.S. Postal Service;US Postal Service;United States Postal Service;US Postal;Postal Service,US,
 UPS,ups.com,,delivery,UPS;United Parcel Service,US,
 FedEx,fedex.com,,delivery,FedEx;Federal Express,US,
