@@ -82,7 +82,7 @@
     "result_neutral": "No answer",
     "result_temperror": "Could not check (temporary error)",
     "result_permerror": "Could not check (broken setup)",
-    "result_policy": "Policy",
+    "result_policy": "Not checked (blocked by policy)",
     "result_missing": "No result",
     "policy_reject": "The owner says: block fakes.",
     "policy_quarantine": "The owner says: send fakes to spam.",
@@ -91,7 +91,8 @@
     "aligned_no": "The address you see does not match any domain that passed a check.",
     "your_provider": "These results were written by {provider} when the email arrived.",
     "provider_generic": "your mail service",
-    "aligned_but": "That only proves who owns the address, not that they are honest."
+    "aligned_but": "That only proves who owns the address, not that they are honest.",
+    "result_unknown": "Not checked (no readable signature)"
   },
   "flags": {
     "title": "Red flags",
