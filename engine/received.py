@@ -354,6 +354,12 @@ def build_hop_map(headers: NormalizedHeaders, trust: TrustInfo, ids=None) -> Hop
     if ids is not None and e is not None and ids.from_domain and not ids.aligned:
         sender = e.from_ptr or e.from_host
         sender_org = _registrable(sender)
+        # With no PTR recorded, the only name is the HELO, which the sender
+        # typed. If SPF did not pass, nothing backs that name up ("EHLO
+        # online.de" from an IP online.de never authorised), so it proves
+        # no connection to the From domain.
+        if not e.from_ptr and not ids.spf_pass:
+            sender_org = None
         # Domains that actually passed a check; a domain named in a failed
         # or "none" SPF result vouched for nothing.
         vouched = {ids.from_org, *ids.dkim_pass_orgs}

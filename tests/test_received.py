@@ -111,6 +111,20 @@ def test_entry_unrelated_only_when_not_aligned():
     assert R.HOP_ENTRY_UNRELATED not in _map(esp).codes
 
 
+def test_helo_alone_does_not_vouch_when_spf_fails():
+    # "EHLO online.de" from an IP online.de never authorised (phish_wild_011).
+    text = ("Received: from 127.0.0.1 by atlas.mail.yahoo.com with HTTP; Sun, 25 Oct 2026 21:20:13 +0000\n"
+            "Authentication-Results: mta.yahoo.com; spf=softfail smtp.mailfrom=online.de;"
+            " dmarc=fail(p=NONE) header.from=online.de\n"
+            "Received: from 92.71.249.74 (EHLO online.de) by 10.200.77.175 with SMTP;"
+            " Sun, 25 Oct 2026 21:20:13 +0000\n"
+            "From: Emily <someone@online.de>\n")
+    assert R.HOP_ENTRY_UNRELATED in _map(text).codes
+    # The same HELO with SPF passing is backed up, so no flag.
+    ok = text.replace("spf=softfail", "spf=pass").replace("dmarc=fail(p=NONE)", "dmarc=pass(p=NONE)")
+    assert R.HOP_ENTRY_UNRELATED not in _map(ok).codes
+
+
 def test_no_received():
     assert _map("From: a@b.com\nSubject: hi\n").codes == [R.HOP_NONE]
 

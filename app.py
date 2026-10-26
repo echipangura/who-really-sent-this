@@ -115,6 +115,8 @@ def render(report: dict, lang: str) -> None:
     for label, question, answer in lines:
         st.markdown(f"**{label}** · {question}  \n→ **{answer}**")
     st.markdown(("✔️ " + T("auth.aligned_yes")) if ids["aligned"] else ("✖️ " + T("auth.aligned_no")))
+    if ids["aligned"] and v["tier"] != "CHECKS_OUT":
+        st.caption(T("auth.aligned_but"))
 
     # 4. Red flags.
     st.subheader(T("flags.title"))
