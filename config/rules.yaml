@@ -73,6 +73,16 @@ rules:
     verdict: BE_CAREFUL
     when: {any: [NORM_POSSIBLY_TRUNCATED, NORM_NO_HEADERS_FOUND, ID_FROM_MISSING]}
 
+  - id: DMARC_FAIL_NOT_ENFORCED
+    # The From domain's owner did not send this, but only asks providers to
+    # watch (p=none), so they deliver it anyway. Yellow, not red: small
+    # senders with a half-finished setup fail this way too.
+    verdict: BE_CAREFUL
+    when:
+      all:
+        - dmarc_fail
+        - not: dmarc_enforced
+
   - id: NO_DMARC
     verdict: BE_CAREFUL
     when: {any: [dmarc_missing]}

@@ -49,7 +49,8 @@
     "RULE_REPLY_TO_ELSEWHERE": "If you reply, your answer goes to someone else.",
     "RULE_FREEMAIL_INSTITUTION": "It uses the name of {name}, but it comes from a free email account. Real offices do not do that.",
     "RULE_UNRELATED_FIRST_SERVER": "It started at a computer that has nothing to do with the sender.",
-    "RULE_ODD_ROUTE": "The times on this email's route do not make sense."
+    "RULE_ODD_ROUTE": "The times on this email's route do not make sense.",
+    "RULE_DMARC_FAIL_NOT_ENFORCED": "The owner of this address did not send it. Their mail settings do not block fakes."
   },
   "note": {
     "NOTE_PASS_NOT_SAFE": "This only shows who sent it. A real sender can still send a bad link. If it asks for money or passwords, check with them another way."
@@ -89,7 +90,8 @@
     "aligned_yes": "The address you see matches a domain that passed a check.",
     "aligned_no": "The address you see does not match any domain that passed a check.",
     "your_provider": "These results were written by {provider} when the email arrived.",
-    "provider_generic": "your mail service"
+    "provider_generic": "your mail service",
+    "aligned_but": "That only proves who owns the address, not that they are honest."
   },
   "flags": {
     "title": "Red flags",
@@ -149,7 +151,7 @@
     "go_direct": "Go to the real website yourself. Type the address. Do not use the email's links.",
     "never_share": "Never send passwords, codes, or bank details by email.",
     "ask": "Not sure? Call the company using a number you already trust, like the one on your card or bill.",
-    "report_in_app": "Report it in your email app: in Gmail, use the three dots and choose **Report phishing**. In Outlook, choose **Report** and then **Report phishing**.",
+    "report_in_app": "Report it in your email app. Gmail: three dots, then **Report phishing**. Outlook: **Report**, then **Report phishing**. Apple Mail or iCloud: **Move to Junk**. Yahoo: **Spam**.",
     "report_title": "Report it",
     "report_ftc": "Report scams to the Federal Trade Commission",
     "report_ic3": "Report online crime to the FBI",
