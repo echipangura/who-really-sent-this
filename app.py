@@ -31,6 +31,8 @@ REPORT_LINKS = {
     "immigration": [("todo.report_uscis", "https://www.uscis.gov/avoid-scams/report-scams")],
     "delivery": [("todo.report_uspis", "https://www.uspis.gov/report/")],
 }
+# Official Spanish versions, used when the page is in Spanish.
+LOCALIZED_LINKS = {"es": {"https://reportfraud.ftc.gov": "https://reportefraude.ftc.gov"}}
 PROVIDER_NAMES = {"gmail": "Gmail", "outlook": "Outlook", "yahoo": "Yahoo Mail", "icloud": "iCloud Mail"}
 BANNER = {"CHECKS_OUT": ("✅", st.success), "BE_CAREFUL": ("⚠️", st.warning), "LIKELY_SCAM": ("⛔", st.error)}
 # Shown, but as "good to know" rather than red flags: on their own they are
@@ -59,7 +61,7 @@ def result_word(result: str | None, lang: str) -> str:
 def short_time(iso: str | None) -> str:
     if not iso:
         return ""
-    return datetime.fromisoformat(iso).strftime("%b %d, %H:%M:%S UTC")
+    return datetime.fromisoformat(iso).strftime("%Y-%m-%d %H:%M:%S UTC")  # reads the same in every language
 
 
 def render(report: dict, lang: str) -> None:
@@ -78,13 +80,18 @@ def render(report: dict, lang: str) -> None:
     # 2. Who it says it is from, and where it came from.
     st.subheader(T("who.title"))
     entry = next((h for h in report["journey"]["hops"] if h["entry"]), None)
+    # The only name for the first server is the one it gave itself, and the
+    # checks show it is unrelated: say so instead of repeating the claim.
+    helo_only = bool(entry and not entry["from_ptr"] and entry["from_host"]
+                     and "HOP_ENTRY_UNRELATED" in report["codes"])
     vouched = sorted(set(ids["dkim_pass_orgs"] + ([ids["spf_org"]] if ids["spf_aligned"] or
                                                    report["auth"]["spf"]["result"] == "pass" else [])) - {None})
     rows = [
         (T("who.shown_name"), ids["from_display"] or T("who.unknown")),
         (T("who.shown_address"), ids["from_address"] or T("who.unknown")),
         (T("who.vouched"), ", ".join(vouched) or T("who.vouched_none")),
-        (T("who.first_server"), " ".join(x for x in ((entry or {}).get("from_ptr") or (entry or {}).get("from_host"),
+        (T("who.first_server"), " ".join(x for x in (T("journey.calls_itself", name=entry["from_host"]) if helo_only
+                                                      else (entry or {}).get("from_ptr") or (entry or {}).get("from_host"),
                                                       f"[{entry['from_ip']}]" if entry and entry.get("from_ip") else None) if x)
          or T("who.unknown")),
     ]
@@ -140,6 +147,8 @@ def render(report: dict, lang: str) -> None:
         for h in hops:
             src = h["from_ptr"] or h["from_host"] or h["from_ip"] or (
                 T("journey.inside") if h["trusted"] else T("journey.unknown_host"))
+            if h["entry"] and helo_only:
+                src = T("journey.calls_itself", name=h["from_host"])
             line = f"**{T('journey.step', n=h['number'])}:** `{T('journey.from_to', **{'from': src, 'to': h['by_host'] or T('journey.unknown_host')})}`"
             if h["timestamp"]:
                 line += f" · {T('journey.at', time=short_time(h['timestamp']))}"
@@ -168,7 +177,8 @@ def render(report: dict, lang: str) -> None:
         st.markdown(T("todo.report_in_app"))
         cat = claimed.get("category", "")
         links = REPORT_LINKS.get(cat, []) + REPORT_LINKS["all"]
-        items = [f"- [{T(k)}]({url})" for k, url in links]
+        local = LOCALIZED_LINKS.get(lang, {})
+        items = [f"- [{T(k)}]({local.get(url, url)})" for k, url in links]
         if cat == "bank":
             items.append(f"- {T('todo.report_bank')}")
         if cat == "school":
@@ -184,8 +194,8 @@ def main() -> None:
     st.set_page_config(page_title=i18n.t("app.title"), page_icon="📧", layout="centered")
     langs = i18n.available()
     names = {"en": "English", "es": "Español"}
-    lang = st.sidebar.selectbox("🌐", langs, format_func=lambda x: names.get(x, x),
-                                label_visibility="collapsed") if len(langs) > 1 else "en"
+    lang = st.radio("🌐 Language / Idioma", langs, format_func=lambda x: names.get(x, x),
+                    horizontal=True) if len(langs) > 1 else "en"
     T = lambda key, **kw: i18n.t(key, lang, **kw)  # noqa: E731
 
     if st.sidebar.toggle(T("app.large_text")):
