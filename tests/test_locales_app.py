@@ -83,3 +83,62 @@ def test_app_asks_for_input_when_empty():
     at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
     at.button[0].click().run()
     assert at.warning[0].value == i18n.t("app.empty_paste")
+
+
+# --- Spanish (brief, Week 5 / Gate 2) ------------------------------------
+
+ES = json.loads((ROOT / "locales" / "es.json").read_text(encoding="utf-8"))
+
+
+def _flat(d, prefix=""):
+    out = {}
+    for k, v in d.items():
+        key = f"{prefix}{k}"
+        out.update(_flat(v, key + ".") if isinstance(v, dict) else {key: v})
+    return out
+
+
+def test_spanish_has_every_english_string():
+    missing = set(_flat(EN)) - set(_flat(ES))
+    assert not missing, sorted(missing)
+
+
+def test_spanish_keeps_the_same_placeholders():
+    en, es = _flat(EN), _flat(ES)
+    for key, text in en.items():
+        assert set(re.findall(r"{(\w+)}", text)) == set(re.findall(r"{(\w+)}", es.get(key, ""))), key
+
+
+def test_spanish_verdict_labels_follow_the_brief():
+    assert ES["verdict"]["CHECKS_OUT"]["title"] == "Parece legítimo"
+    assert ES["verdict"]["BE_CAREFUL"]["title"] == "Tenga cuidado"
+    assert ES["verdict"]["LIKELY_SCAM"]["title"] == "Probablemente es una estafa"
+
+
+def test_both_languages_offered():
+    assert i18n.available() == ["en", "es"]
+
+
+@pytest.mark.parametrize("name", ["phish_wild_008.eml", "legit_gmail_001.eml", "phish_wild_011.eml"])
+def test_app_renders_in_spanish(name):
+    from streamlit.testing.v1 import AppTest
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+    at.radio[0].set_value("es").run()
+    at.text_area[0].input((FIXTURES / name).read_text(encoding="utf-8")).run()
+    at.button[0].click().run()
+    assert not at.exception
+    tier = analyze((FIXTURES / name).read_bytes())["verdict"]["tier"]
+    banner = (list(at.success) + list(at.warning) + list(at.error))[0].value
+    assert ES["verdict"][tier]["title"] in banner
+    page = " ".join(m.value for m in at.markdown)
+    if tier != "CHECKS_OUT":
+        assert "reportefraude.ftc.gov" in page          # the FTC's own Spanish site
+
+
+def test_helo_only_entry_is_described_as_a_claim():
+    from streamlit.testing.v1 import AppTest
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+    at.text_area[0].input((FIXTURES / "phish_wild_011.eml").read_text(encoding="utf-8")).run()
+    at.button[0].click().run()
+    page = " ".join(m.value for m in at.markdown)
+    assert "a computer calling itself online.de" in page

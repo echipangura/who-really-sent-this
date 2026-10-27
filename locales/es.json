@@ -1,0 +1,170 @@
+{
+  "app": {
+    "title": "¿Quién envió esto de verdad?",
+    "tagline": "Pegue los encabezados de un correo. Descubra quién lo envió de verdad.",
+    "language": "Idioma",
+    "large_text": "Letra grande",
+    "paste_label": "Pegue aquí los encabezados del correo",
+    "paste_help": "También puede pegar el mensaje completo. Solo leemos los encabezados.",
+    "check_button": "Revisar este correo",
+    "empty_paste": "Primero pegue los encabezados del correo.",
+    "privacy": "Nada de lo que pegue se guarda ni se envía a ningún lugar. Se revisa aquí y luego se borra.",
+    "results": "Resultados"
+  },
+  "guide": {
+    "title": "¿Cómo encuentro los encabezados?",
+    "intro": "Cada correo tiene unas líneas ocultas llamadas encabezados. Muestran de dónde vino de verdad. Así se copian.",
+    "gmail": "**Gmail:** abra el correo. Haga clic en los tres puntos (⋮) junto a Responder. Elija **Mostrar original** (*Show original*). Haga clic en **Copiar al portapapeles**.",
+    "outlook": "**Outlook.com:** abra el correo. Haga clic en los tres puntos (…). Elija **Ver** y luego **Ver origen del mensaje** (*View message source*). Seleccione todo y cópielo.",
+    "outlook_desktop": "**Outlook en una computadora:** abra el correo. Elija **Archivo** y luego **Propiedades**. Copie el cuadro **Encabezados de Internet** (*Internet headers*).",
+    "yahoo": "**Yahoo Mail:** abra el correo. Haga clic en los tres puntos (…). Elija **Ver mensaje sin formato** (*View raw message*). Seleccione todo y cópielo.",
+    "apple": "**Apple Mail (Mac):** abra el correo. Elija **Visualización**, luego **Mensaje** y luego **Fuente original** (*Raw Source*). Seleccione todo y cópielo.",
+    "help_link": "Ayuda paso a paso de {provider}"
+  },
+  "verdict": {
+    "CHECKS_OUT": {
+      "title": "Parece legítimo",
+      "sentence": "Este correo vino de verdad de la dirección que muestra."
+    },
+    "BE_CAREFUL": {
+      "title": "Tenga cuidado",
+      "sentence": "Algo en este correo no está bien. Confírmelo por otro medio antes de actuar."
+    },
+    "LIKELY_SCAM": {
+      "title": "Probablemente es una estafa",
+      "sentence": "Este correo no es de quien dice ser. No haga clic, no responda y no pague."
+    }
+  },
+  "rule": {
+    "RULE_DMARC_FAIL_ENFORCED": "El dueño real de esta dirección pidió bloquear los correos falsos. Este correo no pasó esa prueba.",
+    "RULE_UNAUTHENTICATED_IMPERSONATION": "Usa el nombre de una empresa u oficina conocida. Nada prueba que venga de ellos.",
+    "RULE_LOOKALIKE_INSTITUTION_DOMAIN": "La dirección se parece a la de una empresa real, pero es una copia.",
+    "RULE_INSTITUTION_NAME_WRONG_DOMAIN": "El nombre dice que es {name}. La dirección no es suya.",
+    "RULE_ADDRESS_DISGUISED_AS_NAME": "El nombre que se ve es una dirección de correo. El remitente real es otro.",
+    "RULE_INVALID_FROM_DOMAIN": "La dirección del remitente termina de una forma que no existe en internet.",
+    "RULE_FORGED_PROVIDER_HOP": "El correo tiene una línea falsa que finge que su servicio de correo lo recibió.",
+    "RULE_INCOMPLETE_HEADERS": "Faltan algunos encabezados. Cópielos otra vez, todos, y revise de nuevo.",
+    "RULE_NO_DMARC": "La dirección del remitente no tiene una prueba clara de que es real.",
+    "RULE_NOT_ALIGNED": "La dirección que usted ve no es la que se revisó.",
+    "RULE_REPLY_TO_ELSEWHERE": "Si responde, su respuesta le llega a otra persona.",
+    "RULE_FREEMAIL_INSTITUTION": "Usa el nombre de {name}, pero viene de una cuenta de correo gratuita. Las oficinas reales no hacen eso.",
+    "RULE_UNRELATED_FIRST_SERVER": "Salió de una computadora que no tiene nada que ver con el remitente.",
+    "RULE_ODD_ROUTE": "Las horas del recorrido de este correo no tienen sentido.",
+    "RULE_DMARC_FAIL_NOT_ENFORCED": "El dueño de esta dirección no lo envió. Su configuración no bloquea los correos falsos."
+  },
+  "note": {
+    "NOTE_PASS_NOT_SAFE": "Esto solo muestra quién lo envió. Un remitente real también puede enviar un enlace peligroso. Si le pide dinero o contraseñas, confírmelo por otro medio."
+  },
+  "who": {
+    "title": "De quién dice ser y de dónde vino",
+    "shown_name": "Nombre que usted ve",
+    "shown_address": "Dirección que usted ve",
+    "vouched": "Dominio que probó que lo envió",
+    "vouched_none": "Ninguno. Ningún dominio lo probó.",
+    "first_server": "Primera computadora de afuera que vio su servicio de correo",
+    "unknown": "No aparece",
+    "claims": "Este correo dice ser de **{name}**. Su dirección real termina en **{domains}**.",
+    "lookalike": "**{shown}** está hecho para parecerse a **{real}**. No es el mismo sitio web.",
+    "punycode": "La dirección usa letras extranjeras ocultas. Se ve como **{decoded}**."
+  },
+  "auth": {
+    "title": "Las tres pruebas, en palabras sencillas",
+    "spf_name": "SPF",
+    "spf_what": "¿La computadora que lo envió tenía permiso para enviar por {domain}?",
+    "dkim_name": "DKIM",
+    "dkim_what": "¿El correo tiene una firma digital, y está intacta?",
+    "dmarc_name": "DMARC",
+    "dmarc_what": "¿Pasó la prueba que el dueño de {domain} puso para el correo real?",
+    "result_pass": "Pasó",
+    "result_fail": "No pasó",
+    "result_softfail": "No pasó (falla leve)",
+    "result_none": "No se revisó",
+    "result_neutral": "Sin respuesta",
+    "result_temperror": "No se pudo revisar (error temporal)",
+    "result_permerror": "No se pudo revisar (configuración dañada)",
+    "result_policy": "No se revisó (bloqueado por una regla)",
+    "result_missing": "Sin resultado",
+    "policy_reject": "El dueño dice: bloquear los falsos.",
+    "policy_quarantine": "El dueño dice: mandar los falsos a correo no deseado.",
+    "policy_none": "El dueño solo observa. Los falsos no se bloquean.",
+    "aligned_yes": "La dirección que usted ve coincide con un dominio que pasó una prueba.",
+    "aligned_no": "La dirección que usted ve no coincide con ningún dominio que pasó una prueba.",
+    "your_provider": "Estos resultados los escribió {provider} cuando llegó el correo.",
+    "provider_generic": "su servicio de correo",
+    "aligned_but": "Eso solo prueba quién es el dueño de la dirección, no que sea honesto.",
+    "result_unknown": "No se revisó (no hay firma legible)"
+  },
+  "flags": {
+    "title": "Señales de alerta",
+    "none": "No se encontraron señales de alerta.",
+    "ID_REPLY_TO_MISMATCH": "Las respuestas van a otra dirección: {reply_to}.",
+    "ID_RETURN_PATH_MISMATCH": "Los correos rebotados van a otro dominio. Los servicios de correo lo hacen a menudo, así que por sí solo no es un problema.",
+    "ID_FREEMAIL_FROM": "Se envió desde una cuenta de correo gratuita.",
+    "ID_FROM_DOMAIN_INVALID": "La dirección del remitente termina de una forma que no existe.",
+    "ID_FROM_MISSING": "No hay dirección del remitente.",
+    "LOOK_DISPLAY_NAME_SPOOF": "El nombre no coincide con la dirección.",
+    "LOOK_LOOKALIKE_DOMAIN": "La dirección imita a una dirección real.",
+    "LOOK_PUNYCODE_DOMAIN": "La dirección esconde letras extranjeras que parecen normales.",
+    "LOOK_FREEMAIL_INSTITUTION": "Nombre de una empresa u oficina, enviado desde una cuenta gratuita.",
+    "LOOK_ADDRESS_IN_NAME": "El nombre que se ve es otra dirección de correo.",
+    "HOP_FORGED_PROVIDER": "El remitente falsificó una línea del recorrido.",
+    "HOP_ENTRY_UNRELATED": "La primera computadora no tiene nada que ver con el remitente.",
+    "HOP_TIME_REVERSED": "El recorrido va hacia atrás en el tiempo.",
+    "HOP_LONG_DELAY": "El correo esperó más de un día en algún punto del camino.",
+    "HOP_MALFORMED": "Algunas líneas del recorrido son difíciles de leer.",
+    "NORM_POSSIBLY_TRUNCATED": "Parece que lo que pegó está cortado.",
+    "NORM_NO_HEADERS_FOUND": "No se encontraron encabezados de correo en lo que pegó.",
+    "NORM_MISSING_AUTH_RESULTS": "Faltan los resultados de las pruebas de su servicio de correo.",
+    "NORM_INPUT_TOO_LARGE": "Lo que pegó es muy largo. Solo se revisó la primera parte.",
+    "TRUST_NO_STAMP": "No se encontraron los resultados de las pruebas de su servicio de correo.",
+    "TRUST_GENERIC_STAMP": "No reconocimos su servicio de correo, así que estos resultados son menos seguros.",
+    "info_title": "Bueno saberlo (normal por sí solo)"
+  },
+  "journey": {
+    "title": "El recorrido",
+    "intro": "Cada paso es una computadora que pasó el correo, desde la primera hasta su bandeja de entrada.",
+    "step": "Paso {n}",
+    "from_to": "{from} → {to}",
+    "at": "a las {time}",
+    "after": "{delay} después del paso anterior",
+    "trusted": "Lo escribió su servicio de correo",
+    "claimed": "Lo afirma el remitente (podría ser inventado)",
+    "entry": "Aquí lo recibió su servicio de correo",
+    "unknown_host": "computadora desconocida",
+    "total": "Tiempo total del recorrido: {delay}",
+    "none": "No se encontraron líneas del recorrido.",
+    "inside": "dentro de su servicio de correo",
+    "calls_itself": "una computadora que se hace llamar {name}"
+  },
+  "time": {
+    "seconds": "{n} s",
+    "minutes": "{n} min",
+    "hours": "{n} h",
+    "days": "{n} días",
+    "negative": "{delay} antes (diferencia de relojes)"
+  },
+  "why": {
+    "title": "Por qué esta respuesta",
+    "none": "Todo lo que podemos revisar pasó, y nada se vio mal."
+  },
+  "todo": {
+    "title": "Qué hacer ahora",
+    "dont_click": "No haga clic en los enlaces ni llame a los teléfonos del correo.",
+    "go_direct": "Vaya usted mismo al sitio web real. Escriba la dirección. No use los enlaces del correo.",
+    "never_share": "Nunca envíe contraseñas, códigos ni datos bancarios por correo.",
+    "ask": "¿No está seguro? Llame a la empresa a un número que ya conoce, como el de su tarjeta o su factura.",
+    "report_in_app": "Repórtelo en su aplicación de correo. Gmail: tres puntos y luego **Denunciar suplantación de identidad** (*Report phishing*). Outlook: **Notificar** y luego **Notificar suplantación de identidad**. Apple Mail o iCloud: **Mover a correo no deseado**. Yahoo: **Spam**.",
+    "report_title": "Repórtelo",
+    "report_ftc": "Reporte estafas a la Comisión Federal de Comercio (FTC)",
+    "report_ic3": "Reporte delitos en internet al FBI (en inglés)",
+    "report_irs": "Correos falsos del IRS o sobre impuestos (en inglés)",
+    "report_uscis": "Correos o avisos falsos de inmigración (en inglés)",
+    "report_uspis": "Correos falsos del Servicio Postal de EE. UU. (en inglés)",
+    "report_bank": "Si es un banco, llame al número que aparece en el reverso de su tarjeta.",
+    "report_school": "Si es una escuela, llame directamente a la oficina de la escuela."
+  },
+  "limits": {
+    "title": "Lo que esta herramienta no puede decirle",
+    "text": "Pasar las pruebas significa que el dueño de la dirección envió el correo. No significa que el correo sea seguro. Una cuenta real que fue hackeada pasará las pruebas. También pasará una estafa enviada desde una cuenta común de Gmail. Esta herramienta solo lee lo que usted pega. No abre enlaces ni busca nada en internet."
+  }
+}

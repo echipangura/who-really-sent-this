@@ -133,7 +133,8 @@
     "unknown_host": "unknown computer",
     "total": "Total trip time: {delay}",
     "none": "No route lines were found.",
-    "inside": "inside your mail service"
+    "inside": "inside your mail service",
+    "calls_itself": "a computer calling itself {name}"
   },
   "time": {
     "seconds": "{n} sec",
