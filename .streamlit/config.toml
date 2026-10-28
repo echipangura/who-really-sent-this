@@ -1,0 +1,7 @@
+# Theme for the app. Keep primaryColor the same as accent_color in
+# config/brand.yaml (docs/white-label.md, step 4).
+[theme]
+primaryColor = "#1F3864"
+
+[browser]
+gatherUsageStats = false

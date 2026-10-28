@@ -166,5 +166,9 @@
   "limits": {
     "title": "Lo que esta herramienta no puede decirle",
     "text": "Pasar las pruebas significa que el dueño de la dirección envió el correo. No significa que el correo sea seguro. Una cuenta real que fue hackeada pasará las pruebas. También pasará una estafa enviada desde una cuenta común de Gmail. Esta herramienta solo lee lo que usted pega. No abre enlaces ni busca nada en internet."
+  },
+  "footer": {
+    "by": "Le ofrece este servicio {org}.",
+    "powered": "Funciona con ¿Quién envió esto de verdad?, software libre y gratuito."
   }
 }

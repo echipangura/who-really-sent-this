@@ -15,6 +15,7 @@ from datetime import datetime
 import streamlit as st
 
 from engine import i18n
+from engine.brand import Brand, load_brand
 from engine.analyze import analyze
 
 # Official help pages for finding headers (checked October 2026).
@@ -23,16 +24,7 @@ HELP_LINKS = {
     "Outlook": "https://support.microsoft.com/en-us/topic/cd039382-dc6e-4264-ac74-c048563d212c",
     "Yahoo": "https://help.yahoo.com/kb/SLN28478.html",
 }
-# Where to report, by the category of institution being impersonated.
-REPORT_LINKS = {
-    "all": [("todo.report_ftc", "https://reportfraud.ftc.gov"),
-            ("todo.report_ic3", "https://www.ic3.gov")],
-    "government": [("todo.report_irs", "https://www.irs.gov/privacy-disclosure/report-phishing")],
-    "immigration": [("todo.report_uscis", "https://www.uscis.gov/avoid-scams/report-scams")],
-    "delivery": [("todo.report_uspis", "https://www.uspis.gov/report/")],
-}
-# Official Spanish versions, used when the page is in Spanish.
-LOCALIZED_LINKS = {"es": {"https://reportfraud.ftc.gov": "https://reportefraude.ftc.gov"}}
+# Reporting links, the logo, colours and names come from config/brand.yaml.
 PROVIDER_NAMES = {"gmail": "Gmail", "outlook": "Outlook", "yahoo": "Yahoo Mail", "icloud": "iCloud Mail"}
 BANNER = {"CHECKS_OUT": ("✅", st.success), "BE_CAREFUL": ("⚠️", st.warning), "LIKELY_SCAM": ("⛔", st.error)}
 # Shown, but as "good to know" rather than red flags: on their own they are
@@ -64,7 +56,7 @@ def short_time(iso: str | None) -> str:
     return datetime.fromisoformat(iso).strftime("%Y-%m-%d %H:%M:%S UTC")  # reads the same in every language
 
 
-def render(report: dict, lang: str) -> None:
+def render(report: dict, lang: str, brand: Brand) -> None:
     T = lambda key, **kw: i18n.t(key, lang, **kw)  # noqa: E731
     v, ids, imp = report["verdict"], report["identities"], report["impersonation"]
     claimed = (imp or {}).get("claimed") or {}
@@ -176,13 +168,10 @@ def render(report: dict, lang: str) -> None:
         st.markdown(f"**{T('todo.report_title')}**")
         st.markdown(T("todo.report_in_app"))
         cat = claimed.get("category", "")
-        links = REPORT_LINKS.get(cat, []) + REPORT_LINKS["all"]
-        local = LOCALIZED_LINKS.get(lang, {})
-        items = [f"- [{T(k)}]({local.get(url, url)})" for k, url in links]
-        if cat == "bank":
-            items.append(f"- {T('todo.report_bank')}")
-        if cat == "school":
-            items.append(f"- {T('todo.report_school')}")
+        items = []
+        for link in brand.links_for(cat):
+            text, url = link.text(lang, i18n.t), link.link(lang)
+            items.append(f"- [{text}]({url})" if url else f"- {text}")
         st.markdown("\n".join(items))
 
     # 8. What this tool cannot tell you.
@@ -191,19 +180,29 @@ def render(report: dict, lang: str) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title=i18n.t("app.title"), page_icon="📧", layout="centered")
-    langs = i18n.available()
+    brand = load_brand()
+    st.set_page_config(page_title=brand.pick("app_name", "en") or i18n.t("app.title"),
+                       page_icon="📧", layout="centered")
+    langs = [x for x in brand.languages if x in i18n.available()] or ["en"]
     names = {"en": "English", "es": "Español"}
     lang = st.radio("🌐 Language / Idioma", langs, format_func=lambda x: names.get(x, x),
-                    horizontal=True) if len(langs) > 1 else "en"
+                    horizontal=True) if len(langs) > 1 else langs[0]
     T = lambda key, **kw: i18n.t(key, lang, **kw)  # noqa: E731
 
+    # Brand accent on the main button and links (the value is checked as a hex code).
+    a = brand.accent_color
+    st.markdown(f"<style>[data-testid='stBaseButton-primary'], button[kind='primary'] "
+                f"{{background-color:{a};border-color:{a};}} .stMarkdown a {{color:{a};}}</style>",
+                unsafe_allow_html=True)
     if st.sidebar.toggle(T("app.large_text")):
         st.markdown("<style>html, body, [class*='st-'] {font-size: 1.25rem !important;}</style>",
                     unsafe_allow_html=True)
 
-    st.title(f"📧 {T('app.title')}")
-    st.markdown(T("app.tagline"))
+    if brand.logo:
+        st.image(brand.logo, width=180)
+    title = brand.pick("app_name", lang) or T("app.title")
+    st.title(title if brand.logo else f"📧 {title}")
+    st.markdown(brand.pick("tagline", lang) or T("app.tagline"))
 
     with st.expander(T("guide.title")):
         st.markdown(T("guide.intro"))
@@ -218,7 +217,16 @@ def main() -> None:
             st.warning(T("app.empty_paste"))
         else:
             st.divider()
-            render(analyze(raw), lang)
+            render(analyze(raw), lang, brand)
+
+    # Footer: who runs this copy, an optional contact line, and the project credit.
+    st.divider()
+    org = f"[{brand.org_name}]({brand.org_website})" if brand.org_website else brand.org_name
+    lines = [T("footer.by", org=org)] if brand.org_name else []
+    if brand.pick("footer_contact", lang):
+        lines.append(brand.pick("footer_contact", lang))
+    lines.append(T("footer.powered"))
+    st.caption("  \n".join(lines))
 
 
 main()

@@ -1,0 +1,56 @@
+# Brand settings for "Who Really Sent This?" (brief, Section 5.5).
+#
+# A branded deployment for a school, credit union, library or senior centre
+# is a copy of this repository plus changes to THIS FILE ONLY.
+# See docs/white-label.md for the step-by-step guide.
+#
+# Text that readers see is given per language: {en: "...", es: "..."}.
+# Leave a value empty ("") to use the default.
+
+organization:
+  name: Chicago Education Advocacy Cooperative     # shown in the footer
+  website: https://www.linkedin.com/company/chieac/ # link on the name ("" for none)
+
+# Optional: a different app name or tagline for this deployment.
+# Empty = the standard "Who Really Sent This?" wording from locales/.
+app_name: {en: "", es: ""}
+tagline: {en: "", es: ""}
+
+# Optional: logo shown above the title. A path inside this repository
+# (e.g. assets/logo.png) or an https:// link. Empty = the envelope emoji.
+logo: ""
+
+# Accent colour for the main button and links (a hex code).
+# Also set the same value as primaryColor in .streamlit/config.toml.
+accent_color: "#1F3864"
+
+# Which languages to offer, in order. Each needs a file in locales/.
+languages: [en, es]
+
+# Optional extra line in the footer, e.g. who to call with questions.
+footer_contact: {en: "", es: ""}
+
+# Where to report a suspicious email, by the kind of institution it
+# pretends to be. "all" is shown for every yellow or red result.
+# Each entry has either:
+#   label_key: a built-in label from locales/   OR   label: {en: ..., es: ...}
+# and optionally:
+#   url:    the link (leave out for advice with no link)
+#   url_es: a Spanish-language version of the link
+# Categories match data/impersonated_institutions.csv: government,
+# immigration, bank, payments, school, utility, telecom, delivery, tech,
+# retail, healthcare, jobs.
+reporting_links:
+  all:
+    - {label_key: todo.report_ftc, url: "https://reportfraud.ftc.gov", url_es: "https://reportefraude.ftc.gov"}
+    - {label_key: todo.report_ic3, url: "https://www.ic3.gov"}
+  government:
+    - {label_key: todo.report_irs, url: "https://www.irs.gov/privacy-disclosure/report-phishing"}
+  immigration:
+    - {label_key: todo.report_uscis, url: "https://www.uscis.gov/avoid-scams/report-scams"}
+  delivery:
+    - {label_key: todo.report_uspis, url: "https://www.uspis.gov/report/"}
+  bank:
+    - {label_key: todo.report_bank}
+  school:
+    - {label_key: todo.report_school}

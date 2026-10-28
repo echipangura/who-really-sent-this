@@ -166,5 +166,9 @@
   "limits": {
     "title": "What this tool cannot tell you",
     "text": "A pass means the owner of the address sent the email. It does not mean the email is safe. A real account that was hacked will pass. So will a scam sent from an ordinary Gmail account. This tool reads only what you paste. It does not open links or look anything up."
+  },
+  "footer": {
+    "by": "Brought to you by {org}.",
+    "powered": "Powered by Who Really Sent This?, free and open-source software."
   }
 }
