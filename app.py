@@ -17,6 +17,7 @@ import streamlit as st
 from engine import i18n
 from engine.brand import Brand, load_brand
 from engine.analyze import analyze
+from engine import batch
 
 # Official help pages for finding headers (checked October 2026).
 HELP_LINKS = {
@@ -183,6 +184,47 @@ def render(report: dict, lang: str, brand: Brand) -> None:
     st.markdown(T("limits.text"))
 
 
+
+def render_batch(lang: str, brand: Brand) -> None:
+    """Check several saved emails at once; riskiest first, with a CSV summary."""
+    T = lambda key, **kw: i18n.t(key, lang, **kw)  # noqa: E731
+    st.markdown(T("batch.intro"))
+    with st.expander(T("batch.how_title")):
+        st.markdown(T("batch.how"))
+    files = st.file_uploader(T("batch.upload_label"), type=["eml", "txt"], accept_multiple_files=True,
+                             help=T("batch.upload_help", max=batch.MAX_FILES))
+    st.caption("🔒 " + T("batch.privacy"))
+    if not st.button(T("batch.check_button"), type="primary", key="check_many"):
+        return
+    if not files:
+        st.warning(T("batch.empty"))
+        return
+    if len(files) > batch.MAX_FILES:
+        st.info(T("batch.too_many", max=batch.MAX_FILES))
+    rows = batch.check_many((f.name, f.getvalue()) for f in files)
+    st.divider()
+    c = batch.counts(rows)
+    st.markdown(T("batch.summary", scam=c["LIKELY_SCAM"], careful=c["BE_CAREFUL"], ok=c["CHECKS_OUT"]))
+    if c["UNREADABLE"]:
+        st.warning(T("batch.unreadable_count", n=c["UNREADABLE"]))
+    table = [{T("batch.col_file"): r.name,
+              T("batch.col_result"): (f"{BANNER[r.tier][0]} {T(f'verdict.{r.tier}.title')}" if r.tier
+                                      else T("batch.unreadable")),
+              T("batch.col_reason"): T(f"rule.{r.reason}", name=r.claimed) if r.reason else "",
+              T("batch.col_name"): r.from_display,
+              T("batch.col_address"): r.from_address}
+             for r in rows]
+    st.dataframe(table, hide_index=True, width="stretch")
+    # The BOM lets Excel show accents; on_click="ignore" keeps the results on screen.
+    st.download_button(T("batch.download"), "\ufeff" + batch.to_csv(rows, T),
+                       file_name=T("batch.download_name"), mime="text/csv", on_click="ignore")
+    st.subheader(T("batch.details"))
+    for r in rows:
+        if r.report is None:
+            continue
+        with st.expander(f"{BANNER[r.tier][0]} {r.name} · {T(f'verdict.{r.tier}.title')}"):
+            render(r.report, lang, brand)
+
 def main() -> None:
     brand = load_brand()
     st.set_page_config(page_title=brand.pick("app_name", "en") or i18n.t("app.title"),
@@ -214,16 +256,20 @@ def main() -> None:
             st.markdown(f"- {T(f'guide.{key}')}")
         st.markdown(" · ".join(f"[{T('guide.help_link', provider=p)}]({u})" for p, u in HELP_LINKS.items()))
 
-    raw = st.text_area(T("app.paste_label"), help=T("app.paste_help"), height=220)
-    st.caption("🔒 " + T("app.privacy"))
-    with st.expander("🔒 " + T("privacy.title")):
-        st.markdown(T("privacy.text", hosting_url=HOSTING_PRIVACY_URL, code_url=CODE_URL))
-    if st.button(T("app.check_button"), type="primary"):
-        if not raw.strip():
-            st.warning(T("app.empty_paste"))
-        else:
-            st.divider()
-            render(analyze(raw), lang, brand)
+    one, many = st.tabs([T("batch.tab_one"), T("batch.tab_many")])
+    with one:
+        raw = st.text_area(T("app.paste_label"), help=T("app.paste_help"), height=220)
+        st.caption("🔒 " + T("app.privacy"))
+        with st.expander("🔒 " + T("privacy.title")):
+            st.markdown(T("privacy.text", hosting_url=HOSTING_PRIVACY_URL, code_url=CODE_URL))
+        if st.button(T("app.check_button"), type="primary"):
+            if not raw.strip():
+                st.warning(T("app.empty_paste"))
+            else:
+                st.divider()
+                render(analyze(raw), lang, brand)
+    with many:
+        render_batch(lang, brand)
 
     # Footer: who runs this copy, an optional contact line, and the project credit.
     st.divider()

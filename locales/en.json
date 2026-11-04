@@ -174,5 +174,29 @@
   "privacy": {
     "title": "Your privacy: what happens to what you paste",
     "text": "**What this tool does**\n\n- It reads the headers you paste, checks them, and shows the result on this page.\n- When you close or refresh the page, your text is gone. The tool keeps no copy.\n\n**What this tool never does**\n\n- It never saves what you paste, in a file, a database or a log.\n- It never sends your email to anyone, and it does not look anything up on the internet.\n- It never opens the links or attachments in your email.\n- It does not collect usage statistics or track you.\n\n**Good to know**\n\n- This page runs on Streamlit Community Cloud. Like any website, your text passes through their computers while it is checked. Read [Streamlit's privacy notice]({hosting_url}).\n- Headers show your own email address. If you prefer, delete the lines that start with **To:** and **Delivered-To:** before you paste. The check still works.\n- Never paste a password or a code. This tool never needs them.\n- The code is free and open, so anyone can check that it does what this page says: [see the code]({code_url})."
+  },
+  "batch": {
+    "tab_one": "Check one email",
+    "tab_many": "Check several emails",
+    "intro": "Save each email as a file, then add them all here. This helps a front desk with many \"is this real?\" emails.",
+    "how_title": "How do I save an email as a file?",
+    "how": "- **Gmail:** open the email, click **⋮** (More) next to Reply, then **Download message**.\n- **Outlook on the web:** open the email, click **⋯** (More actions), then **Save as** or **Download**.\n- **Apple Mail:** select the email, then **File → Save As**, and choose **Raw Message Source**.\n- **Any other mail app:** copy the headers as shown in \"How do I find the headers?\", paste them into Notepad, and save as a .txt file.",
+    "upload_label": "Add email files (.eml or .txt)",
+    "upload_help": "Up to {max} files at a time.",
+    "check_button": "Check these emails",
+    "empty": "Please add at least one email file first.",
+    "too_many": "Only the first {max} files were checked. Check the rest in another round.",
+    "summary": "⛔ **{scam}** likely a scam · ⚠️ **{careful}** be careful · ✅ **{ok}** check out",
+    "unreadable_count": "{n} file(s) could not be read. Make sure they are emails saved as .eml or .txt.",
+    "col_file": "File",
+    "col_result": "Result",
+    "col_name": "Name shown",
+    "col_address": "Address shown",
+    "col_reason": "Main reason",
+    "unreadable": "Could not read this file",
+    "details": "Details for each email",
+    "download": "Download this summary (CSV)",
+    "download_name": "email-check-results.csv",
+    "privacy": "The files are checked here and then thrown away. The summary is made only for you to download."
   }
 }
