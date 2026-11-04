@@ -170,5 +170,9 @@
   "footer": {
     "by": "Le ofrece este servicio {org}.",
     "powered": "Funciona con ¿Quién envió esto de verdad?, software libre y gratuito."
+  },
+  "privacy": {
+    "title": "Su privacidad: qué pasa con lo que pega",
+    "text": "**Lo que hace esta herramienta**\n\n- Lee los encabezados que usted pega, los revisa y muestra el resultado en esta página.\n- Cuando cierra o actualiza la página, su texto desaparece. La herramienta no guarda ninguna copia.\n\n**Lo que esta herramienta nunca hace**\n\n- Nunca guarda lo que usted pega, ni en un archivo, ni en una base de datos, ni en un registro.\n- Nunca envía su correo a nadie y no busca nada en internet.\n- Nunca abre los enlaces ni los archivos adjuntos de su correo.\n- No recopila estadísticas de uso ni le sigue.\n\n**Bueno saber**\n\n- Esta página funciona en Streamlit Community Cloud. Como en cualquier sitio web, su texto pasa por sus computadoras mientras se revisa. Lea el [aviso de privacidad de Streamlit]({hosting_url}) (en inglés).\n- Los encabezados muestran su propia dirección de correo. Si prefiere, borre las líneas que empiezan con **To:** y **Delivered-To:** antes de pegar. La revisión sigue funcionando.\n- Nunca pegue una contraseña ni un código. Esta herramienta nunca los necesita.\n- El código es libre y abierto, así que cualquiera puede comprobar que hace lo que dice esta página: [vea el código]({code_url}) (en inglés)."
   }
 }

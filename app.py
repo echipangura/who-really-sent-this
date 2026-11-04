@@ -33,6 +33,10 @@ INFO_ONLY = {"ID_FREEMAIL_FROM", "ID_RETURN_PATH_MISMATCH"}
 SHOWN_FLAGS = ("ID_", "LOOK_", "HOP_", "NORM_POSSIBLY", "NORM_NO_HEADERS", "NORM_MISSING_AUTH",
                "NORM_INPUT_TOO_LARGE", "TRUST_NO", "TRUST_GENERIC")
 
+# Linked from the privacy section. The hosting notice is Streamlit's own.
+HOSTING_PRIVACY_URL = "https://streamlit.io/privacy"
+CODE_URL = "https://github.com/echipangura/who-really-sent-this"
+
 
 def duration(seconds: int | None, lang: str) -> str:
     if seconds is None:
@@ -212,6 +216,8 @@ def main() -> None:
 
     raw = st.text_area(T("app.paste_label"), help=T("app.paste_help"), height=220)
     st.caption("🔒 " + T("app.privacy"))
+    with st.expander("🔒 " + T("privacy.title")):
+        st.markdown(T("privacy.text", hosting_url=HOSTING_PRIVACY_URL, code_url=CODE_URL))
     if st.button(T("app.check_button"), type="primary"):
         if not raw.strip():
             st.warning(T("app.empty_paste"))
