@@ -174,5 +174,29 @@
   "privacy": {
     "title": "Su privacidad: qué pasa con lo que pega",
     "text": "**Lo que hace esta herramienta**\n\n- Lee los encabezados que usted pega, los revisa y muestra el resultado en esta página.\n- Cuando cierra o actualiza la página, su texto desaparece. La herramienta no guarda ninguna copia.\n\n**Lo que esta herramienta nunca hace**\n\n- Nunca guarda lo que usted pega, ni en un archivo, ni en una base de datos, ni en un registro.\n- Nunca envía su correo a nadie y no busca nada en internet.\n- Nunca abre los enlaces ni los archivos adjuntos de su correo.\n- No recopila estadísticas de uso ni le sigue.\n\n**Bueno saber**\n\n- Esta página funciona en Streamlit Community Cloud. Como en cualquier sitio web, su texto pasa por sus computadoras mientras se revisa. Lea el [aviso de privacidad de Streamlit]({hosting_url}) (en inglés).\n- Los encabezados muestran su propia dirección de correo. Si prefiere, borre las líneas que empiezan con **To:** y **Delivered-To:** antes de pegar. La revisión sigue funcionando.\n- Nunca pegue una contraseña ni un código. Esta herramienta nunca los necesita.\n- El código es libre y abierto, así que cualquiera puede comprobar que hace lo que dice esta página: [vea el código]({code_url}) (en inglés)."
+  },
+  "batch": {
+    "tab_one": "Revisar un correo",
+    "tab_many": "Revisar varios correos",
+    "intro": "Guarde cada correo como archivo y luego agréguelos todos aquí. Esto ayuda a una recepción que recibe muchos correos de \"¿esto es real?\".",
+    "how_title": "¿Cómo guardo un correo como archivo?",
+    "how": "- **Gmail:** abra el correo, haga clic en **⋮** (Más) junto a Responder y luego en **Descargar mensaje** (*Download message*).\n- **Outlook en la web:** abra el correo, haga clic en **⋯** (Más acciones) y luego en **Guardar como** o **Descargar** (*Save as* / *Download*).\n- **Apple Mail:** seleccione el correo, luego **Archivo → Guardar como** (*File → Save As*) y elija **Fuente del mensaje sin procesar** (*Raw Message Source*).\n- **Cualquier otra aplicación de correo:** copie los encabezados como se explica en \"¿Cómo encuentro los encabezados?\", péguelos en el Bloc de notas y guárdelos como archivo .txt.",
+    "upload_label": "Agregue archivos de correo (.eml o .txt)",
+    "upload_help": "Hasta {max} archivos a la vez.",
+    "check_button": "Revisar estos correos",
+    "empty": "Primero agregue al menos un archivo de correo.",
+    "too_many": "Solo se revisaron los primeros {max} archivos. Revise los demás en otra ronda.",
+    "summary": "⛔ **{scam}** probablemente estafa · ⚠️ **{careful}** tenga cuidado · ✅ **{ok}** parecen legítimos",
+    "unreadable_count": "No se pudo leer {n} archivo(s). Asegúrese de que sean correos guardados como .eml o .txt.",
+    "col_file": "Archivo",
+    "col_result": "Resultado",
+    "col_name": "Nombre que se ve",
+    "col_address": "Dirección que se ve",
+    "col_reason": "Razón principal",
+    "unreadable": "No se pudo leer este archivo",
+    "details": "Detalles de cada correo",
+    "download": "Descargar este resumen (CSV)",
+    "download_name": "resultados-revision-correos.csv",
+    "privacy": "Los archivos se revisan aquí y luego se borran. El resumen se crea solo para que usted lo descargue."
   }
 }
